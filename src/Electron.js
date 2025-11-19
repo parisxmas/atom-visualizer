@@ -2,11 +2,12 @@ import * as THREE from 'three';
 import { getSorbitalPath, getPorbitalPath, getDorbitalPath, getForbitalPath } from './OrbitalShapes.js';
 
 export class Electron {
-    constructor(radius = 0.2, orbitalType = 's', orbitalAxis = 0, shellRadius = 5, speed = 1, color = 0x00ffff, orbitColor = 0x333333) {
+    constructor(radius = 0.2, orbitalType = 's', orbitalAxis = 0, shellRadius = 5, speed = 1, color = 0x00ffff, orbitColor = 0x333333, shellNumber = 1) {
         this.radius = radius;
         this.orbitalType = orbitalType;
         this.orbitalAxis = orbitalAxis;
         this.shellRadius = shellRadius;
+        this.shellNumber = shellNumber;
         this.speed = speed;
         this.pathIndex = Math.random() * 100; // Random starting position on path
 

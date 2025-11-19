@@ -94,11 +94,11 @@ export function getOrbitalGeometry(orbitalType, orbitalAxis, size = 5) {
             const phi = u * Math.PI * 2; // 0 to 2PI
 
             // Get radius from spherical harmonic
-            // Take absolute value for probability density shape (or squared)
-            // Usually we visualize |Y| or Y^2. Let's use |Y| * size
-            let r = Math.abs(sphericalHarmonic(l, m, theta, phi));
+            // Use squared magnitude for probability density visualization (tighter lobes)
+            const val = sphericalHarmonic(l, m, theta, phi);
+            let r = val * val;
 
-            // Enhance contrast for cleaner shapes (optional)
+            // Enhance contrast for cleaner shapes
             r = r * size;
 
             // Convert to Cartesian

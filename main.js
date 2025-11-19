@@ -198,6 +198,9 @@ function handleAtomSelection(newAtomData) {
     scene.add(newAtom.group);
     atomObjects.push(newAtom);
 
+    // Update labels for the new atom
+    newAtom.updateLabels(camera);
+
     // Zoom to new atom
     selectAtom(newAtom);
 }
@@ -494,7 +497,10 @@ function animate(time) {
 
     controls.update();
 
-    atomObjects.forEach(atom => atom.update(time));
+    atomObjects.forEach(atom => {
+        atom.update(time);
+        atom.updateLabels(camera);
+    });
 
     renderer.render(scene, camera);
 }

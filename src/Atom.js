@@ -138,10 +138,10 @@ export class Atom {
 
         // Orbital colors
         const orbitalColors = {
-            's': 0x00ffff,  // Cyan
-            'p': 0xff00ff,  // Magenta
-            'd': 0xffff00,  // Yellow
-            'f': 0x00ff00   // Green
+            's': 0x2b65ec,  // Blue
+            'p': 0xff3333,  // Red
+            'd': 0x33ff33,  // Green
+            'f': 0xffaa00   // Gold
         };
 
         let remainingElectrons = electronCount;
@@ -161,7 +161,8 @@ export class Atom {
                     orbital.radius,         // shellRadius
                     1.0 / orbital.shell,    // speed (slower for outer shells)
                     this.data.electronColor, // electron color
-                    orbitColor              // orbit line color
+                    orbitColor,             // orbit line color
+                    orbital.shell           // shellNumber
                 );
 
                 this.electrons.push(electron);
@@ -175,11 +176,12 @@ export class Atom {
     createOrbitals() {
         // Track created orbitals to avoid duplicates
         const createdOrbitals = new Set();
+        this.orbitalLabels = []; // Store labels for LOD updates
         const orbitalColors = {
-            's': 0x00ffff,  // Cyan
-            'p': 0xff00ff,  // Magenta
-            'd': 0xffff00,  // Yellow
-            'f': 0x00ff00   // Green
+            's': 0x2b65ec,  // Blue (Reference)
+            'p': 0xff3333,  // Red (Reference)
+            'd': 0x33ff33,  // Green (Reference)
+            'f': 0xffaa00   // Gold/Orange
         };
 
         // Iterate through electrons to find unique orbitals
@@ -193,17 +195,70 @@ export class Atom {
                 const material = new THREE.MeshPhongMaterial({
                     color: orbitalColors[electron.orbitalType],
                     transparent: true,
-                    opacity: 0.1, // Very faint to see nucleus
+                    opacity: 0.3, // Increased opacity for better visibility
                     side: THREE.DoubleSide,
                     depthWrite: false,
-                    blending: THREE.AdditiveBlending,
-                    shininess: 50
+                    blending: THREE.NormalBlending, // Normal blending for solid-looking clouds
+                    shininess: 80
                 });
 
                 const mesh = new THREE.Mesh(geometry, material);
                 mesh.raycast = () => { }; // Ignore clicks
                 this.group.add(mesh);
+
+                // Create Label (e.g., "1s", "2p")
+                const labelText = `${electron.shellNumber}${electron.orbitalType}`;
+                const labelCanvas = document.createElement('canvas');
+                const ctx = labelCanvas.getContext('2d');
+                labelCanvas.width = 64;
+                labelCanvas.height = 32;
+                ctx.fillStyle = 'rgba(0,0,0,0.5)'; // Semi-transparent background
+                ctx.fillRect(0, 0, 64, 32);
+                ctx.font = 'bold 20px Arial';
+                ctx.fillStyle = 'white';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(labelText, 32, 16);
+
+                const labelTexture = new THREE.CanvasTexture(labelCanvas);
+                const labelMaterial = new THREE.SpriteMaterial({
+                    map: labelTexture,
+                    depthTest: false,
+                    depthWrite: false
+                });
+                const labelSprite = new THREE.Sprite(labelMaterial);
+
+                // Position label slightly offset from center, depending on orbital type
+                // For simplicity, place it at 0.7 * radius along a relevant axis
+                let pos = new THREE.Vector3(electron.shellRadius * 0.7, 0, 0);
+                if (electron.orbitalType === 'p') {
+                    if (electron.orbitalAxis % 3 === 1) pos.set(0, electron.shellRadius * 0.7, 0); // y
+                    else if (electron.orbitalAxis % 3 === 0) pos.set(0, 0, electron.shellRadius * 0.7); // z (mapped to 0 in getOrbitalGeometry logic? need to check)
+                    // Actually let's just use a generic offset for now to ensure visibility
+                    pos.set(electron.shellRadius * 0.6, electron.shellRadius * 0.6, 0);
+                }
+
+                labelSprite.position.copy(pos);
+                labelSprite.scale.set(2, 1, 1);
+                labelSprite.visible = false; // Hidden by default (LOD)
+
+                this.group.add(labelSprite);
+                this.orbitalLabels.push(labelSprite);
+                console.log(`Created label for ${labelText} at`, pos);
             }
+        });
+    }
+
+    updateLabels(camera) {
+        if (!this.orbitalLabels) return;
+
+        const distance = camera.position.distanceTo(this.group.position);
+        const showLabels = distance < 100; // Increased threshold for better visibility
+
+        this.orbitalLabels.forEach(label => {
+            label.visible = showLabels;
+            // Optional: scale labels to stay readable? 
+            // For now just toggle visibility
         });
     }
 
