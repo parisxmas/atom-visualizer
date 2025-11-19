@@ -9,6 +9,7 @@ export class Electron {
         this.shellRadius = shellRadius;
         this.shellNumber = shellNumber;
         this.speed = speed;
+        this.speedMultiplier = 1; // Default speed multiplier (can be changed by UI)
         this.pathIndex = Math.random() * 100; // Random starting position on path
 
         const geometry = new THREE.SphereGeometry(this.radius, 16, 16);
@@ -113,7 +114,9 @@ export class Electron {
 
     update(time) {
         // Move along the orbital path - all electrons use same base speed
-        this.pathIndex += this.speed * 0.4; // Increased to 0.4 for faster movement
+        // Apply speed multiplier if set (for speed control UI)
+        const multiplier = this.speedMultiplier || 1;
+        this.pathIndex += this.speed * 0.4 * multiplier;
 
         if (this.pathPoints && this.pathPoints.length > 0) {
             const index = Math.floor(this.pathIndex) % this.pathPoints.length;

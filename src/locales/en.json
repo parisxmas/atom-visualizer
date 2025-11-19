@@ -604,6 +604,7 @@
     },
     "ui": {
         "periodicTable": "Periodic Table",
+        "electronSpeed": "Electron Speed",
         "atomicNumber": "Atomic Number:",
         "protons": "Protons:",
         "neutrons": "Neutrons:",

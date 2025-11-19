@@ -486,6 +486,7 @@
     },
     "ui": {
         "periodicTable": "Periyodik Tablo",
+        "electronSpeed": "Elektron Hızı",
         "atomicNumber": "Atom Numarası:",
         "protons": "Protonlar:",
         "neutrons": "Nötronlar:",

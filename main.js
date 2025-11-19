@@ -106,6 +106,37 @@ const atomsButton = document.getElementById('atoms-button');
 // Set translated button text
 atomsButton.textContent = i18n.t('ui.periodicTable');
 
+// Electron Speed Control
+const speedLabel = document.getElementById('speed-label');
+const speedButtons = document.querySelectorAll('.speed-btn');
+let currentSpeedMultiplier = 1;
+
+// Set translated speed label
+speedLabel.textContent = i18n.t('ui.electronSpeed') + ':';
+
+// Add click handlers for speed buttons
+speedButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        speedButtons.forEach(b => b.classList.remove('active'));
+
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        // Get speed multiplier from data attribute
+        currentSpeedMultiplier = parseFloat(btn.dataset.speed);
+
+        // Update all existing electrons' speed
+        atomObjects.forEach(atom => {
+            atom.electrons.forEach(electron => {
+                // The base speed is already set, we just need to update the multiplier
+                // The electron update function will use this multiplier
+                electron.speedMultiplier = currentSpeedMultiplier;
+            });
+        });
+    });
+});
+
 atomsButton.addEventListener('click', () => {
     updatePeriodicTableHighlights();
     periodicTableOverlay.classList.remove('hidden');
