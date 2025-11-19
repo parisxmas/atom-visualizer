@@ -26,6 +26,8 @@ document.body.appendChild(renderer.domElement);
 // Controls
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = false; // Disabled for debugging
+controls.minDistance = 10; // Minimum zoom in distance
+controls.maxDistance = 200; // Maximum zoom out distance
 
 // Lights
 const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft white light
@@ -106,33 +108,27 @@ const mouse = new THREE.Vector2();
 
 function zoomToAtom(targetGroup) {
     const targetPosition = targetGroup.position.clone();
-    console.log('Main: Zooming to', targetPosition);
+
 
     // Calculate offset based on a fixed distance for now
     // We could calculate bounding box but fixed is safer for now
     const offset = new THREE.Vector3(0, 2, 20);
     const newCameraPosition = targetPosition.clone().add(offset);
 
-    console.log('Main: New camera pos', newCameraPosition);
 
-    console.log('Creating camera tween from', camera.position, 'to', newCameraPosition);
 
     const cameraTween = new TWEEN.Tween(camera.position, tweenGroup)
         .to({ x: newCameraPosition.x, y: newCameraPosition.y, z: newCameraPosition.z }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
-        .onStart(() => console.log('Main: Tween started'))
-        .onUpdate(() => console.log('Main: Tween update', camera.position))
-        .onComplete(() => console.log('Main: Tween complete'))
+
         .start();
 
-    console.log('Camera tween created:', cameraTween);
 
     const targetTween = new TWEEN.Tween(controls.target, tweenGroup)
         .to({ x: targetPosition.x, y: targetPosition.y, z: targetPosition.z }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    console.log('Target tween created:', targetTween);
 }
 
 
@@ -221,15 +217,12 @@ function onMouseMove(event) {
                 foundNucleon.material.emissive = new THREE.Color(0x000000);
             }
 
-            console.log('Found nucleon to highlight!', foundNucleon);
             // Use bright yellow for protons (red base) and bright cyan for neutrons (gray base)
             const isProton = foundNucleon.material.color.r > 0.5; // Red channel high = proton
             const highlightColor = isProton ? 0xffff00 : 0x00ffff; // Yellow for protons, cyan for neutrons
 
-            console.log('Setting emissive to:', highlightColor.toString(16), 'isProton:', isProton);
             foundNucleon.material.emissive.setHex(highlightColor);
             foundNucleon.material.emissiveIntensity = 2.0; // Much brighter
-            console.log('Emissive set:', foundNucleon.material.emissive, 'intensity:', foundNucleon.material.emissiveIntensity);
         }
 
         window.hoveredNucleon = foundNucleon;
@@ -250,7 +243,7 @@ function selectAtom(atom) {
     }
 
     selectedAtom = atom;
-    console.log('Main: selected atom', atom.data.name);
+
 
     // Force scale up
     new TWEEN.Tween(atom.group.scale, tweenGroup)
@@ -315,15 +308,27 @@ window.addEventListener('resize', () => {
 
 // Animation Loop
 let frameCount = 0;
+let lastTime = performance.now();
+let fps = 0;
+const fpsCounter = document.getElementById('fps-counter');
+
 function animate(time) {
     requestAnimationFrame(animate);
 
+    // Calculate FPS
+    const currentTime = performance.now();
+    const deltaTime = currentTime - lastTime;
+    fps = 1000 / deltaTime;
+    lastTime = currentTime;
+
+    // Update FPS display every 10 frames
+    if (frameCount % 10 === 0) {
+        fpsCounter.textContent = `FPS: ${Math.round(fps)}`;
+    }
+
     const updateResult = tweenGroup.update(performance.now());
 
-    // Log every 60 frames to avoid spam
-    if (frameCount % 60 === 0) {
-        console.log('TWEEN update result:', updateResult, 'TWEEN object:', TWEEN);
-    }
+
     frameCount++;
 
     controls.update();
