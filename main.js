@@ -419,6 +419,16 @@ window.addEventListener('click', (event) => {
         if (object.name === 'label' && object.userData.atomName) {
             const atom = atomObjects.find(a => a.data.name === object.userData.atomName);
             if (atom) {
+                // Check distance from camera to atom
+                const distance = camera.position.distanceTo(atom.group.position);
+                const maxDistanceForInfoPanel = 50; // Only open info panel when close enough
+
+                if (distance > maxDistanceForInfoPanel) {
+                    // Too far - just zoom to the atom instead
+                    selectAtom(atom);
+                    return;
+                }
+
                 // Close other panels first
                 atomObjects.forEach(a => {
                     if (a !== atom && a.infoPanel) {
