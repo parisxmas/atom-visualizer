@@ -37,7 +37,7 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = false; // Disabled for debugging
 controls.minDistance = 10; // Minimum zoom in distance
-controls.maxDistance = 200; // Maximum zoom out distance
+controls.maxDistance = 220; // Maximum zoom out distance (increased for better grid view)
 
 // Lights
 const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft white light
