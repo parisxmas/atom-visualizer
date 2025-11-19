@@ -311,7 +311,7 @@ export class Atom {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
         const width = 512;
-        const height = 380; // Reduced height to fit content without extra space
+        const height = 550; // Increased height to fit details
         canvas.width = width;
         canvas.height = height;
 
@@ -351,6 +351,44 @@ export class Atom {
         context.lineWidth = 2;
         context.stroke();
 
+        // Atom Details Section
+        let y = 95;
+        const labelX = 30;
+        const valueX = 240;
+        const lineHeight = 28;
+
+        context.font = 'bold 18px Arial';
+        context.fillStyle = '#00ccff';
+
+        // Helper to draw row
+        const drawRow = (label, value) => {
+            context.fillStyle = '#00ccff';
+            context.fillText(label, labelX, y);
+            context.fillStyle = '#ffffff';
+            context.textAlign = 'right';
+            context.fillText(value, width - 30, y);
+            context.textAlign = 'left';
+            y += lineHeight;
+        };
+
+        drawRow(i18n.t('ui.atomicNumber'), this.data.atomicNumber);
+        drawRow(i18n.t('ui.protons'), this.data.protons);
+        drawRow(i18n.t('ui.neutrons'), this.data.neutrons);
+        drawRow(i18n.t('ui.electrons'), this.data.electrons);
+
+        const reactivityLabel = i18n.t(`reactivity.${this.data.reactivity}`);
+        drawRow(i18n.t('ui.reactivityLabel'), reactivityLabel);
+
+        // Separator 2
+        y += 10;
+        context.beginPath();
+        context.moveTo(30, y);
+        context.lineTo(width - 30, y);
+        context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+        context.lineWidth = 2;
+        context.stroke();
+        y += 30;
+
         // Description
         context.font = '16px Arial';
         context.fillStyle = '#dddddd';
@@ -363,10 +401,10 @@ export class Atom {
 
         // Text wrapping for description
         const maxWidth = width - 60;
-        const lineHeight = 22;
+        const descLineHeight = 22;
         const words = text.split(' ');
         let line = '';
-        let y = 95;
+        // y is already updated
 
         for (let n = 0; n < words.length; n++) {
             const testLine = line + words[n] + ' ';
@@ -375,14 +413,14 @@ export class Atom {
             if (testWidth > maxWidth && n > 0) {
                 context.fillText(line, 30, y);
                 line = words[n] + ' ';
-                y += lineHeight;
+                y += descLineHeight;
             }
             else {
                 line = testLine;
             }
         }
         context.fillText(line, 30, y);
-        y += lineHeight + 8;
+        y += descLineHeight + 8;
 
         // Physical Properties Section
         if (this.data.melting !== null || this.data.boiling !== null || this.data.density !== null) {

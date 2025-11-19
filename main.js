@@ -151,6 +151,16 @@ function createPeriodicTable() {
                 <p><strong>${i18n.t('ui.neutrons')}</strong> ${atomData.neutrons}</p>
                 <p><strong>${i18n.t('ui.electrons')}</strong> ${atomData.electrons}</p>
                 <p class="${atomData.isReactive ? 'reactive' : ''}"><strong>${i18n.t('ui.reactivityLabel')}</strong> ${translatedReactivity}</p>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 8px 0;">
+                <p style="font-size: 0.9em; color: #ddd;">${i18n.t('infoPanel.description_template', {
+                name: translatedName,
+                symbol: atomData.symbol,
+                atomicNumber: atomData.atomicNumber,
+                reactivity: translatedReactivity
+            })}</p>
+                ${atomData.melting !== null ? `<p style="font-size: 0.9em;"><strong>${i18n.t('infoPanel.headers.Melting Point')}:</strong> ${atomData.melting}°C</p>` : ''}
+                ${atomData.boiling !== null ? `<p style="font-size: 0.9em;"><strong>${i18n.t('infoPanel.headers.Boiling Point')}:</strong> ${atomData.boiling}°C</p>` : ''}
+                ${atomData.density !== null ? `<p style="font-size: 0.9em;"><strong>${i18n.t('infoPanel.headers.Density')}:</strong> ${atomData.density} g/cm³</p>` : ''}
             `;
 
             // Show popup
