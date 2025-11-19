@@ -51,7 +51,7 @@ const atomObjects = [];
 const gridSpacing = 40; // Increased spacing for better visibility
 const gridSize = 3;
 
-atoms.forEach((atomData, index) => {
+atoms.slice(0, 27).forEach((atomData, index) => {
     const atom = new Atom(atomData);
 
     // 3x3x3 Grid Logic
@@ -72,62 +72,114 @@ atoms.forEach((atomData, index) => {
     atomObjects.push(atom);
 });
 
-// Create Atom List UI
-const atomListContainer = document.getElementById('atom-list');
-const listTitle = document.createElement('h3');
-listTitle.textContent = 'Atoms';
-atomListContainer.appendChild(listTitle);
+// Periodic Table Logic
+const periodicTableOverlay = document.getElementById('periodic-table-overlay');
+const periodicTableGrid = document.getElementById('periodic-table-grid');
+const atomsButton = document.getElementById('atoms-button');
 
-atomObjects.forEach((atom) => {
-    const listItem = document.createElement('div');
-    listItem.className = 'atom-list-item';
-    listItem.textContent = `${atom.data.symbol} - ${atom.data.name}`;
-    listItem.dataset.atomName = atom.data.name;
+atomsButton.addEventListener('click', () => {
+    updatePeriodicTableHighlights();
+    periodicTableOverlay.classList.remove('hidden');
+});
 
-    const popup = document.getElementById('atom-popup');
+periodicTableOverlay.addEventListener('click', (e) => {
+    if (e.target === periodicTableOverlay) {
+        periodicTableOverlay.classList.add('hidden');
+    }
+});
 
-    listItem.addEventListener('mouseenter', (e) => {
-        // Populate popup
-        popup.innerHTML = `
-            <h4>${atom.data.name} (${atom.data.symbol})</h4>
-            <p><strong>Atomic Number:</strong> ${atom.data.atomicNumber}</p>
-            <p><strong>Protons:</strong> ${atom.data.protons}</p>
-            <p><strong>Neutrons:</strong> ${atom.data.neutrons}</p>
-            <p><strong>Electrons:</strong> ${atom.data.electrons}</p>
+function updatePeriodicTableHighlights() {
+    // Get all currently active atom names
+    const activeAtomNames = new Set(atomObjects.map(a => a.data.name));
+
+    const cells = document.querySelectorAll('.periodic-atom');
+    cells.forEach(cell => {
+        const atomName = cell.dataset.atomName;
+        if (activeAtomNames.has(atomName)) {
+            cell.classList.add('active');
+        } else {
+            cell.classList.remove('active');
+        }
+    });
+}
+
+function createPeriodicTable() {
+    atoms.forEach(atomData => {
+        const cell = document.createElement('div');
+        cell.className = 'periodic-atom';
+        cell.dataset.atomName = atomData.name; // Store name for highlighting logic
+        cell.innerHTML = `
+            <span class="periodic-atom-number">${atomData.atomicNumber}</span>
+            <span class="periodic-atom-symbol">${atomData.symbol}</span>
+            <span class="periodic-atom-name">${atomData.name}</span>
         `;
 
-        // Position popup to the left of the list item
-        const rect = listItem.getBoundingClientRect();
-        popup.style.display = 'block';
+        // Apply grid positioning
+        cell.style.gridColumn = atomData.xpos;
+        cell.style.gridRow = atomData.ypos;
 
-        // Calculate position: left of the item minus popup width minus some padding
-        // We need to show it to get its width, or assume a width. 
-        // Since it's display: block now, we can get offsetWidth.
-        const popupWidth = popup.offsetWidth;
+        const popup = document.getElementById('atom-popup');
 
-        popup.style.top = `${rect.top}px`;
-        popup.style.left = `${rect.left - popupWidth - 10}px`;
-    });
+        cell.addEventListener('mouseenter', (e) => {
+            // Populate popup
+            popup.innerHTML = `
+                <h4>${atomData.name} (${atomData.symbol})</h4>
+                <p><strong>Atomic Number:</strong> ${atomData.atomicNumber}</p>
+                <p><strong>Protons:</strong> ${atomData.protons}</p>
+                <p><strong>Neutrons:</strong> ${atomData.neutrons}</p>
+                <p><strong>Electrons:</strong> ${atomData.electrons}</p>
+            `;
 
-    listItem.addEventListener('mouseleave', () => {
-        popup.style.display = 'none';
-    });
+            // Show popup
+            popup.style.display = 'block';
 
-    listItem.addEventListener('click', () => {
-        // Remove selected class from all items
-        document.querySelectorAll('.atom-list-item').forEach(item => {
-            item.classList.remove('selected');
+            // Position popup to the right of the cell
+            const rect = cell.getBoundingClientRect();
+            popup.style.top = `${rect.top}px`;
+            popup.style.left = `${rect.right + 10}px`;
+
+            // Adjust if it goes off screen (simple check)
+            if (rect.right + 10 + 250 > window.innerWidth) {
+                popup.style.left = `${rect.left - 260}px`; // Show on left if no space on right
+            }
         });
 
-        // Add selected class to clicked item
-        listItem.classList.add('selected');
+        cell.addEventListener('mouseleave', () => {
+            popup.style.display = 'none';
+        });
 
-        // Zoom to atom
-        selectAtom(atom);
+        cell.addEventListener('click', () => {
+            handleAtomSelection(atomData);
+        });
+
+        periodicTableGrid.appendChild(cell);
     });
+}
 
-    atomListContainer.appendChild(listItem);
-});
+function handleAtomSelection(newAtomData) {
+    // Hide table
+    periodicTableOverlay.classList.add('hidden');
+
+    // Select random atom to remove
+    const randomIndex = Math.floor(Math.random() * atomObjects.length);
+    const oldAtom = atomObjects[randomIndex];
+    const position = oldAtom.group.position.clone();
+
+    // Remove old atom
+    scene.remove(oldAtom.group);
+    atomObjects.splice(randomIndex, 1);
+
+    // Create new atom
+    const newAtom = new Atom(newAtomData);
+    newAtom.group.position.copy(position);
+    scene.add(newAtom.group);
+    atomObjects.push(newAtom);
+
+    // Zoom to new atom
+    selectAtom(newAtom);
+}
+
+createPeriodicTable();
 
 // Raycaster for interaction
 const raycaster = new THREE.Raycaster();
@@ -286,6 +338,9 @@ function selectAtom(atom) {
 
 // Global Click Listener using Raycasting
 window.addEventListener('click', (event) => {
+    // Ignore clicks on UI elements (like the periodic table)
+    if (event.target !== renderer.domElement) return;
+
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
