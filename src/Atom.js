@@ -225,8 +225,7 @@ export class Atom {
                 const ctx = labelCanvas.getContext('2d');
                 labelCanvas.width = 64;
                 labelCanvas.height = 32;
-                ctx.fillStyle = 'rgba(0,0,0,0.5)'; // Semi-transparent background
-                ctx.fillRect(0, 0, 64, 32);
+                // No background - transparent
                 ctx.font = 'bold 20px Arial';
                 ctx.fillStyle = 'white';
                 ctx.textAlign = 'center';
