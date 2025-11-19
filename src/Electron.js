@@ -85,7 +85,7 @@ export class Electron {
         const orbitMaterial = new THREE.LineBasicMaterial({
             color: orbitColor,
             transparent: true,
-            opacity: 0.15
+            opacity: 0.4
         });
         this.orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
         this.orbitLine.raycast = () => { };

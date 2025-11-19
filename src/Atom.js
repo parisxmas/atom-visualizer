@@ -157,7 +157,7 @@ export class Atom {
                     orbital.type,           // orbitalType (s, p, d, f)
                     orbital.suborbital,     // orbitalAxis/orientation
                     orbital.radius,         // shellRadius
-                    1.0 / orbital.shell,    // speed (slower for outer shells)
+                    0.2 / orbital.shell,    // speed (slower for outer shells)
                     this.data.electronColor, // electron color
                     orbitColor,             // orbit line color
                     orbital.shell           // shellNumber
