@@ -4,6 +4,7 @@
 import * as THREE from 'three';
 import { Nucleon } from './Nucleon.js';
 import { Electron } from './Electron.js';
+import { getCurrentLanguage, getElementName, getDescription } from './translations.js';
 
 export class Atom {
     constructor(data) {
@@ -197,13 +198,16 @@ export class Atom {
         context.stroke();
 
         // Draw text
+        const lang = getCurrentLanguage();
+        const translatedName = getElementName(this.data.name, lang);
         context.font = 'bold 48px Arial';
         context.fillStyle = 'white';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText(`${this.data.symbol} - ${this.data.name}`, canvas.width / 2, canvas.height / 2);
+        context.fillText(`${this.data.symbol} - ${translatedName}`, canvas.width / 2, canvas.height / 2);
 
         const texture = new THREE.CanvasTexture(canvas);
+        texture.needsUpdate = true;
         const material = new THREE.SpriteMaterial({ map: texture, depthTest: false, depthWrite: false });
         const sprite = new THREE.Sprite(material);
 
@@ -252,9 +256,11 @@ export class Atom {
         context.stroke();
 
         // Title
+        const lang = getCurrentLanguage();
+        const translatedName = getElementName(this.data.name, lang);
         context.font = 'bold 40px Arial';
         context.fillStyle = '#00ccff';
-        context.fillText(`${this.data.name} (${this.data.symbol})`, 30, 60);
+        context.fillText(`${translatedName} (${this.data.symbol})`, 30, 60);
 
         // Separator
         context.beginPath();
@@ -267,7 +273,7 @@ export class Atom {
         // Description
         context.font = '24px Arial';
         context.fillStyle = '#dddddd';
-        const text = this.data.description || "No description available.";
+        const text = getDescription(this.data, lang);
 
         // Text wrapping
         const maxWidth = width - 60;

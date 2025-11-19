@@ -4,9 +4,16 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-import TWEEN from '@tweenjs/tween.js';
+import { Atom } from './src/Atom.js';
 import { atoms } from './src/data.js';
-import { Atom } from './src/Atom.js'; // Keeping this as it's used later in the code
+import TWEEN from '@tweenjs/tween.js';
+import { getCurrentLanguage, getElementName, getReactivity } from './src/translations.js';
+
+// Detect browser language
+const currentLanguage = getCurrentLanguage();
+console.log('Language detected:', currentLanguage);
+
+// Scene setuping this as it's used later in the code
 import './style.css';
 
 // Create TWEEN group for managing tweens
@@ -115,10 +122,11 @@ function createPeriodicTable() {
             cell.classList.add('reactive');
         }
 
+        const translatedName = getElementName(atomData.name, currentLanguage);
         cell.innerHTML = `
             <span class="periodic-atom-number">${atomData.atomicNumber}</span>
             <span class="periodic-atom-symbol">${atomData.symbol}</span>
-            <span class="periodic-atom-name">${atomData.name}</span>
+            <span class="periodic-atom-name">${translatedName}</span>
         `;
 
         // Apply grid positioning
@@ -128,14 +136,17 @@ function createPeriodicTable() {
         const popup = document.getElementById('atom-popup');
 
         cell.addEventListener('mouseenter', (e) => {
-            // Populate popup
+            // Populate popup with translated content
+            const translatedName = getElementName(atomData.name, currentLanguage);
+            const translatedReactivity = getReactivity(atomData.reactivity, currentLanguage);
+
             popup.innerHTML = `
-                <h4>${atomData.name} (${atomData.symbol})</h4>
+                <h4>${translatedName} (${atomData.symbol})</h4>
                 <p><strong>Atomic Number:</strong> ${atomData.atomicNumber}</p>
                 <p><strong>Protons:</strong> ${atomData.protons}</p>
                 <p><strong>Neutrons:</strong> ${atomData.neutrons}</p>
                 <p><strong>Electrons:</strong> ${atomData.electrons}</p>
-                <p><strong>Reactivity:</strong> <span style="color: ${atomData.isReactive ? '#ff4444' : '#00ff00'}">${atomData.reactivity}</span></p>
+                <p><strong>Reactivity:</strong> <span style="color: ${atomData.isReactive ? '#ff4444' : '#00ff00'}">${translatedReactivity}</span></p>
             `;
 
             // Show popup
@@ -355,8 +366,12 @@ window.addEventListener('click', (event) => {
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(scene.children, true);
 
-    if (intersects.length > 0) {
-        const object = intersects[0].object;
+    // Filter to only sprites (labels and info panels), ignore meshes (nucleons, electrons)
+    const spriteIntersects = intersects.filter(i => i.object instanceof THREE.Sprite);
+
+    if (spriteIntersects.length > 0) {
+        const object = spriteIntersects[0].object;
+        console.log('Clicked sprite:', object.name, 'userData:', object.userData);
 
         // Check if clicked on info panel - close it
         if (object.name === 'infoPanel' && object.userData.atomName) {
@@ -386,17 +401,52 @@ window.addEventListener('click', (event) => {
         let clickedObject = object;
         let atomGroup = null;
 
-        while (clickedObject.parent && clickedObject.parent !== scene) {
+        // Traverse up to find the atom group
+        while (clickedObject && !atomGroup) {
+            if (clickedObject.parent && clickedObject.parent.type === 'Group') {
+                // Check if this group belongs to an atom
+                const foundAtom = atomObjects.find(a => a.group === clickedObject.parent);
+                if (foundAtom) {
+                    atomGroup = clickedObject.parent;
+                    break;
+                }
+            }
             clickedObject = clickedObject.parent;
-        }
-
-        if (clickedObject.parent === scene) {
-            atomGroup = clickedObject;
         }
 
         if (atomGroup) {
             const atom = atomObjects.find(a => a.group === atomGroup);
-            if (atom) selectAtom(atom);
+            if (atom) {
+                selectAtom(atom);
+            }
+        }
+        return;
+    }
+
+    // If no sprites clicked, check for nucleus clicks (for zoom)
+    const nucleusIntersects = intersects.filter(i => i.object.parent?.name === 'nucleus');
+    if (nucleusIntersects.length > 0) {
+        const nucleusObject = nucleusIntersects[0].object;
+        let atomGroup = null;
+        let current = nucleusObject;
+
+        // Traverse up to find the atom group
+        while (current && !atomGroup) {
+            if (current.parent && current.parent.type === 'Group') {
+                const foundAtom = atomObjects.find(a => a.group === current.parent);
+                if (foundAtom) {
+                    atomGroup = current.parent;
+                    break;
+                }
+            }
+            current = current.parent;
+        }
+
+        if (atomGroup) {
+            const atom = atomObjects.find(a => a.group === atomGroup);
+            if (atom) {
+                selectAtom(atom);
+            }
         }
     }
 });

@@ -18,5 +18,6 @@ export class Nucleon {
         });
 
         this.mesh = new THREE.Mesh(geometry, material);
+        this.mesh.raycast = () => { }; // Disable raycasting so clicks pass through
     }
 }
