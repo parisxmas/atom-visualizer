@@ -58,7 +58,7 @@ scene.add(camera); // Important: add camera to scene so its children are rendere
 // Atoms
 // Atoms
 const atomObjects = [];
-const gridSpacing = 40; // Increased spacing for better visibility
+const gridSpacing = 60; // Increased spacing for better separation between atoms
 const gridSize = 3;
 
 // Loading Screen Logic
