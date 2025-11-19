@@ -7,11 +7,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Atom } from './src/Atom.js';
 import { atoms } from './src/data.js';
 import TWEEN from '@tweenjs/tween.js';
-import { getCurrentLanguage, getElementName, getReactivity, getUIText } from './src/translations.js';
+import i18n from './src/i18n.js';
+// import { getElementName, getReactivity, getUses } from './src/translations.js'; // Removed legacy imports
 
 // Detect browser language
-const currentLanguage = getCurrentLanguage();
-console.log('Language detected:', currentLanguage);
+console.log('Language detected:', i18n.language);
 
 // Scene setuping this as it's used later in the code
 import './style.css';
@@ -88,7 +88,7 @@ const periodicTableGrid = document.getElementById('periodic-table-grid');
 const atomsButton = document.getElementById('atoms-button');
 
 // Set translated button text
-atomsButton.textContent = getUIText('Periodic Table', currentLanguage);
+atomsButton.textContent = i18n.t('ui.periodicTable');
 
 atomsButton.addEventListener('click', () => {
     updatePeriodicTableHighlights();
@@ -125,11 +125,12 @@ function createPeriodicTable() {
             cell.classList.add('reactive');
         }
 
-        const translatedName = getElementName(atomData.name, currentLanguage);
+        // Display translated element name
+        const translatedName = i18n.t(`element.${atomData.name}.name`);
         cell.innerHTML = `
-            <span class="periodic-atom-number">${atomData.atomicNumber}</span>
-            <span class="periodic-atom-symbol">${atomData.symbol}</span>
-            <span class="periodic-atom-name">${translatedName}</span>
+            <div class="periodic-atom-symbol">${atomData.symbol}</div>
+            <div class="periodic-atom-number">${atomData.atomicNumber}</div>
+            <div class="periodic-atom-name">${translatedName}</div>
         `;
 
         // Apply grid positioning
@@ -140,16 +141,16 @@ function createPeriodicTable() {
 
         cell.addEventListener('mouseenter', (e) => {
             // Populate popup with translated content
-            const translatedName = getElementName(atomData.name, currentLanguage);
-            const translatedReactivity = getReactivity(atomData.reactivity, currentLanguage);
+            const translatedName = i18n.t(`element.${atomData.name}.name`);
+            const translatedReactivity = i18n.t(`reactivity.${atomData.reactivity}`);
 
             popup.innerHTML = `
                 <h4>${translatedName} (${atomData.symbol})</h4>
-                <p><strong>Atomic Number:</strong> ${atomData.atomicNumber}</p>
-                <p><strong>Protons:</strong> ${atomData.protons}</p>
-                <p><strong>Neutrons:</strong> ${atomData.neutrons}</p>
-                <p><strong>Electrons:</strong> ${atomData.electrons}</p>
-                <p><strong>Reactivity:</strong> <span style="color: ${atomData.isReactive ? '#ff4444' : '#00ff00'}">${translatedReactivity}</span></p>
+                <p><strong>${i18n.t('ui.atomicNumber')}</strong> ${atomData.atomicNumber}</p>
+                <p><strong>${i18n.t('ui.protons')}</strong> ${atomData.protons}</p>
+                <p><strong>${i18n.t('ui.neutrons')}</strong> ${atomData.neutrons}</p>
+                <p><strong>${i18n.t('ui.electrons')}</strong> ${atomData.electrons}</p>
+                <p class="${atomData.isReactive ? 'reactive' : ''}"><strong>${i18n.t('ui.reactivityLabel')}</strong> ${translatedReactivity}</p>
             `;
 
             // Show popup

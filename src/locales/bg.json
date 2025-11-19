@@ -1,0 +1,508 @@
+{
+    "element": {
+        "Hydrogen": {
+            "name": "Водород",
+            "uses": "Горивни клетки, производство на амоняк, ракетно гориво"
+        },
+        "Helium": {
+            "name": "Хелий",
+            "uses": "Балони, криогеника, дихателни смеси"
+        },
+        "Lithium": {
+            "name": "Литий",
+            "uses": "Батерии, керамика, смазочни материали"
+        },
+        "Beryllium": {
+            "name": "Берилий",
+            "uses": "Аерокосмически сплави, рентгенови прозорци"
+        },
+        "Boron": {
+            "name": "Бор",
+            "uses": "Стъкло, детергенти, полупроводници"
+        },
+        "Carbon": {
+            "name": "Въглерод",
+            "uses": "Стомана, пластмаси, диаманти, графит"
+        },
+        "Nitrogen": {
+            "name": "Азот",
+            "uses": "Торове, взривни вещества, консервиране на храни"
+        },
+        "Oxygen": {
+            "name": "Кислород",
+            "uses": "Дишане, производство на стомана, пречистване на вода"
+        },
+        "Fluorine": {
+            "name": "Флуор",
+            "uses": "Паста за зъби, хладилни агенти, тефлон"
+        },
+        "Neon": {
+            "name": "Неон",
+            "uses": "Неонови светлини, лазери, криогенен хладилен агент"
+        },
+        "Sodium": {
+            "name": "Натрий",
+            "uses": "Трапезна сол, сапун, улични лампи"
+        },
+        "Magnesium": {
+            "name": "Магнезий",
+            "uses": "Сплави, фойерверки, флаш фотография"
+        },
+        "Aluminum": {
+            "name": "Алуминий",
+            "uses": "Кутии, фолио, самолети, строителство"
+        },
+        "Silicon": {
+            "name": "Силиций",
+            "uses": "Компютърни чипове, слънчеви клетки, стъкло"
+        },
+        "Phosphorus": {
+            "name": "Фосфор",
+            "uses": "Торове, детергенти, кибрити"
+        },
+        "Sulfur": {
+            "name": "Сяра",
+            "uses": "Сярна киселина, барут, вулканизация на каучук"
+        },
+        "Chlorine": {
+            "name": "Хлор",
+            "uses": "Пречистване на вода, белина, PVC"
+        },
+        "Argon": {
+            "name": "Аргон",
+            "uses": "Заваряване, крушки, изолация"
+        },
+        "Potassium": {
+            "name": "Калий",
+            "uses": "Торове, сапун, стъкло"
+        },
+        "Calcium": {
+            "name": "Калций",
+            "uses": "Кости, цимент, производство на сирене"
+        },
+        "Scandium": {
+            "name": "Скандий",
+            "uses": "Аерокосмически сплави, спортно оборудване"
+        },
+        "Titanium": {
+            "name": "Титан",
+            "uses": "Самолети, медицински импланти, бяла боя"
+        },
+        "Vanadium": {
+            "name": "Ванадий",
+            "uses": "Стоманени сплави, катализатори, батерии"
+        },
+        "Chromium": {
+            "name": "Хром",
+            "uses": "Неръждаема стомана, хромиране, бои"
+        },
+        "Manganese": {
+            "name": "Манган",
+            "uses": "Производство на стомана, батерии, торове"
+        },
+        "Iron": {
+            "name": "Желязо",
+            "uses": "Стомана, строителство, машини, хемоглобин"
+        },
+        "Cobalt": {
+            "name": "Кобалт",
+            "uses": "Магнити, батерии, сини пигменти"
+        },
+        "Nickel": {
+            "name": "Никел",
+            "uses": "Неръждаема стомана, монети, батерии"
+        },
+        "Copper": {
+            "name": "Мед",
+            "uses": "Електрически кабели, водопровод, монети"
+        },
+        "Zinc": {
+            "name": "Цинк",
+            "uses": "Галванизиране, месинг, батерии"
+        },
+        "Gallium": {
+            "name": "Галий",
+            "uses": "Полупроводници, LED диоди, слънчеви клетки"
+        },
+        "Germanium": {
+            "name": "Германий",
+            "uses": "Оптични влакна, инфрачервена оптика, транзистори"
+        },
+        "Arsenic": {
+            "name": "Арсен",
+            "uses": "Полупроводници, консерванти за дърво, пестициди"
+        },
+        "Selenium": {
+            "name": "Селен",
+            "uses": "Производство на стъкло, електроника, копирни машини"
+        },
+        "Bromine": {
+            "name": "Бром",
+            "uses": "Огнезащитни вещества, пречистване на вода, фотография"
+        },
+        "Krypton": {
+            "name": "Криптон",
+            "uses": "Осветление, лазери, изолация"
+        },
+        "Rubidium": {
+            "name": "Рубидий",
+            "uses": "Атомни часовници, фотоклетки, изследвания"
+        },
+        "Strontium": {
+            "name": "Стронций",
+            "uses": "Фойерверки, сигнални ракети, магнити"
+        },
+        "Yttrium": {
+            "name": "Итрий",
+            "uses": "LED диоди, свръхпроводници, лечение на рак"
+        },
+        "Zirconium": {
+            "name": "Цирконий",
+            "uses": "Ядрени реактори, керамика, скъпоценни камъни"
+        },
+        "Niobium": {
+            "name": "Ниобий",
+            "uses": "Свръхпроводници, стоманени сплави, бижута"
+        },
+        "Molybdenum": {
+            "name": "Молибден",
+            "uses": "Стоманени сплави, смазочни материали, катализатори"
+        },
+        "Technetium": {
+            "name": "Технеций",
+            "uses": "Медицинска образна диагностика, инхибитор на корозия"
+        },
+        "Ruthenium": {
+            "name": "Рутений",
+            "uses": "Електроника, катализатори, сплави"
+        },
+        "Rhodium": {
+            "name": "Родий",
+            "uses": "Каталитични конвертори, бижута, огледала"
+        },
+        "Palladium": {
+            "name": "Паладий",
+            "uses": "Каталитични конвертори, електроника, стоматология"
+        },
+        "Silver": {
+            "name": "Сребро",
+            "uses": "Бижута, монети, фотография, електроника"
+        },
+        "Cadmium": {
+            "name": "Кадмий",
+            "uses": "Батерии, пигменти, покрития"
+        },
+        "Indium": {
+            "name": "Индий",
+            "uses": "Сензорни екрани, слънчеви панели, LED диоди"
+        },
+        "Tin": {
+            "name": "Калай",
+            "uses": "Спойка, консервни кутии, бронз"
+        },
+        "Antimony": {
+            "name": "Антимон",
+            "uses": "Огнезащитни вещества, батерии, полупроводници"
+        },
+        "Tellurium": {
+            "name": "Телур",
+            "uses": "Слънчеви клетки, термоелектрици, металургия"
+        },
+        "Iodine": {
+            "name": "Йод",
+            "uses": "Дезинфектанти, лекарства, фотография"
+        },
+        "Xenon": {
+            "name": "Ксенон",
+            "uses": "Осветление, анестезия, йонно задвижване"
+        },
+        "Cesium": {
+            "name": "Цезий",
+            "uses": "Атомни часовници, течности за сондиране, фотоелектрични клетки"
+        },
+        "Barium": {
+            "name": "Барий",
+            "uses": "Медицинска образна диагностика, фойерверки, течности за сондиране"
+        },
+        "Lanthanum": {
+            "name": "Лантан",
+            "uses": "Камерни лещи, осветление, батерии"
+        },
+        "Cerium": {
+            "name": "Церий",
+            "uses": "Каталитични конвертори, кремъци за запалки, полиране на стъкло"
+        },
+        "Praseodymium": {
+            "name": "Празеодим",
+            "uses": "Магнити, лазери, дъгово осветление"
+        },
+        "Neodymium": {
+            "name": "Неодим",
+            "uses": "Мощни магнити, лазери, оцветяване на стъкло"
+        },
+        "Promethium": {
+            "name": "Прометий",
+            "uses": "Луминесцентна боя, атомни батерии, дебеломери"
+        },
+        "Samarium": {
+            "name": "Самарий",
+            "uses": "Магнити, лазери, ядрени реактори"
+        },
+        "Europium": {
+            "name": "Европий",
+            "uses": "Фосфори, лазери, ядрени контролни пръти"
+        },
+        "Gadolinium": {
+            "name": "Гадолиний",
+            "uses": "МРТ контрастни вещества, магнити, неутронно улавяне"
+        },
+        "Terbium": {
+            "name": "Тербий",
+            "uses": "Фосфори, магнити, горивни клетки"
+        },
+        "Dysprosium": {
+            "name": "Диспросий",
+            "uses": "Магнити, лазери, ядрени реактори"
+        },
+        "Holmium": {
+            "name": "Холмий",
+            "uses": "Лазери, магнити, ядрени реактори"
+        },
+        "Erbium": {
+            "name": "Ербий",
+            "uses": "Оптични влакна, лазери, ядрена технология"
+        },
+        "Thulium": {
+            "name": "Тулий",
+            "uses": "Преносими рентгенови устройства, лазери, сплави"
+        },
+        "Ytterbium": {
+            "name": "Итербий",
+            "uses": "Лазери, металургия, тензометри"
+        },
+        "Lutetium": {
+            "name": "Лутеций",
+            "uses": "Катализатори, фосфори, датиране на скали"
+        },
+        "Hafnium": {
+            "name": "Хафний",
+            "uses": "Ядрени реактори, микропроцесори, плазмено рязане"
+        },
+        "Tantalum": {
+            "name": "Тантал",
+            "uses": "Кондензатори, хирургични импланти, реактивни двигатели"
+        },
+        "Tungsten": {
+            "name": "Волфрам",
+            "uses": "Нишки за крушки, режещи инструменти, броня"
+        },
+        "Rhenium": {
+            "name": "Рений",
+            "uses": "Реактивни двигатели, катализатори, термодвойки"
+        },
+        "Osmium": {
+            "name": "Осмий",
+            "uses": "Върхове на писалки, електрически контакти, катализатори"
+        },
+        "Iridium": {
+            "name": "Иридий",
+            "uses": "Запалителни свещи, тигели, електрически контакти"
+        },
+        "Platinum": {
+            "name": "Платина",
+            "uses": "Каталитични конвертори, бижута, лабораторно оборудване"
+        },
+        "Gold": {
+            "name": "Злато",
+            "uses": "Бижута, електроника, валута, стоматология"
+        },
+        "Mercury": {
+            "name": "Живак",
+            "uses": "Термометри, луминесцентни лампи, зъбни амалгами"
+        },
+        "Thallium": {
+            "name": "Талий",
+            "uses": "Електроника, оптика, медицинска образна диагностика"
+        },
+        "Lead": {
+            "name": "Олово",
+            "uses": "Батерии, радиационна защита, боеприпаси"
+        },
+        "Bismuth": {
+            "name": "Бисмут",
+            "uses": "Козметика, лекарства, пожарни детектори"
+        },
+        "Polonium": {
+            "name": "Полоний",
+            "uses": "Antistatik cihazlar, nükleer piller, araştırma"
+        },
+        "Astatine": {
+            "name": "Астатин",
+            "uses": "Kanser tedavisi araştırması, radyoaktif izleyiciler"
+        },
+        "Radon": {
+            "name": "Радон",
+            "uses": "Kanser tedavisi, deprem tahmini, araştırma"
+        },
+        "Francium": {
+            "name": "Франций",
+            "uses": "Bilimsel araştırma, atomik yapı çalışmaları"
+        },
+        "Radium": {
+            "name": "Радий",
+            "uses": "Kanser tedavisi, fosforlu boya, nötron kaynakları"
+        },
+        "Actinium": {
+            "name": "Актиний",
+            "uses": "Nötron kaynakları, kanser tedavisi araştırması"
+        },
+        "Thorium": {
+            "name": "Торий",
+            "uses": "Nükleer yakıt, gaz mantoları, kaynak elektrotları"
+        },
+        "Protactinium": {
+            "name": "Протактиний",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Uranium": {
+            "name": "Уран",
+            "uses": "Nükleer yakıt, silahlar, fakirleştirilmiş uranyum zırh"
+        },
+        "Neptunium": {
+            "name": "Нептуний",
+            "uses": "Nötron algılama, plütonyum üretimi, araştırma"
+        },
+        "Plutonium": {
+            "name": "Плутоний",
+            "uses": "Nükleer silahlar, uzay aracı gücü, araştırma"
+        },
+        "Americium": {
+            "name": "Америций",
+            "uses": "Duman dedektörleri, nötron kaynakları, araştırma"
+        },
+        "Curium": {
+            "name": "Кюрий",
+            "uses": "Uzay aracı gücü, alfa parçacık kaynakları, araştırma"
+        },
+        "Berkelium": {
+            "name": "Берклий",
+            "uses": "Bilimsel araştırma, element sentezi"
+        },
+        "Californium": {
+            "name": "Калифорний",
+            "uses": "Nötron kaynakları, kanser tedavisi, metal dedektörleri"
+        },
+        "Einsteinium": {
+            "name": "Айнщайний",
+            "uses": "Bilimsel araştırma, element sentezi"
+        },
+        "Fermium": {
+            "name": "Фермий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Mendelevium": {
+            "name": "Менделевий",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Nobelium": {
+            "name": "Нобелий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Lawrencium": {
+            "name": "Лоурънсий",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Rutherfordium": {
+            "name": "Ръдърфордий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Dubnium": {
+            "name": "Дубний",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Seaborgium": {
+            "name": "Сиборгий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Bohrium": {
+            "name": "Борий",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Hassium": {
+            "name": "Хасий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Meitnerium": {
+            "name": "Майтнерий",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Darmstadtium": {
+            "name": "Дармщадтий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Roentgenium": {
+            "name": "Рьонтгений",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Copernicium": {
+            "name": "Коперниций",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Nihonium": {
+            "name": "Нихоний",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Flerovium": {
+            "name": "Флеровий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Moscovium": {
+            "name": "Московий",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Livermorium": {
+            "name": "Ливерморий",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Tennessine": {
+            "name": "Тенесин",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Oganesson": {
+            "name": "Оганесон",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        }
+    },
+    "reactivity": {
+        "Radioactive/Reactive": "Radioactive/Reactive",
+        "Explosive": "Взривоопасен",
+        "Noble Gas (Inert)": "Благороден газ (Инертен)",
+        "Alkali Metal (Highly Reactive)": "Алкален метал (Високо реактивен)",
+        "Noble Metal (Unreactive)": "Благороден метал (Нереактивен)",
+        "Alkaline Earth Metal (Reactive)": "Алкалоземен метал (Реактивен)",
+        "Moderate": "Умерен",
+        "Chalcogen (Reactive)": "Chalcogen (Reactive)",
+        "Halogen (Highly Reactive)": "Халоген (Високо реактивен)"
+    },
+    "ui": {
+        "periodicTable": "Периодична таблица",
+        "atomicNumber": "Атомен номер:",
+        "protons": "Протони:",
+        "neutrons": "Неуtronlar:",
+        "electrons": "Електрони:",
+        "reactivityLabel": "Реактивност:"
+    },
+    "infoPanel": {
+        "headers": {
+            "Physical Properties": "Физични свойства",
+            "Melting Point": "Точка на топене",
+            "Boiling Point": "Точка на кипене",
+            "Density": "Плътност",
+            "Discovery": "Откритие",
+            "Year": "Година",
+            "Ancient": "Древен",
+            "Common Uses": "Общи употреби"
+        },
+        "description_template": "{{name}} е химичен елемент със символ {{symbol}} и атомен номер {{atomicNumber}}. Класифициран е като {{reactivity}}."
+    }
+}

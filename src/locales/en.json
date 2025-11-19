@@ -1,0 +1,626 @@
+{
+    "element": {
+        "Hydrogen": {
+            "name": "Hydrogen",
+            "uses": "Fuel cells, ammonia production, rocket fuel",
+            "reactivity": "Explosive"
+        },
+        "Helium": {
+            "name": "Helium",
+            "uses": "Balloons, cryogenics, breathing mixtures",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Lithium": {
+            "name": "Lithium",
+            "uses": "Batteries, ceramics, lubricants",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Beryllium": {
+            "name": "Beryllium",
+            "uses": "Aerospace alloys, X-ray windows",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Boron": {
+            "name": "Boron",
+            "uses": "Glass, detergents, semiconductors",
+            "reactivity": "Moderate"
+        },
+        "Carbon": {
+            "name": "Carbon",
+            "uses": "Steel, plastics, diamonds, graphite",
+            "reactivity": "Moderate"
+        },
+        "Nitrogen": {
+            "name": "Nitrogen",
+            "uses": "Fertilizers, explosives, food preservation",
+            "reactivity": "Moderate"
+        },
+        "Oxygen": {
+            "name": "Oxygen",
+            "uses": "Respiration, steel production, water treatment",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Fluorine": {
+            "name": "Fluorine",
+            "uses": "Toothpaste, refrigerants, Teflon",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Neon": {
+            "name": "Neon",
+            "uses": "Neon signs, lasers, cryogenic refrigerant",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Sodium": {
+            "name": "Sodium",
+            "uses": "Table salt, soap, street lights",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Magnesium": {
+            "name": "Magnesium",
+            "uses": "Alloys, fireworks, flash photography",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Aluminum": {
+            "name": "Aluminum",
+            "uses": "Cans, foil, aircraft, construction",
+            "reactivity": "Moderate"
+        },
+        "Silicon": {
+            "name": "Silicon",
+            "uses": "Computer chips, solar cells, glass",
+            "reactivity": "Moderate"
+        },
+        "Phosphorus": {
+            "name": "Phosphorus",
+            "uses": "Fertilizers, detergents, matches",
+            "reactivity": "Moderate"
+        },
+        "Sulfur": {
+            "name": "Sulfur",
+            "uses": "Sulfuric acid, gunpowder, vulcanizing rubber",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Chlorine": {
+            "name": "Chlorine",
+            "uses": "Water purification, bleach, PVC",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Argon": {
+            "name": "Argon",
+            "uses": "Welding, light bulbs, insulation",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Potassium": {
+            "name": "Potassium",
+            "uses": "Fertilizers, soap, glass",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Calcium": {
+            "name": "Calcium",
+            "uses": "Bones, cement, cheese production",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Scandium": {
+            "name": "Scandium",
+            "uses": "Aerospace alloys, sports equipment",
+            "reactivity": "Moderate"
+        },
+        "Titanium": {
+            "name": "Titanium",
+            "uses": "Aircraft, medical implants, white paint",
+            "reactivity": "Moderate"
+        },
+        "Vanadium": {
+            "name": "Vanadium",
+            "uses": "Steel alloys, catalysts, batteries",
+            "reactivity": "Moderate"
+        },
+        "Chromium": {
+            "name": "Chromium",
+            "uses": "Stainless steel, chrome plating, dyes",
+            "reactivity": "Moderate"
+        },
+        "Manganese": {
+            "name": "Manganese",
+            "uses": "Steel production, batteries, fertilizers",
+            "reactivity": "Moderate"
+        },
+        "Iron": {
+            "name": "Iron",
+            "uses": "Steel, construction, machinery, hemoglobin",
+            "reactivity": "Moderate"
+        },
+        "Cobalt": {
+            "name": "Cobalt",
+            "uses": "Magnets, batteries, blue pigments",
+            "reactivity": "Moderate"
+        },
+        "Nickel": {
+            "name": "Nickel",
+            "uses": "Stainless steel, coins, batteries",
+            "reactivity": "Moderate"
+        },
+        "Copper": {
+            "name": "Copper",
+            "uses": "Electrical wiring, plumbing, coins",
+            "reactivity": "Moderate"
+        },
+        "Zinc": {
+            "name": "Zinc",
+            "uses": "Galvanizing, brass, batteries",
+            "reactivity": "Moderate"
+        },
+        "Gallium": {
+            "name": "Gallium",
+            "uses": "Semiconductors, LEDs, solar cells",
+            "reactivity": "Moderate"
+        },
+        "Germanium": {
+            "name": "Germanium",
+            "uses": "Fiber optics, infrared optics, transistors",
+            "reactivity": "Moderate"
+        },
+        "Arsenic": {
+            "name": "Arsenic",
+            "uses": "Semiconductors, wood preservatives, pesticides",
+            "reactivity": "Moderate"
+        },
+        "Selenium": {
+            "name": "Selenium",
+            "uses": "Glass manufacturing, electronics, photocopiers",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Bromine": {
+            "name": "Bromine",
+            "uses": "Flame retardants, water treatment, photography",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Krypton": {
+            "name": "Krypton",
+            "uses": "Lighting, lasers, insulation",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Rubidium": {
+            "name": "Rubidium",
+            "uses": "Atomic clocks, photocells, research",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Strontium": {
+            "name": "Strontium",
+            "uses": "Fireworks, flares, magnets",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Yttrium": {
+            "name": "Yttrium",
+            "uses": "LEDs, superconductors, cancer treatment",
+            "reactivity": "Moderate"
+        },
+        "Zirconium": {
+            "name": "Zirconium",
+            "uses": "Nuclear reactors, ceramics, gems",
+            "reactivity": "Moderate"
+        },
+        "Niobium": {
+            "name": "Niobium",
+            "uses": "Superconductors, steel alloys, jewelry",
+            "reactivity": "Moderate"
+        },
+        "Molybdenum": {
+            "name": "Molybdenum",
+            "uses": "Steel alloys, lubricants, catalysts",
+            "reactivity": "Moderate"
+        },
+        "Technetium": {
+            "name": "Technetium",
+            "uses": "Medical imaging, corrosion inhibitor",
+            "reactivity": "Moderate"
+        },
+        "Ruthenium": {
+            "name": "Ruthenium",
+            "uses": "Electronics, catalysts, alloys",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Rhodium": {
+            "name": "Rhodium",
+            "uses": "Catalytic converters, jewelry, mirrors",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Palladium": {
+            "name": "Palladium",
+            "uses": "Catalytic converters, electronics, dentistry",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Silver": {
+            "name": "Silver",
+            "uses": "Jewelry, coins, photography, electronics",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Cadmium": {
+            "name": "Cadmium",
+            "uses": "Batteries, pigments, coatings",
+            "reactivity": "Moderate"
+        },
+        "Indium": {
+            "name": "Indium",
+            "uses": "Touch screens, solar panels, LEDs",
+            "reactivity": "Moderate"
+        },
+        "Tin": {
+            "name": "Tin",
+            "uses": "Solder, tin cans, bronze",
+            "reactivity": "Moderate"
+        },
+        "Antimony": {
+            "name": "Antimony",
+            "uses": "Flame retardants, batteries, semiconductors",
+            "reactivity": "Moderate"
+        },
+        "Tellurium": {
+            "name": "Tellurium",
+            "uses": "Solar cells, thermoelectrics, metallurgy",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Iodine": {
+            "name": "Iodine",
+            "uses": "Disinfectants, pharmaceuticals, photography",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Xenon": {
+            "name": "Xenon",
+            "uses": "Lighting, anesthesia, ion propulsion",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Cesium": {
+            "name": "Cesium",
+            "uses": "Atomic clocks, drilling fluids, photoelectric cells",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Barium": {
+            "name": "Barium",
+            "uses": "Medical imaging, fireworks, drilling fluids",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Lanthanum": {
+            "name": "Lanthanum",
+            "uses": "Camera lenses, lighting, batteries",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Cerium": {
+            "name": "Cerium",
+            "uses": "Catalytic converters, lighter flints, glass polishing",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Praseodymium": {
+            "name": "Praseodymium",
+            "uses": "Magnets, lasers, arc lighting",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Neodymium": {
+            "name": "Neodymium",
+            "uses": "Powerful magnets, lasers, glass coloring",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Promethium": {
+            "name": "Promethium",
+            "uses": "Luminous paint, atomic batteries, thickness gauges",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Samarium": {
+            "name": "Samarium",
+            "uses": "Magnets, lasers, nuclear reactors",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Europium": {
+            "name": "Europium",
+            "uses": "Phosphors, lasers, nuclear control rods",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Gadolinium": {
+            "name": "Gadolinium",
+            "uses": "MRI contrast agents, magnets, neutron capture",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Terbium": {
+            "name": "Terbium",
+            "uses": "Phosphors, magnets, fuel cells",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Dysprosium": {
+            "name": "Dysprosium",
+            "uses": "Magnets, lasers, nuclear reactors",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Holmium": {
+            "name": "Holmium",
+            "uses": "Lasers, magnets, nuclear reactors",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Erbium": {
+            "name": "Erbium",
+            "uses": "Fiber optics, lasers, nuclear technology",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Thulium": {
+            "name": "Thulium",
+            "uses": "Portable X-ray devices, lasers, alloys",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Ytterbium": {
+            "name": "Ytterbium",
+            "uses": "Lasers, metallurgy, stress gauges",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Lutetium": {
+            "name": "Lutetium",
+            "uses": "Catalysts, phosphors, dating rocks",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Hafnium": {
+            "name": "Hafnium",
+            "uses": "Nuclear reactors, microprocessors, plasma cutting",
+            "reactivity": "Moderate"
+        },
+        "Tantalum": {
+            "name": "Tantalum",
+            "uses": "Capacitors, surgical implants, jet engines",
+            "reactivity": "Moderate"
+        },
+        "Tungsten": {
+            "name": "Tungsten",
+            "uses": "Light bulb filaments, cutting tools, armor",
+            "reactivity": "Moderate"
+        },
+        "Rhenium": {
+            "name": "Rhenium",
+            "uses": "Jet engines, catalysts, thermocouples",
+            "reactivity": "Moderate"
+        },
+        "Osmium": {
+            "name": "Osmium",
+            "uses": "Fountain pen tips, electrical contacts, catalysts",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Iridium": {
+            "name": "Iridium",
+            "uses": "Spark plugs, crucibles, electrical contacts",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Platinum": {
+            "name": "Platinum",
+            "uses": "Catalytic converters, jewelry, laboratory equipment",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Gold": {
+            "name": "Gold",
+            "uses": "Jewelry, electronics, currency, dentistry",
+            "reactivity": "Noble Metal (Unreactive)"
+        },
+        "Mercury": {
+            "name": "Mercury",
+            "uses": "Thermometers, fluorescent lamps, dental amalgams",
+            "reactivity": "Moderate"
+        },
+        "Thallium": {
+            "name": "Thallium",
+            "uses": "Electronics, optics, medical imaging",
+            "reactivity": "Moderate"
+        },
+        "Lead": {
+            "name": "Lead",
+            "uses": "Batteries, radiation shielding, ammunition",
+            "reactivity": "Moderate"
+        },
+        "Bismuth": {
+            "name": "Bismuth",
+            "uses": "Cosmetics, pharmaceuticals, fire detectors",
+            "reactivity": "Moderate"
+        },
+        "Polonium": {
+            "name": "Polonium",
+            "uses": "Antistatic devices, nuclear batteries, research",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Astatine": {
+            "name": "Astatine",
+            "uses": "Cancer treatment research, radioactive tracers",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Radon": {
+            "name": "Radon",
+            "uses": "Cancer treatment, earthquake prediction, research",
+            "reactivity": "Noble Gas (Inert)"
+        },
+        "Francium": {
+            "name": "Francium",
+            "uses": "Scientific research, atomic structure studies",
+            "reactivity": "Alkali Metal (Highly Reactive)"
+        },
+        "Radium": {
+            "name": "Radium",
+            "uses": "Cancer treatment, luminous paint, neutron sources",
+            "reactivity": "Alkaline Earth Metal (Reactive)"
+        },
+        "Actinium": {
+            "name": "Actinium",
+            "uses": "Neutron sources, cancer treatment research",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Thorium": {
+            "name": "Thorium",
+            "uses": "Nuclear fuel, gas mantles, welding electrodes",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Protactinium": {
+            "name": "Protactinium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Uranium": {
+            "name": "Uranium",
+            "uses": "Nuclear fuel, weapons, depleted uranium armor",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Neptunium": {
+            "name": "Neptunium",
+            "uses": "Neutron detection, plutonium production, research",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Plutonium": {
+            "name": "Plutonium",
+            "uses": "Nuclear weapons, spacecraft power, research",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Americium": {
+            "name": "Americium",
+            "uses": "Smoke detectors, neutron sources, research",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Curium": {
+            "name": "Curium",
+            "uses": "Spacecraft power, alpha particle sources, research",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Berkelium": {
+            "name": "Berkelium",
+            "uses": "Scientific research, element synthesis",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Californium": {
+            "name": "Californium",
+            "uses": "Neutron sources, cancer treatment, metal detectors",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Einsteinium": {
+            "name": "Einsteinium",
+            "uses": "Scientific research, element synthesis",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Fermium": {
+            "name": "Fermium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Mendelevium": {
+            "name": "Mendelevium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Radioactive/Reactive"
+        },
+        "Nobelium": {
+            "name": "Nobelium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Lawrencium": {
+            "name": "Lawrencium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Rutherfordium": {
+            "name": "Rutherfordium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Dubnium": {
+            "name": "Dubnium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Seaborgium": {
+            "name": "Seaborgium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Bohrium": {
+            "name": "Bohrium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Hassium": {
+            "name": "Hassium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Meitnerium": {
+            "name": "Meitnerium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Darmstadtium": {
+            "name": "Darmstadtium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Roentgenium": {
+            "name": "Roentgenium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Copernicium": {
+            "name": "Copernicium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Nihonium": {
+            "name": "Nihonium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Flerovium": {
+            "name": "Flerovium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Moderate"
+        },
+        "Moscovium": {
+            "name": "Moscovium",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Moderate"
+        },
+        "Livermorium": {
+            "name": "Livermorium",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Chalcogen (Reactive)"
+        },
+        "Tennessine": {
+            "name": "Tennessine",
+            "uses": "Scientific research, nuclear physics",
+            "reactivity": "Halogen (Highly Reactive)"
+        },
+        "Oganesson": {
+            "name": "Oganesson",
+            "uses": "Scientific research, nuclear studies",
+            "reactivity": "Noble Gas (Inert)"
+        }
+    },
+    "reactivity": {
+        "Radioactive/Reactive": "Radioactive/Reactive",
+        "Explosive": "Explosive",
+        "Noble Gas (Inert)": "Noble Gas (Inert)",
+        "Alkali Metal (Highly Reactive)": "Alkali Metal (Highly Reactive)",
+        "Noble Metal (Unreactive)": "Noble Metal (Unreactive)",
+        "Alkaline Earth Metal (Reactive)": "Alkaline Earth Metal (Reactive)",
+        "Moderate": "Moderate",
+        "Chalcogen (Reactive)": "Chalcogen (Reactive)",
+        "Halogen (Highly Reactive)": "Halogen (Highly Reactive)"
+    },
+    "ui": {
+        "periodicTable": "Periodic Table",
+        "atomicNumber": "Atomic Number:",
+        "protons": "Protons:",
+        "neutrons": "Neutrons:",
+        "electrons": "Electrons:",
+        "reactivityLabel": "Reactivity:"
+    },
+    "infoPanel": {
+        "headers": {
+            "Physical Properties": "Physical Properties",
+            "Melting Point": "Melting Point",
+            "Boiling Point": "Boiling Point",
+            "Density": "Density",
+            "Discovery": "Discovery",
+            "Year": "Year",
+            "Ancient": "Ancient",
+            "Common Uses": "Common Uses"
+        },
+        "description_template": "{{name}} is a chemical element with symbol {{symbol}} and atomic number {{atomicNumber}}. It is classified as a {{reactivity}}."
+    }
+}

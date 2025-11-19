@@ -4,7 +4,8 @@
 import * as THREE from 'three';
 import { Nucleon } from './Nucleon.js';
 import { Electron } from './Electron.js';
-import { getCurrentLanguage, getElementName, getDescription, getSectionHeader, getUses } from './translations.js';
+import i18n from './i18n.js';
+// import { getElementName, getDescription, getUses } from './translations.js'; // Removed legacy imports
 
 export class Atom {
     constructor(data) {
@@ -170,54 +171,42 @@ export class Atom {
     createLabel() {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
-        canvas.width = 512;
-        canvas.height = 128;
+        canvas.width = 256;
+        canvas.height = 64;
 
-        // Draw semi-transparent background for better clickability
+        // Background
         context.fillStyle = 'rgba(0, 0, 0, 0.7)';
-        context.strokeStyle = 'white';
-        context.lineWidth = 3;
-        const padding = 10;
-        const rectWidth = canvas.width - padding * 2;
-        const rectHeight = canvas.height - padding * 2;
+        context.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Rounded rectangle
-        const radius = 15;
-        context.beginPath();
-        context.moveTo(padding + radius, padding);
-        context.lineTo(padding + rectWidth - radius, padding);
-        context.quadraticCurveTo(padding + rectWidth, padding, padding + rectWidth, padding + radius);
-        context.lineTo(padding + rectWidth, padding + rectHeight - radius);
-        context.quadraticCurveTo(padding + rectWidth, padding + rectHeight, padding + rectWidth - radius, padding + rectHeight);
-        context.lineTo(padding + radius, padding + rectHeight);
-        context.quadraticCurveTo(padding, padding + rectHeight, padding, padding + rectHeight - radius);
-        context.lineTo(padding, padding + radius);
-        context.quadraticCurveTo(padding, padding, padding + radius, padding);
-        context.closePath();
-        context.fill();
-        context.stroke();
+        // Border
+        context.strokeStyle = '#00ccff';
+        context.lineWidth = 2;
+        context.strokeRect(0, 0, canvas.width, canvas.height);
 
-        // Draw text
-        const lang = getCurrentLanguage();
-        const translatedName = getElementName(this.data.name, lang);
-        context.font = 'bold 48px Arial';
-        context.fillStyle = 'white';
+        // Get translated element name
+        const translatedName = i18n.t(`element.${this.data.name}.name`);
+
+        // Text
+        context.font = 'bold 24px Arial';
+        context.fillStyle = '#ffffff';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
         context.fillText(`${this.data.symbol} - ${translatedName}`, canvas.width / 2, canvas.height / 2);
 
         const texture = new THREE.CanvasTexture(canvas);
         texture.needsUpdate = true;
-        const material = new THREE.SpriteMaterial({ map: texture, depthTest: false, depthWrite: false });
-        const sprite = new THREE.Sprite(material);
-
-        sprite.position.set(0, -8, 0);
-        sprite.scale.set(12, 3, 1); // Increased scale for better visibility and clickability
-        sprite.name = 'label';
-        sprite.userData.atomName = this.data.name;
-
-        this.label = sprite;
-        this.group.add(sprite);
+        const spriteMaterial = new THREE.SpriteMaterial({
+            map: texture,
+            depthTest: false,
+            depthWrite: false
+        });
+        this.label = new THREE.Sprite(spriteMaterial);
+        this.label.scale.set(8, 2, 1);
+        this.label.position.set(0, -3, 0);
+        this.label.renderOrder = 999; // Render on top of everything
+        this.label.name = 'label';
+        this.label.userData.atomName = this.data.name;
+        this.group.add(this.label);
     }
 
     toggleInfoPanel() {
@@ -256,8 +245,8 @@ export class Atom {
         context.stroke();
 
         // Title
-        const lang = getCurrentLanguage();
-        const translatedName = getElementName(this.data.name, lang);
+        const lang = i18n.language;
+        const translatedName = i18n.t(`element.${this.data.name}.name`);
         context.font = 'bold 32px Arial';
         context.fillStyle = '#00ccff';
         context.fillText(`${translatedName} (${this.data.symbol})`, 30, 50);
@@ -273,7 +262,12 @@ export class Atom {
         // Description
         context.font = '16px Arial';
         context.fillStyle = '#dddddd';
-        const text = getDescription(this.data, lang);
+        const text = i18n.t('infoPanel.description_template', {
+            name: i18n.t(`element.${this.data.name}.name`),
+            symbol: this.data.symbol,
+            atomicNumber: this.data.atomicNumber,
+            reactivity: i18n.t(`reactivity.${this.data.reactivity}`)
+        });
 
         // Text wrapping for description
         const maxWidth = width - 60;
@@ -302,22 +296,22 @@ export class Atom {
         if (this.data.melting !== null || this.data.boiling !== null || this.data.density !== null) {
             context.font = 'bold 18px Arial';
             context.fillStyle = '#00ccff';
-            context.fillText(getSectionHeader('Physical Properties', lang) + ':', 30, y);
+            context.fillText(i18n.t('infoPanel.headers.Physical Properties') + ':', 30, y);
             y += 24;
 
             context.font = '15px Arial';
             context.fillStyle = '#dddddd';
 
             if (this.data.melting !== null) {
-                context.fillText(`${getSectionHeader('Melting Point', lang)}: ${this.data.melting}°C`, 40, y);
+                context.fillText(`${i18n.t('infoPanel.headers.Melting Point')}: ${this.data.melting}°C`, 40, y);
                 y += 20;
             }
             if (this.data.boiling !== null) {
-                context.fillText(`${getSectionHeader('Boiling Point', lang)}: ${this.data.boiling}°C`, 40, y);
+                context.fillText(`${i18n.t('infoPanel.headers.Boiling Point')}: ${this.data.boiling}°C`, 40, y);
                 y += 20;
             }
             if (this.data.density !== null) {
-                context.fillText(`${getSectionHeader('Density', lang)}: ${this.data.density} g/cm³`, 40, y);
+                context.fillText(`${i18n.t('infoPanel.headers.Density')}: ${this.data.density} g/cm³`, 40, y);
                 y += 20;
             }
             y += 8;
@@ -327,14 +321,14 @@ export class Atom {
         if (this.data.yearDiscovered !== null) {
             context.font = 'bold 18px Arial';
             context.fillStyle = '#00ccff';
-            context.fillText(getSectionHeader('Discovery', lang) + ':', 30, y);
+            context.fillText(i18n.t('infoPanel.headers.Discovery') + ':', 30, y);
             y += 24;
 
             context.font = '15px Arial';
             context.fillStyle = '#dddddd';
             const yearText = this.data.yearDiscovered < 0 ?
-                `${getSectionHeader('Ancient', lang)} (${Math.abs(this.data.yearDiscovered)} BCE)` :
-                `${getSectionHeader('Year', lang)} ${this.data.yearDiscovered}`;
+                `${i18n.t('infoPanel.headers.Ancient')} (${Math.abs(this.data.yearDiscovered)} BCE)` :
+                `${i18n.t('infoPanel.headers.Year')} ${this.data.yearDiscovered}`;
             context.fillText(yearText, 40, y);
             y += 28;
         }
@@ -343,14 +337,14 @@ export class Atom {
         if (this.data.uses) {
             context.font = 'bold 18px Arial';
             context.fillStyle = '#00ccff';
-            context.fillText(getSectionHeader('Common Uses', lang) + ':', 30, y);
+            context.fillText(i18n.t('infoPanel.headers.Common Uses') + ':', 30, y);
             y += 24;
 
             context.font = '15px Arial';
             context.fillStyle = '#dddddd';
 
             // Get translated uses
-            const translatedUses = getUses(this.data.name, this.data.uses, lang);
+            const translatedUses = i18n.t(`element.${this.data.name}.uses`);
 
             // Wrap uses text
             const usesWords = translatedUses.split(' ');
@@ -399,6 +393,7 @@ export class Atom {
         // Position above the atom (closer to make it visible)
         this.infoPanel.position.set(0, 4, 0);
         this.infoPanel.scale.set(12, 9, 1); // Adjusted for 512x380 aspect ratio
+        this.infoPanel.renderOrder = 1000; // Render on top of labels (which have renderOrder 999)
         this.infoPanel.name = 'infoPanel';
         this.infoPanel.userData.atomName = this.data.name;
 

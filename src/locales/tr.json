@@ -1,0 +1,508 @@
+{
+    "element": {
+        "Hydrogen": {
+            "name": "Hidrojen",
+            "uses": "Yakıt hücreleri, amonyak üretimi, roket yakıtı"
+        },
+        "Helium": {
+            "name": "Helyum",
+            "uses": "Balonlar, kriyojenik, solunum karışımları"
+        },
+        "Lithium": {
+            "name": "Lityum",
+            "uses": "Piller, seramikler, yağlayıcılar"
+        },
+        "Beryllium": {
+            "name": "Berilyum",
+            "uses": "Havacılık alaşımları, X-ışını pencereleri"
+        },
+        "Boron": {
+            "name": "Bor",
+            "uses": "Cam, deterjanlar, yarı iletkenler"
+        },
+        "Carbon": {
+            "name": "Karbon",
+            "uses": "Çelik, plastikler, elmaslar, grafit"
+        },
+        "Nitrogen": {
+            "name": "Azot",
+            "uses": "Gübreler, patlayıcılar, gıda muhafazası"
+        },
+        "Oxygen": {
+            "name": "Oksijen",
+            "uses": "Solunum, çelik üretimi, su arıtma"
+        },
+        "Fluorine": {
+            "name": "Flor",
+            "uses": "Diş macunu, soğutucular, Teflon"
+        },
+        "Neon": {
+            "name": "Neon",
+            "uses": "Neon ışıkları, lazerler, kriyojenik soğutucu"
+        },
+        "Sodium": {
+            "name": "Sodyum",
+            "uses": "Sofra tuzu, sabun, sokak lambaları"
+        },
+        "Magnesium": {
+            "name": "Magnezyum",
+            "uses": "Alaşımlar, havai fişekler, flaş fotoğrafçılığı"
+        },
+        "Aluminum": {
+            "name": "Alüminyum",
+            "uses": "Kutular, folyo, uçak, inşaat"
+        },
+        "Silicon": {
+            "name": "Silisyum",
+            "uses": "Bilgisayar çipleri, güneş pilleri, cam"
+        },
+        "Phosphorus": {
+            "name": "Fosfor",
+            "uses": "Gübreler, deterjanlar, kibritler"
+        },
+        "Sulfur": {
+            "name": "Kükürt",
+            "uses": "Sülfürik asit, barut, kauçuk vulkanizasyonu"
+        },
+        "Chlorine": {
+            "name": "Klor",
+            "uses": "Su arıtma, çamaşır suyu, PVC"
+        },
+        "Argon": {
+            "name": "Argon",
+            "uses": "Kaynak, ampuller, yalıtım"
+        },
+        "Potassium": {
+            "name": "Potasyum",
+            "uses": "Gübreler, sabun, cam"
+        },
+        "Calcium": {
+            "name": "Kalsiyum",
+            "uses": "Kemikler, çimento, peynir üretimi"
+        },
+        "Scandium": {
+            "name": "Skandiyum",
+            "uses": "Havacılık alaşımları, spor ekipmanları"
+        },
+        "Titanium": {
+            "name": "Titanyum",
+            "uses": "Uçak, tıbbi implantlar, beyaz boya"
+        },
+        "Vanadium": {
+            "name": "Vanadyum",
+            "uses": "Çelik alaşımları, katalizörler, piller"
+        },
+        "Chromium": {
+            "name": "Krom",
+            "uses": "Paslanmaz çelik, krom kaplama, boyalar"
+        },
+        "Manganese": {
+            "name": "Mangan",
+            "uses": "Çelik üretimi, piller, gübreler"
+        },
+        "Iron": {
+            "name": "Demir",
+            "uses": "Çelik, inşaat, makineler, hemoglobin"
+        },
+        "Cobalt": {
+            "name": "Kobalt",
+            "uses": "Mıknatıslar, piller, mavi pigmentler"
+        },
+        "Nickel": {
+            "name": "Nikel",
+            "uses": "Paslanmaz çelik, madeni paralar, piller"
+        },
+        "Copper": {
+            "name": "Bakır",
+            "uses": "Elektrik kabloları, sıhhi tesisat, madeni paralar"
+        },
+        "Zinc": {
+            "name": "Çinko",
+            "uses": "Galvanizleme, pirinç, piller"
+        },
+        "Gallium": {
+            "name": "Galyum",
+            "uses": "Yarı iletkenler, LED\\"
+        },
+        "Germanium": {
+            "name": "Germanyum",
+            "uses": "Fiber optik, kızılötesi optik, transistörler"
+        },
+        "Arsenic": {
+            "name": "Arsenik",
+            "uses": "Yarı iletkenler, ahşap koruyucular, pestisitler"
+        },
+        "Selenium": {
+            "name": "Selenyum",
+            "uses": "Cam üretimi, elektronik, fotokopi makineleri"
+        },
+        "Bromine": {
+            "name": "Brom",
+            "uses": "Alev geciktiriciler, su arıtma, fotoğrafçılık"
+        },
+        "Krypton": {
+            "name": "Kripton",
+            "uses": "Aydınlatma, lazerler, yalıtım"
+        },
+        "Rubidium": {
+            "name": "Rubidyum",
+            "uses": "Atomik saatler, fotohücreler, araştırma"
+        },
+        "Strontium": {
+            "name": "Stronsiyum",
+            "uses": "Havai fişekler, işaret fişleri, mıknatıslar"
+        },
+        "Yttrium": {
+            "name": "İtriyum",
+            "uses": "LED\\"
+        },
+        "Zirconium": {
+            "name": "Zirkonyum",
+            "uses": "Nükleer reaktörler, seramikler, mücevherler"
+        },
+        "Niobium": {
+            "name": "Niyobyum",
+            "uses": "Süper iletkenler, çelik alaşımları, mücevher"
+        },
+        "Molybdenum": {
+            "name": "Molibden",
+            "uses": "Çelik alaşımları, yağlayıcılar, katalizörler"
+        },
+        "Technetium": {
+            "name": "Teknesyum",
+            "uses": "Tıbbi görüntüleme, korozyon önleyici"
+        },
+        "Ruthenium": {
+            "name": "Rutenyum",
+            "uses": "Elektronik, katalizörler, alaşımlar"
+        },
+        "Rhodium": {
+            "name": "Rodyum",
+            "uses": "Katalitik konvertörler, mücevher, aynalar"
+        },
+        "Palladium": {
+            "name": "Paladyum",
+            "uses": "Katalitik konvertörler, elektronik, diş hekimliği"
+        },
+        "Silver": {
+            "name": "Gümüş",
+            "uses": "Mücevher, madeni paralar, fotoğrafçılık, elektronik"
+        },
+        "Cadmium": {
+            "name": "Kadmiyum",
+            "uses": "Piller, pigmentler, kaplamalar"
+        },
+        "Indium": {
+            "name": "İndiyum",
+            "uses": "Dokunmatik ekranlar, güneş panelleri, LED\\"
+        },
+        "Tin": {
+            "name": "Kalay",
+            "uses": "Lehim, teneke kutular, bronz"
+        },
+        "Antimony": {
+            "name": "Antimon",
+            "uses": "Alev geciktiriciler, piller, yarı iletkenler"
+        },
+        "Tellurium": {
+            "name": "Tellür",
+            "uses": "Güneş pilleri, termoelektrikler, metalurji"
+        },
+        "Iodine": {
+            "name": "İyot",
+            "uses": "Dezenfektanlar, ilaçlar, fotoğrafçılık"
+        },
+        "Xenon": {
+            "name": "Ksenon",
+            "uses": "Aydınlatma, anestezi, iyon itici"
+        },
+        "Cesium": {
+            "name": "Sezyum",
+            "uses": "Atomik saatler, sondaj sıvıları, fotoelektrik hücreler"
+        },
+        "Barium": {
+            "name": "Baryum",
+            "uses": "Tıbbi görüntüleme, havai fişekler, sondaj sıvıları"
+        },
+        "Lanthanum": {
+            "name": "Lantanyum",
+            "uses": "Kamera lensleri, aydınlatma, piller"
+        },
+        "Cerium": {
+            "name": "Seryum",
+            "uses": "Katalitik konvertörler, çakmak taşları, cam cilalama"
+        },
+        "Praseodymium": {
+            "name": "Praseodimyum",
+            "uses": "Mıknatıslar, lazerler, дъгово осветление"
+        },
+        "Neodymium": {
+            "name": "Neodimyum",
+            "uses": "Güçlü mıknatıslar, lazerler, cam renklendirme"
+        },
+        "Promethium": {
+            "name": "Prometyum",
+            "uses": "Fosforlu boya, atomik piller, kalınlık ölçerler"
+        },
+        "Samarium": {
+            "name": "Samaryum",
+            "uses": "Mıknatıslar, lazerler, nükleer reaktörler"
+        },
+        "Europium": {
+            "name": "Evropiyum",
+            "uses": "Fosforlar, lazerler, nükleer kontrol çubukları"
+        },
+        "Gadolinium": {
+            "name": "Gadolinyum",
+            "uses": "MRI kontrast maddeleri, mıknatıslar, nötron yakalama"
+        },
+        "Terbium": {
+            "name": "Terbiyum",
+            "uses": "Fosforlar, mıknatıslar, yakıt hücreleri"
+        },
+        "Dysprosium": {
+            "name": "Disprozyum",
+            "uses": "Mıknatıslar, lazerler, nükleer reaktörler"
+        },
+        "Holmium": {
+            "name": "Holmiyum",
+            "uses": "Lazerler, mıknatıslar, nükleer reaktörler"
+        },
+        "Erbium": {
+            "name": "Erbiyum",
+            "uses": "Fiber optik, lazerler, nükleer teknoloji"
+        },
+        "Thulium": {
+            "name": "Tulyum",
+            "uses": "Taşınabilir X-ışını cihazları, lazerler, alaşımlar"
+        },
+        "Ytterbium": {
+            "name": "İterbiyum",
+            "uses": "Lazerler, metalurji, gerilim ölçerler"
+        },
+        "Lutetium": {
+            "name": "Lutesyum",
+            "uses": "Katalizörler, fosforlar, kaya tarihlendirme"
+        },
+        "Hafnium": {
+            "name": "Hafniyum",
+            "uses": "Nükleer reaktörler, mikroişlemciler, plazma kesim"
+        },
+        "Tantalum": {
+            "name": "Tantal",
+            "uses": "Kapasitörler, cerrahi implantlar, jet motorları"
+        },
+        "Tungsten": {
+            "name": "Tungsten",
+            "uses": "Ampul filamentleri, kesici aletler, zırh"
+        },
+        "Rhenium": {
+            "name": "Renyum",
+            "uses": "Jet motorları, katalizörler, termokupllar"
+        },
+        "Osmium": {
+            "name": "Osmiyum",
+            "uses": "Dolma kalem uçları, elektrik kontakları, katalizörler"
+        },
+        "Iridium": {
+            "name": "İridyum",
+            "uses": "Buji, potalar, elektrik kontakları"
+        },
+        "Platinum": {
+            "name": "Platin",
+            "uses": "Katalitik konvertörler, mücevher, laboratuvar ekipmanları"
+        },
+        "Gold": {
+            "name": "Altın",
+            "uses": "Mücevher, elektronik, para birimi, diş hekimliği"
+        },
+        "Mercury": {
+            "name": "Cıva",
+            "uses": "Termometreler, floresan lambalar, diş amalgamları"
+        },
+        "Thallium": {
+            "name": "Talyum",
+            "uses": "Elektronik, optik, tıbbi görüntüleme"
+        },
+        "Lead": {
+            "name": "Kurşun",
+            "uses": "Piller, radyasyon kalkanı, mühimmat"
+        },
+        "Bismuth": {
+            "name": "Bizmut",
+            "uses": "Kozmetik, ilaçlar, yangın dedektörleri"
+        },
+        "Polonium": {
+            "name": "Polonyum",
+            "uses": "Antistatik cihazlar, nükleer piller, araştırma"
+        },
+        "Astatine": {
+            "name": "Astatin",
+            "uses": "Kanser tedavisi araştırması, radyoaktif izleyiciler"
+        },
+        "Radon": {
+            "name": "Radon",
+            "uses": "Kanser tedavisi, deprem tahmini, araştırma"
+        },
+        "Francium": {
+            "name": "Fransiyum",
+            "uses": "Bilimsel araştırma, atomik yapı çalışmaları"
+        },
+        "Radium": {
+            "name": "Radyum",
+            "uses": "Kanser tedavisi, fosforlu boya, nötron kaynakları"
+        },
+        "Actinium": {
+            "name": "Aktinyum",
+            "uses": "Nötron kaynakları, kanser tedavisi araştırması"
+        },
+        "Thorium": {
+            "name": "Toryum",
+            "uses": "Nükleer yakıt, gaz mantoları, kaynak elektrotları"
+        },
+        "Protactinium": {
+            "name": "Protaktinyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Uranium": {
+            "name": "Uranyum",
+            "uses": "Nükleer yakıt, silahlar, fakirleştirilmiş uranyum zırh"
+        },
+        "Neptunium": {
+            "name": "Neptünyum",
+            "uses": "Nötron algılama, plütonyum üretimi, araştırma"
+        },
+        "Plutonium": {
+            "name": "Plütonyum",
+            "uses": "Nükleer silahlar, uzay aracı gücü, araştırma"
+        },
+        "Americium": {
+            "name": "Amerikyum",
+            "uses": "Duman dedektörleri, nötron kaynakları, araştırma"
+        },
+        "Curium": {
+            "name": "Küriyum",
+            "uses": "Uzay aracı gücü, alfa parçacık kaynakları, araştırma"
+        },
+        "Berkelium": {
+            "name": "Berkelyum",
+            "uses": "Bilimsel araştırma, element sentezi"
+        },
+        "Californium": {
+            "name": "Kaliforniyum",
+            "uses": "Nötron kaynakları, kanser tedavisi, metal dedektörleri"
+        },
+        "Einsteinium": {
+            "name": "Einsteinyum",
+            "uses": "Bilimsel araştırma, element sentezi"
+        },
+        "Fermium": {
+            "name": "Fermiyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Mendelevium": {
+            "name": "Mendelevyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Nobelium": {
+            "name": "Nobelyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Lawrencium": {
+            "name": "Lawrensiyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Rutherfordium": {
+            "name": "Rutherfordiyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Dubnium": {
+            "name": "Dubniyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Seaborgium": {
+            "name": "Seaborgiyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Bohrium": {
+            "name": "Bohriyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Hassium": {
+            "name": "Hassiyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Meitnerium": {
+            "name": "Meitneryum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Darmstadtium": {
+            "name": "Darmstadtiyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Roentgenium": {
+            "name": "Roentgenyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Copernicium": {
+            "name": "Kopernikyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Nihonium": {
+            "name": "Nihonyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Flerovium": {
+            "name": "Flerovyum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Moscovium": {
+            "name": "Moskovyum",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Livermorium": {
+            "name": "Livermoryum",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        },
+        "Tennessine": {
+            "name": "Tenesin",
+            "uses": "Bilimsel araştırma, nükleer fizik"
+        },
+        "Oganesson": {
+            "name": "Oganesson",
+            "uses": "Bilimsel araştırma, nükleer çalışmalar"
+        }
+    },
+    "reactivity": {
+        "Radioactive/Reactive": "Radioactive/Reactive",
+        "Explosive": "Patlayıcı",
+        "Noble Gas (Inert)": "Soy Gaz (İnert)",
+        "Alkali Metal (Highly Reactive)": "Alkali Metal (Yüksek Reaktif)",
+        "Noble Metal (Unreactive)": "Soy Metal (Reaktif Değil)",
+        "Alkaline Earth Metal (Reactive)": "Toprak Alkali Metal (Reaktif)",
+        "Moderate": "Orta",
+        "Chalcogen (Reactive)": "Chalcogen (Reactive)",
+        "Halogen (Highly Reactive)": "Halojen (Yüksek Reaktif)"
+    },
+    "ui": {
+        "periodicTable": "Periyodik Tablo",
+        "atomicNumber": "Atom Numarası:",
+        "protons": "Protonlar:",
+        "neutrons": "Nötronlar:",
+        "electrons": "Elektronlar:",
+        "reactivityLabel": "Reaktivite:"
+    },
+    "infoPanel": {
+        "headers": {
+            "Physical Properties": "Fiziksel Özellikler",
+            "Melting Point": "Erime Noktası",
+            "Boiling Point": "Kaynama Noktası",
+            "Density": "Yoğunluk",
+            "Discovery": "Keşif",
+            "Year": "Yıl",
+            "Ancient": "Antik",
+            "Common Uses": "Yaygın Kullanımlar"
+        },
+        "description_template": "{{name}}, {{symbol}} sembolü ve {{atomicNumber}} atom numarası ile bir kimyasal elementtir. {{reactivity}} olarak sınıflandırılır."
+    }
+}
