@@ -79,22 +79,41 @@ export class Electron {
 
         // Store path points for animation
         this.pathPoints = pathPoints;
+        this.orbitColor = orbitColor;
 
-        // Create visual orbit line
-        const orbitGeometry = new THREE.BufferGeometry().setFromPoints(pathPoints);
-        const orbitMaterial = new THREE.LineBasicMaterial({
-            color: orbitColor,
+        // Create dynamic trail instead of static line
+        this.trailLength = 300; // Number of points to show in trail (very long for extensive path visibility)
+        this.trailPoints = [];
+
+        // Initialize trail with empty points
+        for (let i = 0; i < this.trailLength; i++) {
+            this.trailPoints.push(new THREE.Vector3(0, 0, 0));
+        }
+
+        const trailGeometry = new THREE.BufferGeometry().setFromPoints(this.trailPoints);
+
+        // Create gradient colors for fading effect
+        const colors = [];
+        const color = new THREE.Color(orbitColor);
+        for (let i = 0; i < this.trailLength; i++) {
+            const alpha = 1 - (i / this.trailLength); // Fade from 1 to 0
+            colors.push(color.r * alpha, color.g * alpha, color.b * alpha);
+        }
+        trailGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+        const trailMaterial = new THREE.LineBasicMaterial({
+            vertexColors: true,
             transparent: true,
-            opacity: 0.4
+            opacity: 0.8
         });
-        this.orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+        this.orbitLine = new THREE.Line(trailGeometry, trailMaterial);
         this.orbitLine.raycast = () => { };
         this.group.add(this.orbitLine);
     }
 
     update(time) {
         // Move along the orbital path
-        this.pathIndex += this.speed * 0.5;
+        this.pathIndex += this.speed * 0.08; // Further reduced for even slower movement
 
         if (this.pathPoints && this.pathPoints.length > 0) {
             const index = Math.floor(this.pathIndex) % this.pathPoints.length;
@@ -106,6 +125,32 @@ export class Electron {
             const nextPoint = this.pathPoints[nextIndex];
 
             this.mesh.position.lerpVectors(currentPoint, nextPoint, t);
+
+            // Update trail - show recent path behind electron
+            if (this.trailPoints) {
+                // Shift trail points back
+                for (let i = this.trailPoints.length - 1; i > 0; i--) {
+                    this.trailPoints[i].copy(this.trailPoints[i - 1]);
+                }
+
+                // Add current position at the front
+                this.trailPoints[0].copy(this.mesh.position);
+
+                // Update the trail geometry
+                this.orbitLine.geometry.setFromPoints(this.trailPoints);
+                this.orbitLine.geometry.attributes.position.needsUpdate = true;
+
+                // Update gradient colors for fading effect
+                const colors = this.orbitLine.geometry.attributes.color.array;
+                const color = new THREE.Color(this.orbitColor);
+                for (let i = 0; i < this.trailLength; i++) {
+                    const alpha = 1 - (i / this.trailLength); // Fade from 1 to 0
+                    colors[i * 3] = color.r * alpha;
+                    colors[i * 3 + 1] = color.g * alpha;
+                    colors[i * 3 + 2] = color.b * alpha;
+                }
+                this.orbitLine.geometry.attributes.color.needsUpdate = true;
+            }
         }
 
 
