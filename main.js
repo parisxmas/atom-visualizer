@@ -61,26 +61,42 @@ const atomObjects = [];
 const gridSpacing = 40; // Increased spacing for better visibility
 const gridSize = 3;
 
-atoms.slice(0, 27).forEach((atomData, index) => {
-    const atom = new Atom(atomData);
+// Loading Screen Logic
+const loadingScreen = document.getElementById('loading-screen');
 
-    // 3x3x3 Grid Logic
-    const xIndex = index % gridSize;
-    const yIndex = Math.floor(index / gridSize) % gridSize;
-    const zIndex = Math.floor(index / (gridSize * gridSize));
+function initAtoms() {
+    atoms.slice(0, 27).forEach((atomData, index) => {
+        const atom = new Atom(atomData);
 
-    // Center the grid
-    // Indices are 0, 1, 2. Center is 1.
-    // (0-1)*S = -S, (1-1)*S = 0, (2-1)*S = S
+        // 3x3x3 Grid Logic
+        const xIndex = index % gridSize;
+        const yIndex = Math.floor(index / gridSize) % gridSize;
+        const zIndex = Math.floor(index / (gridSize * gridSize));
 
-    const x = (xIndex - 1) * gridSpacing;
-    const y = -(yIndex - 1) * gridSpacing; // Invert Y for top-down feel
-    const z = (zIndex - 1) * gridSpacing;
+        // Center the grid
+        // Indices are 0, 1, 2. Center is 1.
+        // (0-1)*S = -S, (1-1)*S = 0, (2-1)*S = S
 
-    atom.group.position.set(x, y, z);
-    scene.add(atom.group);
-    atomObjects.push(atom);
-});
+        const x = (xIndex - 1) * gridSpacing;
+        const y = -(yIndex - 1) * gridSpacing; // Invert Y for top-down feel
+        const z = (zIndex - 1) * gridSpacing;
+
+        atom.group.position.set(x, y, z);
+        scene.add(atom.group);
+        atomObjects.push(atom);
+    });
+
+    // Hide loading screen after atoms are generated
+    if (loadingScreen) {
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Defer atom generation to allow loading screen to render
+setTimeout(initAtoms, 100);
 
 // Periodic Table Logic
 const periodicTableOverlay = document.getElementById('periodic-table-overlay');

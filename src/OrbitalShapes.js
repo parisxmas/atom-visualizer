@@ -42,6 +42,7 @@ export function getPorbitalPath(radius, axis = 'x', pointCount = 50) {
         // This creates a smooth continuous loop without jumps
 
         const scale = radius * 1.2;
+        let x, y, z;
 
         if (axis === 'x') {
             // Aligned along X
