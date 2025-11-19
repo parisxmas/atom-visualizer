@@ -18,6 +18,7 @@ export class Electron {
             toneMapped: false
         });
         this.mesh = new THREE.Mesh(geometry, material);
+        this.mesh.raycast = () => { }; // Disable raycasting so clicks pass through
 
         this.group = new THREE.Group();
 

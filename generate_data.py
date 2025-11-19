@@ -116,6 +116,8 @@ for i, (name, symbol) in enumerate(elements):
         reactivity = "Noble Metal (Unreactive)"
         is_reactive = False
 
+    description = f"{name} is a chemical element with symbol {symbol} and atomic number {atomic_number}. It is classified as a {reactivity}."
+
     print(f"  {{")
     print(f"    name: \"{name}\",")
     print(f"    symbol: \"{symbol}\",")
@@ -128,6 +130,7 @@ for i, (name, symbol) in enumerate(elements):
     print(f"    xpos: {xpos},")
     print(f"    ypos: {ypos},")
     print(f"    reactivity: \"{reactivity}\",")
-    print(f"    isReactive: {str(is_reactive).lower()}")
+    print(f"    isReactive: {str(is_reactive).lower()},")
+    print(f"    description: \"{description}\"")
     print(f"  }},")
 print("];")

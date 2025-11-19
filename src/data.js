@@ -11,7 +11,8 @@ export const atoms = [
     xpos: 1,
     ypos: 1,
     reactivity: "Explosive",
-    isReactive: true
+    isReactive: true,
+    description: "Hydrogen is a chemical element with symbol H and atomic number 1. It is classified as a Explosive."
   },
   {
     name: "Helium",
@@ -25,7 +26,8 @@ export const atoms = [
     xpos: 18,
     ypos: 1,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Helium is a chemical element with symbol He and atomic number 2. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Lithium",
@@ -39,7 +41,8 @@ export const atoms = [
     xpos: 1,
     ypos: 2,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Lithium is a chemical element with symbol Li and atomic number 3. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Beryllium",
@@ -53,7 +56,8 @@ export const atoms = [
     xpos: 2,
     ypos: 2,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Beryllium is a chemical element with symbol Be and atomic number 4. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Boron",
@@ -67,7 +71,8 @@ export const atoms = [
     xpos: 13,
     ypos: 2,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Boron is a chemical element with symbol B and atomic number 5. It is classified as a Moderate."
   },
   {
     name: "Carbon",
@@ -81,7 +86,8 @@ export const atoms = [
     xpos: 14,
     ypos: 2,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Carbon is a chemical element with symbol C and atomic number 6. It is classified as a Moderate."
   },
   {
     name: "Nitrogen",
@@ -95,7 +101,8 @@ export const atoms = [
     xpos: 15,
     ypos: 2,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Nitrogen is a chemical element with symbol N and atomic number 7. It is classified as a Moderate."
   },
   {
     name: "Oxygen",
@@ -109,7 +116,8 @@ export const atoms = [
     xpos: 16,
     ypos: 2,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Oxygen is a chemical element with symbol O and atomic number 8. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Fluorine",
@@ -123,7 +131,8 @@ export const atoms = [
     xpos: 17,
     ypos: 2,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Fluorine is a chemical element with symbol F and atomic number 9. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Neon",
@@ -137,7 +146,8 @@ export const atoms = [
     xpos: 18,
     ypos: 2,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Neon is a chemical element with symbol Ne and atomic number 10. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Sodium",
@@ -151,7 +161,8 @@ export const atoms = [
     xpos: 1,
     ypos: 3,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Sodium is a chemical element with symbol Na and atomic number 11. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Magnesium",
@@ -165,7 +176,8 @@ export const atoms = [
     xpos: 2,
     ypos: 3,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Magnesium is a chemical element with symbol Mg and atomic number 12. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Aluminum",
@@ -179,7 +191,8 @@ export const atoms = [
     xpos: 13,
     ypos: 3,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Aluminum is a chemical element with symbol Al and atomic number 13. It is classified as a Moderate."
   },
   {
     name: "Silicon",
@@ -193,7 +206,8 @@ export const atoms = [
     xpos: 14,
     ypos: 3,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Silicon is a chemical element with symbol Si and atomic number 14. It is classified as a Moderate."
   },
   {
     name: "Phosphorus",
@@ -207,7 +221,8 @@ export const atoms = [
     xpos: 15,
     ypos: 3,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Phosphorus is a chemical element with symbol P and atomic number 15. It is classified as a Moderate."
   },
   {
     name: "Sulfur",
@@ -221,7 +236,8 @@ export const atoms = [
     xpos: 16,
     ypos: 3,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Sulfur is a chemical element with symbol S and atomic number 16. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Chlorine",
@@ -235,7 +251,8 @@ export const atoms = [
     xpos: 17,
     ypos: 3,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Chlorine is a chemical element with symbol Cl and atomic number 17. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Argon",
@@ -249,7 +266,8 @@ export const atoms = [
     xpos: 18,
     ypos: 3,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Argon is a chemical element with symbol Ar and atomic number 18. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Potassium",
@@ -263,7 +281,8 @@ export const atoms = [
     xpos: 1,
     ypos: 4,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Potassium is a chemical element with symbol K and atomic number 19. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Calcium",
@@ -277,7 +296,8 @@ export const atoms = [
     xpos: 2,
     ypos: 4,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Calcium is a chemical element with symbol Ca and atomic number 20. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Scandium",
@@ -291,7 +311,8 @@ export const atoms = [
     xpos: 3,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Scandium is a chemical element with symbol Sc and atomic number 21. It is classified as a Moderate."
   },
   {
     name: "Titanium",
@@ -305,7 +326,8 @@ export const atoms = [
     xpos: 4,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Titanium is a chemical element with symbol Ti and atomic number 22. It is classified as a Moderate."
   },
   {
     name: "Vanadium",
@@ -319,7 +341,8 @@ export const atoms = [
     xpos: 5,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Vanadium is a chemical element with symbol V and atomic number 23. It is classified as a Moderate."
   },
   {
     name: "Chromium",
@@ -333,7 +356,8 @@ export const atoms = [
     xpos: 6,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Chromium is a chemical element with symbol Cr and atomic number 24. It is classified as a Moderate."
   },
   {
     name: "Manganese",
@@ -347,7 +371,8 @@ export const atoms = [
     xpos: 7,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Manganese is a chemical element with symbol Mn and atomic number 25. It is classified as a Moderate."
   },
   {
     name: "Iron",
@@ -361,7 +386,8 @@ export const atoms = [
     xpos: 8,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Iron is a chemical element with symbol Fe and atomic number 26. It is classified as a Moderate."
   },
   {
     name: "Cobalt",
@@ -375,7 +401,8 @@ export const atoms = [
     xpos: 9,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Cobalt is a chemical element with symbol Co and atomic number 27. It is classified as a Moderate."
   },
   {
     name: "Nickel",
@@ -389,7 +416,8 @@ export const atoms = [
     xpos: 10,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Nickel is a chemical element with symbol Ni and atomic number 28. It is classified as a Moderate."
   },
   {
     name: "Copper",
@@ -403,7 +431,8 @@ export const atoms = [
     xpos: 11,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Copper is a chemical element with symbol Cu and atomic number 29. It is classified as a Moderate."
   },
   {
     name: "Zinc",
@@ -417,7 +446,8 @@ export const atoms = [
     xpos: 12,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Zinc is a chemical element with symbol Zn and atomic number 30. It is classified as a Moderate."
   },
   {
     name: "Gallium",
@@ -431,7 +461,8 @@ export const atoms = [
     xpos: 13,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Gallium is a chemical element with symbol Ga and atomic number 31. It is classified as a Moderate."
   },
   {
     name: "Germanium",
@@ -445,7 +476,8 @@ export const atoms = [
     xpos: 14,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Germanium is a chemical element with symbol Ge and atomic number 32. It is classified as a Moderate."
   },
   {
     name: "Arsenic",
@@ -459,7 +491,8 @@ export const atoms = [
     xpos: 15,
     ypos: 4,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Arsenic is a chemical element with symbol As and atomic number 33. It is classified as a Moderate."
   },
   {
     name: "Selenium",
@@ -473,7 +506,8 @@ export const atoms = [
     xpos: 16,
     ypos: 4,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Selenium is a chemical element with symbol Se and atomic number 34. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Bromine",
@@ -487,7 +521,8 @@ export const atoms = [
     xpos: 17,
     ypos: 4,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Bromine is a chemical element with symbol Br and atomic number 35. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Krypton",
@@ -501,7 +536,8 @@ export const atoms = [
     xpos: 18,
     ypos: 4,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Krypton is a chemical element with symbol Kr and atomic number 36. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Rubidium",
@@ -515,7 +551,8 @@ export const atoms = [
     xpos: 1,
     ypos: 5,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Rubidium is a chemical element with symbol Rb and atomic number 37. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Strontium",
@@ -529,7 +566,8 @@ export const atoms = [
     xpos: 2,
     ypos: 5,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Strontium is a chemical element with symbol Sr and atomic number 38. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Yttrium",
@@ -543,7 +581,8 @@ export const atoms = [
     xpos: 3,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Yttrium is a chemical element with symbol Y and atomic number 39. It is classified as a Moderate."
   },
   {
     name: "Zirconium",
@@ -557,7 +596,8 @@ export const atoms = [
     xpos: 4,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Zirconium is a chemical element with symbol Zr and atomic number 40. It is classified as a Moderate."
   },
   {
     name: "Niobium",
@@ -571,7 +611,8 @@ export const atoms = [
     xpos: 5,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Niobium is a chemical element with symbol Nb and atomic number 41. It is classified as a Moderate."
   },
   {
     name: "Molybdenum",
@@ -585,7 +626,8 @@ export const atoms = [
     xpos: 6,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Molybdenum is a chemical element with symbol Mo and atomic number 42. It is classified as a Moderate."
   },
   {
     name: "Technetium",
@@ -599,7 +641,8 @@ export const atoms = [
     xpos: 7,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Technetium is a chemical element with symbol Tc and atomic number 43. It is classified as a Moderate."
   },
   {
     name: "Ruthenium",
@@ -613,7 +656,8 @@ export const atoms = [
     xpos: 8,
     ypos: 5,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Ruthenium is a chemical element with symbol Ru and atomic number 44. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Rhodium",
@@ -627,7 +671,8 @@ export const atoms = [
     xpos: 9,
     ypos: 5,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Rhodium is a chemical element with symbol Rh and atomic number 45. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Palladium",
@@ -641,7 +686,8 @@ export const atoms = [
     xpos: 10,
     ypos: 5,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Palladium is a chemical element with symbol Pd and atomic number 46. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Silver",
@@ -655,7 +701,8 @@ export const atoms = [
     xpos: 11,
     ypos: 5,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Silver is a chemical element with symbol Ag and atomic number 47. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Cadmium",
@@ -669,7 +716,8 @@ export const atoms = [
     xpos: 12,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Cadmium is a chemical element with symbol Cd and atomic number 48. It is classified as a Moderate."
   },
   {
     name: "Indium",
@@ -683,7 +731,8 @@ export const atoms = [
     xpos: 13,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Indium is a chemical element with symbol In and atomic number 49. It is classified as a Moderate."
   },
   {
     name: "Tin",
@@ -697,7 +746,8 @@ export const atoms = [
     xpos: 14,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Tin is a chemical element with symbol Sn and atomic number 50. It is classified as a Moderate."
   },
   {
     name: "Antimony",
@@ -711,7 +761,8 @@ export const atoms = [
     xpos: 15,
     ypos: 5,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Antimony is a chemical element with symbol Sb and atomic number 51. It is classified as a Moderate."
   },
   {
     name: "Tellurium",
@@ -725,7 +776,8 @@ export const atoms = [
     xpos: 16,
     ypos: 5,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Tellurium is a chemical element with symbol Te and atomic number 52. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Iodine",
@@ -739,7 +791,8 @@ export const atoms = [
     xpos: 17,
     ypos: 5,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Iodine is a chemical element with symbol I and atomic number 53. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Xenon",
@@ -753,7 +806,8 @@ export const atoms = [
     xpos: 18,
     ypos: 5,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Xenon is a chemical element with symbol Xe and atomic number 54. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Cesium",
@@ -767,7 +821,8 @@ export const atoms = [
     xpos: 1,
     ypos: 6,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Cesium is a chemical element with symbol Cs and atomic number 55. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Barium",
@@ -781,7 +836,8 @@ export const atoms = [
     xpos: 2,
     ypos: 6,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Barium is a chemical element with symbol Ba and atomic number 56. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Lanthanum",
@@ -795,7 +851,8 @@ export const atoms = [
     xpos: 3,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Lanthanum is a chemical element with symbol La and atomic number 57. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Cerium",
@@ -809,7 +866,8 @@ export const atoms = [
     xpos: 4,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Cerium is a chemical element with symbol Ce and atomic number 58. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Praseodymium",
@@ -823,7 +881,8 @@ export const atoms = [
     xpos: 5,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Praseodymium is a chemical element with symbol Pr and atomic number 59. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Neodymium",
@@ -837,7 +896,8 @@ export const atoms = [
     xpos: 6,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Neodymium is a chemical element with symbol Nd and atomic number 60. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Promethium",
@@ -851,7 +911,8 @@ export const atoms = [
     xpos: 7,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Promethium is a chemical element with symbol Pm and atomic number 61. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Samarium",
@@ -865,7 +926,8 @@ export const atoms = [
     xpos: 8,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Samarium is a chemical element with symbol Sm and atomic number 62. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Europium",
@@ -879,7 +941,8 @@ export const atoms = [
     xpos: 9,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Europium is a chemical element with symbol Eu and atomic number 63. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Gadolinium",
@@ -893,7 +956,8 @@ export const atoms = [
     xpos: 10,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Gadolinium is a chemical element with symbol Gd and atomic number 64. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Terbium",
@@ -907,7 +971,8 @@ export const atoms = [
     xpos: 11,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Terbium is a chemical element with symbol Tb and atomic number 65. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Dysprosium",
@@ -921,7 +986,8 @@ export const atoms = [
     xpos: 12,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Dysprosium is a chemical element with symbol Dy and atomic number 66. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Holmium",
@@ -935,7 +1001,8 @@ export const atoms = [
     xpos: 13,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Holmium is a chemical element with symbol Ho and atomic number 67. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Erbium",
@@ -949,7 +1016,8 @@ export const atoms = [
     xpos: 14,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Erbium is a chemical element with symbol Er and atomic number 68. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Thulium",
@@ -963,7 +1031,8 @@ export const atoms = [
     xpos: 15,
     ypos: 8,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Thulium is a chemical element with symbol Tm and atomic number 69. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Ytterbium",
@@ -977,7 +1046,8 @@ export const atoms = [
     xpos: 16,
     ypos: 8,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Ytterbium is a chemical element with symbol Yb and atomic number 70. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Lutetium",
@@ -991,7 +1061,8 @@ export const atoms = [
     xpos: 17,
     ypos: 8,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Lutetium is a chemical element with symbol Lu and atomic number 71. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Hafnium",
@@ -1005,7 +1076,8 @@ export const atoms = [
     xpos: 4,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Hafnium is a chemical element with symbol Hf and atomic number 72. It is classified as a Moderate."
   },
   {
     name: "Tantalum",
@@ -1019,7 +1091,8 @@ export const atoms = [
     xpos: 5,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Tantalum is a chemical element with symbol Ta and atomic number 73. It is classified as a Moderate."
   },
   {
     name: "Tungsten",
@@ -1033,7 +1106,8 @@ export const atoms = [
     xpos: 6,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Tungsten is a chemical element with symbol W and atomic number 74. It is classified as a Moderate."
   },
   {
     name: "Rhenium",
@@ -1047,7 +1121,8 @@ export const atoms = [
     xpos: 7,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Rhenium is a chemical element with symbol Re and atomic number 75. It is classified as a Moderate."
   },
   {
     name: "Osmium",
@@ -1061,7 +1136,8 @@ export const atoms = [
     xpos: 8,
     ypos: 6,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Osmium is a chemical element with symbol Os and atomic number 76. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Iridium",
@@ -1075,7 +1151,8 @@ export const atoms = [
     xpos: 9,
     ypos: 6,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Iridium is a chemical element with symbol Ir and atomic number 77. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Platinum",
@@ -1089,7 +1166,8 @@ export const atoms = [
     xpos: 10,
     ypos: 6,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Platinum is a chemical element with symbol Pt and atomic number 78. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Gold",
@@ -1103,7 +1181,8 @@ export const atoms = [
     xpos: 11,
     ypos: 6,
     reactivity: "Noble Metal (Unreactive)",
-    isReactive: false
+    isReactive: false,
+    description: "Gold is a chemical element with symbol Au and atomic number 79. It is classified as a Noble Metal (Unreactive)."
   },
   {
     name: "Mercury",
@@ -1117,7 +1196,8 @@ export const atoms = [
     xpos: 12,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Mercury is a chemical element with symbol Hg and atomic number 80. It is classified as a Moderate."
   },
   {
     name: "Thallium",
@@ -1131,7 +1211,8 @@ export const atoms = [
     xpos: 13,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Thallium is a chemical element with symbol Tl and atomic number 81. It is classified as a Moderate."
   },
   {
     name: "Lead",
@@ -1145,7 +1226,8 @@ export const atoms = [
     xpos: 14,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Lead is a chemical element with symbol Pb and atomic number 82. It is classified as a Moderate."
   },
   {
     name: "Bismuth",
@@ -1159,7 +1241,8 @@ export const atoms = [
     xpos: 15,
     ypos: 6,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Bismuth is a chemical element with symbol Bi and atomic number 83. It is classified as a Moderate."
   },
   {
     name: "Polonium",
@@ -1173,7 +1256,8 @@ export const atoms = [
     xpos: 16,
     ypos: 6,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Polonium is a chemical element with symbol Po and atomic number 84. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Astatine",
@@ -1187,7 +1271,8 @@ export const atoms = [
     xpos: 17,
     ypos: 6,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Astatine is a chemical element with symbol At and atomic number 85. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Radon",
@@ -1201,7 +1286,8 @@ export const atoms = [
     xpos: 18,
     ypos: 6,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Radon is a chemical element with symbol Rn and atomic number 86. It is classified as a Noble Gas (Inert)."
   },
   {
     name: "Francium",
@@ -1215,7 +1301,8 @@ export const atoms = [
     xpos: 1,
     ypos: 7,
     reactivity: "Alkali Metal (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Francium is a chemical element with symbol Fr and atomic number 87. It is classified as a Alkali Metal (Highly Reactive)."
   },
   {
     name: "Radium",
@@ -1229,7 +1316,8 @@ export const atoms = [
     xpos: 2,
     ypos: 7,
     reactivity: "Alkaline Earth Metal (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Radium is a chemical element with symbol Ra and atomic number 88. It is classified as a Alkaline Earth Metal (Reactive)."
   },
   {
     name: "Actinium",
@@ -1243,7 +1331,8 @@ export const atoms = [
     xpos: 3,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Actinium is a chemical element with symbol Ac and atomic number 89. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Thorium",
@@ -1257,7 +1346,8 @@ export const atoms = [
     xpos: 4,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Thorium is a chemical element with symbol Th and atomic number 90. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Protactinium",
@@ -1271,7 +1361,8 @@ export const atoms = [
     xpos: 5,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Protactinium is a chemical element with symbol Pa and atomic number 91. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Uranium",
@@ -1285,7 +1376,8 @@ export const atoms = [
     xpos: 6,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Uranium is a chemical element with symbol U and atomic number 92. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Neptunium",
@@ -1299,7 +1391,8 @@ export const atoms = [
     xpos: 7,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Neptunium is a chemical element with symbol Np and atomic number 93. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Plutonium",
@@ -1313,7 +1406,8 @@ export const atoms = [
     xpos: 8,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Plutonium is a chemical element with symbol Pu and atomic number 94. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Americium",
@@ -1327,7 +1421,8 @@ export const atoms = [
     xpos: 9,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Americium is a chemical element with symbol Am and atomic number 95. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Curium",
@@ -1341,7 +1436,8 @@ export const atoms = [
     xpos: 10,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Curium is a chemical element with symbol Cm and atomic number 96. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Berkelium",
@@ -1355,7 +1451,8 @@ export const atoms = [
     xpos: 11,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Berkelium is a chemical element with symbol Bk and atomic number 97. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Californium",
@@ -1369,7 +1466,8 @@ export const atoms = [
     xpos: 12,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Californium is a chemical element with symbol Cf and atomic number 98. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Einsteinium",
@@ -1383,7 +1481,8 @@ export const atoms = [
     xpos: 13,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Einsteinium is a chemical element with symbol Es and atomic number 99. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Fermium",
@@ -1397,7 +1496,8 @@ export const atoms = [
     xpos: 14,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Fermium is a chemical element with symbol Fm and atomic number 100. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Mendelevium",
@@ -1411,7 +1511,8 @@ export const atoms = [
     xpos: 15,
     ypos: 9,
     reactivity: "Radioactive/Reactive",
-    isReactive: true
+    isReactive: true,
+    description: "Mendelevium is a chemical element with symbol Md and atomic number 101. It is classified as a Radioactive/Reactive."
   },
   {
     name: "Nobelium",
@@ -1425,7 +1526,8 @@ export const atoms = [
     xpos: 16,
     ypos: 9,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Nobelium is a chemical element with symbol No and atomic number 102. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Lawrencium",
@@ -1439,7 +1541,8 @@ export const atoms = [
     xpos: 17,
     ypos: 9,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Lawrencium is a chemical element with symbol Lr and atomic number 103. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Rutherfordium",
@@ -1453,7 +1556,8 @@ export const atoms = [
     xpos: 4,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Rutherfordium is a chemical element with symbol Rf and atomic number 104. It is classified as a Moderate."
   },
   {
     name: "Dubnium",
@@ -1467,7 +1571,8 @@ export const atoms = [
     xpos: 5,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Dubnium is a chemical element with symbol Db and atomic number 105. It is classified as a Moderate."
   },
   {
     name: "Seaborgium",
@@ -1481,7 +1586,8 @@ export const atoms = [
     xpos: 6,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Seaborgium is a chemical element with symbol Sg and atomic number 106. It is classified as a Moderate."
   },
   {
     name: "Bohrium",
@@ -1495,7 +1601,8 @@ export const atoms = [
     xpos: 7,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Bohrium is a chemical element with symbol Bh and atomic number 107. It is classified as a Moderate."
   },
   {
     name: "Hassium",
@@ -1509,7 +1616,8 @@ export const atoms = [
     xpos: 8,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Hassium is a chemical element with symbol Hs and atomic number 108. It is classified as a Moderate."
   },
   {
     name: "Meitnerium",
@@ -1523,7 +1631,8 @@ export const atoms = [
     xpos: 9,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Meitnerium is a chemical element with symbol Mt and atomic number 109. It is classified as a Moderate."
   },
   {
     name: "Darmstadtium",
@@ -1537,7 +1646,8 @@ export const atoms = [
     xpos: 10,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Darmstadtium is a chemical element with symbol Ds and atomic number 110. It is classified as a Moderate."
   },
   {
     name: "Roentgenium",
@@ -1551,7 +1661,8 @@ export const atoms = [
     xpos: 11,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Roentgenium is a chemical element with symbol Rg and atomic number 111. It is classified as a Moderate."
   },
   {
     name: "Copernicium",
@@ -1565,7 +1676,8 @@ export const atoms = [
     xpos: 12,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Copernicium is a chemical element with symbol Cn and atomic number 112. It is classified as a Moderate."
   },
   {
     name: "Nihonium",
@@ -1579,7 +1691,8 @@ export const atoms = [
     xpos: 13,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Nihonium is a chemical element with symbol Nh and atomic number 113. It is classified as a Moderate."
   },
   {
     name: "Flerovium",
@@ -1593,7 +1706,8 @@ export const atoms = [
     xpos: 14,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Flerovium is a chemical element with symbol Fl and atomic number 114. It is classified as a Moderate."
   },
   {
     name: "Moscovium",
@@ -1607,7 +1721,8 @@ export const atoms = [
     xpos: 15,
     ypos: 7,
     reactivity: "Moderate",
-    isReactive: false
+    isReactive: false,
+    description: "Moscovium is a chemical element with symbol Mc and atomic number 115. It is classified as a Moderate."
   },
   {
     name: "Livermorium",
@@ -1621,7 +1736,8 @@ export const atoms = [
     xpos: 16,
     ypos: 7,
     reactivity: "Chalcogen (Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Livermorium is a chemical element with symbol Lv and atomic number 116. It is classified as a Chalcogen (Reactive)."
   },
   {
     name: "Tennessine",
@@ -1635,7 +1751,8 @@ export const atoms = [
     xpos: 17,
     ypos: 7,
     reactivity: "Halogen (Highly Reactive)",
-    isReactive: true
+    isReactive: true,
+    description: "Tennessine is a chemical element with symbol Ts and atomic number 117. It is classified as a Halogen (Highly Reactive)."
   },
   {
     name: "Oganesson",
@@ -1649,6 +1766,7 @@ export const atoms = [
     xpos: 18,
     ypos: 7,
     reactivity: "Noble Gas (Inert)",
-    isReactive: false
+    isReactive: false,
+    description: "Oganesson is a chemical element with symbol Og and atomic number 118. It is classified as a Noble Gas (Inert)."
   },
 ];

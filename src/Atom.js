@@ -167,51 +167,164 @@ export class Atom {
     }
 
     createLabel() {
-        // Create canvas for text rendering
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
         canvas.width = 512;
         canvas.height = 128;
 
-        // Draw rounded rectangle background
+        // Draw semi-transparent background for better clickability
         context.fillStyle = 'rgba(0, 0, 0, 0.7)';
-        context.beginPath();
-        context.roundRect(10, 10, canvas.width - 20, canvas.height - 20, 15);
-        context.fill();
-
-        // Draw border
-        context.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        context.strokeStyle = 'white';
         context.lineWidth = 3;
+        const padding = 10;
+        const rectWidth = canvas.width - padding * 2;
+        const rectHeight = canvas.height - padding * 2;
+
+        // Rounded rectangle
+        const radius = 15;
+        context.beginPath();
+        context.moveTo(padding + radius, padding);
+        context.lineTo(padding + rectWidth - radius, padding);
+        context.quadraticCurveTo(padding + rectWidth, padding, padding + rectWidth, padding + radius);
+        context.lineTo(padding + rectWidth, padding + rectHeight - radius);
+        context.quadraticCurveTo(padding + rectWidth, padding + rectHeight, padding + rectWidth - radius, padding + rectHeight);
+        context.lineTo(padding + radius, padding + rectHeight);
+        context.quadraticCurveTo(padding, padding + rectHeight, padding, padding + rectHeight - radius);
+        context.lineTo(padding, padding + radius);
+        context.quadraticCurveTo(padding, padding, padding + radius, padding);
+        context.closePath();
+        context.fill();
         context.stroke();
 
         // Draw text
-        context.font = 'Bold 56px Arial';
+        context.font = 'bold 48px Arial';
         context.fillStyle = 'white';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.shadowColor = 'black';
-        context.shadowBlur = 8;
         context.fillText(`${this.data.symbol} - ${this.data.name}`, canvas.width / 2, canvas.height / 2);
 
-        // Create sprite from canvas
         const texture = new THREE.CanvasTexture(canvas);
-        texture.needsUpdate = true;
+        const material = new THREE.SpriteMaterial({ map: texture, depthTest: false, depthWrite: false });
+        const sprite = new THREE.Sprite(material);
 
-        const spriteMaterial = new THREE.SpriteMaterial({
-            map: texture,
-            transparent: true,
-            depthTest: true,
-            depthWrite: false
-        });
-
-        const sprite = new THREE.Sprite(spriteMaterial);
-        sprite.scale.set(10, 2.5, 1); // Adjust scale for readability
-        sprite.position.set(0, -8, 0); // Position below atom
-        sprite.name = 'label'; // For raycasting identification
-        sprite.userData.atomName = this.data.name; // Store atom name for lookup
+        sprite.position.set(0, -8, 0);
+        sprite.scale.set(12, 3, 1); // Increased scale for better visibility and clickability
+        sprite.name = 'label';
+        sprite.userData.atomName = this.data.name;
 
         this.label = sprite;
         this.group.add(sprite);
+    }
+
+    toggleInfoPanel() {
+        if (this.infoPanel) {
+            this.group.remove(this.infoPanel);
+            this.infoPanel = null;
+            return;
+        }
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        const width = 512;
+        const height = 256;
+        canvas.width = width;
+        canvas.height = height;
+
+        // Background
+        context.fillStyle = 'rgba(0, 20, 40, 0.9)';
+        context.strokeStyle = '#00ccff';
+        context.lineWidth = 4;
+
+        // Rounded rectangle
+        const radius = 20;
+        context.beginPath();
+        context.moveTo(radius, 0);
+        context.lineTo(width - radius, 0);
+        context.quadraticCurveTo(width, 0, width, radius);
+        context.lineTo(width, height - radius);
+        context.quadraticCurveTo(width, height, width - radius, height);
+        context.lineTo(radius, height);
+        context.quadraticCurveTo(0, height, 0, height - radius);
+        context.lineTo(0, radius);
+        context.quadraticCurveTo(0, 0, radius, 0);
+        context.closePath();
+        context.fill();
+        context.stroke();
+
+        // Title
+        context.font = 'bold 40px Arial';
+        context.fillStyle = '#00ccff';
+        context.fillText(`${this.data.name} (${this.data.symbol})`, 30, 60);
+
+        // Separator
+        context.beginPath();
+        context.moveTo(30, 80);
+        context.lineTo(width - 30, 80);
+        context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+        context.lineWidth = 2;
+        context.stroke();
+
+        // Description
+        context.font = '24px Arial';
+        context.fillStyle = '#dddddd';
+        const text = this.data.description || "No description available.";
+
+        // Text wrapping
+        const maxWidth = width - 60;
+        const lineHeight = 32;
+        const words = text.split(' ');
+        let line = '';
+        let y = 120;
+
+        for (let n = 0; n < words.length; n++) {
+            const testLine = line + words[n] + ' ';
+            const metrics = context.measureText(testLine);
+            const testWidth = metrics.width;
+            if (testWidth > maxWidth && n > 0) {
+                context.fillText(line, 30, y);
+                line = words[n] + ' ';
+                y += lineHeight;
+            }
+            else {
+                line = testLine;
+            }
+        }
+        context.fillText(line, 30, y);
+
+        // Draw X button in top right corner
+        const xButtonX = width - 40;
+        const xButtonY = 30;
+        const xButtonRadius = 20;
+
+        // X button circle background
+        context.fillStyle = 'rgba(255, 100, 100, 0.8)';
+        context.beginPath();
+        context.arc(xButtonX, xButtonY, xButtonRadius, 0, Math.PI * 2);
+        context.fill();
+
+        // X text
+        context.font = 'bold 28px Arial';
+        context.fillStyle = 'white';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillText('X', xButtonX, xButtonY);
+
+
+        const texture = new THREE.CanvasTexture(canvas);
+        const material = new THREE.SpriteMaterial({
+            map: texture,
+            depthTest: false,
+            depthWrite: false
+        });
+        this.infoPanel = new THREE.Sprite(material);
+
+        // Position above the atom (closer to make it visible)
+        this.infoPanel.position.set(0, 4, 0);
+        this.infoPanel.scale.set(15, 7.5, 1);
+        this.infoPanel.name = 'infoPanel';
+        this.infoPanel.userData.atomName = this.data.name;
+
+        this.group.add(this.infoPanel);
     }
 
     update(time) {

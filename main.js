@@ -358,11 +358,26 @@ window.addEventListener('click', (event) => {
     if (intersects.length > 0) {
         const object = intersects[0].object;
 
+        // Check if clicked on info panel - close it
+        if (object.name === 'infoPanel' && object.userData.atomName) {
+            const atom = atomObjects.find(a => a.data.name === object.userData.atomName);
+            if (atom && atom.infoPanel) {
+                atom.toggleInfoPanel();
+                return;
+            }
+        }
+
         // Check if clicked on a label sprite
         if (object.name === 'label' && object.userData.atomName) {
             const atom = atomObjects.find(a => a.data.name === object.userData.atomName);
             if (atom) {
-                selectAtom(atom);
+                // Close other panels first
+                atomObjects.forEach(a => {
+                    if (a !== atom && a.infoPanel) {
+                        a.toggleInfoPanel();
+                    }
+                });
+                atom.toggleInfoPanel();
                 return;
             }
         }
