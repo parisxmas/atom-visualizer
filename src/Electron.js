@@ -82,7 +82,7 @@ export class Electron {
         this.orbitColor = orbitColor;
 
         // Create dynamic trail instead of static line
-        this.trailLength = 300; // Number of points to show in trail (very long for extensive path visibility)
+        this.trailLength = 500; // Number of points to show in trail (very long for extensive path visibility)
         this.trailPoints = [];
 
         // Initialize trail with empty points
