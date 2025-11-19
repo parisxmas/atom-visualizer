@@ -4,7 +4,7 @@ export const atoms = [
     symbol: "H",
     atomicNumber: 1,
     protons: 1,
-    neutrons: 1,
+    neutrons: 0,
     electrons: 1,
     color: 0xff0000,
     electronColor: 0x00ffff,

@@ -49,9 +49,6 @@ export class Electron {
         this.glowSprite.raycast = () => { };
         this.mesh.add(this.glowSprite);
 
-        // Trail Setup
-        this.trailContainer = new THREE.Group();
-        this.group.add(this.trailContainer);
         this.group.add(this.mesh);
 
         // Generate orbital path based on type
@@ -111,26 +108,6 @@ export class Electron {
             this.mesh.position.lerpVectors(currentPoint, nextPoint, t);
         }
 
-        // Spawn trail particle
-        if (Math.random() > 0.5) {
-            const trailSprite = this.glowSprite.clone();
-            trailSprite.scale.set(2.0, 2.0, 1);
-            trailSprite.material = this.glowSprite.material.clone();
-            trailSprite.material.opacity = 0.3;
-            trailSprite.position.copy(this.mesh.position);
-            trailSprite.raycast = () => { };
-            this.trailContainer.add(trailSprite);
-        }
 
-        // Update trail particles
-        for (let i = this.trailContainer.children.length - 1; i >= 0; i--) {
-            const p = this.trailContainer.children[i];
-            p.material.opacity -= 0.01;
-            p.scale.multiplyScalar(0.95);
-            if (p.material.opacity <= 0) {
-                this.trailContainer.remove(p);
-                if (p.material) p.material.dispose();
-            }
-        }
     }
 }

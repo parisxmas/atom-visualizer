@@ -16,8 +16,6 @@ export class Atom {
 
         this.createNucleus();
         this.createElectrons();
-        this.createNucleus();
-        this.createElectrons();
         this.createOrbitals();
         this.createLabel();
     }
