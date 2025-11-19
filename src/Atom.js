@@ -241,14 +241,35 @@ export class Atom {
                 });
                 const labelSprite = new THREE.Sprite(labelMaterial);
 
-                // Position label slightly offset from center, depending on orbital type
-                // For simplicity, place it at 0.7 * radius along a relevant axis
-                let pos = new THREE.Vector3(electron.shellRadius * 0.7, 0, 0);
-                if (electron.orbitalType === 'p') {
-                    if (electron.orbitalAxis % 3 === 1) pos.set(0, electron.shellRadius * 0.7, 0); // y
-                    else if (electron.orbitalAxis % 3 === 0) pos.set(0, 0, electron.shellRadius * 0.7); // z (mapped to 0 in getOrbitalGeometry logic? need to check)
-                    // Actually let's just use a generic offset for now to ensure visibility
-                    pos.set(electron.shellRadius * 0.6, electron.shellRadius * 0.6, 0);
+                // Position label based on orbital type and shell radius
+                let pos;
+                const radius = electron.shellRadius;
+
+                if (electron.orbitalType === 's') {
+                    // s-orbitals: spherical, place label to the right and slightly up
+                    pos = new THREE.Vector3(radius * 0.8, radius * 0.3, 0);
+                } else if (electron.orbitalType === 'p') {
+                    // p-orbitals: dumbbell shape along x, y, or z axis
+                    const axis = electron.orbitalAxis % 3;
+                    if (axis === 0) {
+                        // px: along x-axis
+                        pos = new THREE.Vector3(radius * 1.2, radius * 0.4, 0);
+                    } else if (axis === 1) {
+                        // py: along y-axis
+                        pos = new THREE.Vector3(radius * 0.4, radius * 1.2, 0);
+                    } else {
+                        // pz: along z-axis
+                        pos = new THREE.Vector3(radius * 0.4, radius * 0.4, radius * 1.0);
+                    }
+                } else if (electron.orbitalType === 'd') {
+                    // d-orbitals: cloverleaf, place at outer edge
+                    pos = new THREE.Vector3(radius * 0.9, radius * 0.5, 0);
+                } else if (electron.orbitalType === 'f') {
+                    // f-orbitals: complex shape, place at outer edge
+                    pos = new THREE.Vector3(radius * 1.0, radius * 0.6, 0);
+                } else {
+                    // Default fallback
+                    pos = new THREE.Vector3(radius * 0.7, radius * 0.3, 0);
                 }
 
                 labelSprite.position.copy(pos);
@@ -257,7 +278,6 @@ export class Atom {
 
                 this.group.add(labelSprite);
                 this.orbitalLabels.push(labelSprite);
-                console.log(`Created label for ${labelText} at`, pos);
             }
         });
     }
