@@ -1,3 +1,6 @@
+/**
+ * Author: Baris AKIN
+ */
 import * as THREE from 'three';
 import { Nucleon } from './Nucleon.js';
 import { Electron } from './Electron.js';
