@@ -61,3 +61,10 @@ body {
   background: rgba(0, 200, 255, 0.3);
   border-left: 3px solid #00c8ff;
 }
+
+/* Hide atom list on mobile devices */
+@media (max-width: 768px) {
+  #atom-list {
+    display: none;
+  }
+}
