@@ -7,10 +7,13 @@ import * as THREE from 'three';
 export function getSorbitalPath(radius, pointCount = 50) {
     const points = [];
 
-    // Create a spherical path by varying theta and phi
+    // Create a smooth spherical spiral path
     for (let i = 0; i < pointCount; i++) {
-        const theta = (i / pointCount) * Math.PI * 2;
-        const phi = Math.asin(Math.sin(theta * 3)); // Oscillate up and down
+        const t = (i / pointCount) * Math.PI * 2;
+
+        // Spherical spiral
+        const theta = t * 2; // 2 loops around
+        const phi = Math.sin(t) * Math.PI / 2; // Up and down
 
         const x = radius * Math.cos(theta) * Math.cos(phi);
         const y = radius * Math.sin(theta) * Math.cos(phi);
@@ -33,23 +36,28 @@ export function getPorbitalPath(radius, axis = 'x', pointCount = 50) {
     for (let i = 0; i < pointCount; i++) {
         const t = (i / pointCount) * Math.PI * 2;
 
-        // Create figure-8 pattern
-        const r = radius * Math.abs(Math.sin(t));
+        // Smooth figure-8 (Lemniscate of Bernoulli or similar)
+        // x = a * sin(t)
+        // y = a * sin(t) * cos(t)
+        // This creates a smooth continuous loop without jumps
 
-        let x, y, z;
+        const scale = radius * 1.2;
 
         if (axis === 'x') {
-            x = r * Math.sign(Math.sin(t));
-            y = radius * 0.5 * Math.cos(t);
-            z = radius * 0.5 * Math.sin(t);
+            // Aligned along X
+            x = scale * Math.sin(t);
+            y = scale * Math.sin(t) * Math.cos(t);
+            z = radius * 0.3 * Math.cos(t); // Slight 3D depth
         } else if (axis === 'y') {
-            x = radius * 0.5 * Math.cos(t);
-            y = r * Math.sign(Math.sin(t));
-            z = radius * 0.5 * Math.sin(t);
+            // Aligned along Y
+            x = scale * Math.sin(t) * Math.cos(t);
+            y = scale * Math.sin(t);
+            z = radius * 0.3 * Math.cos(t);
         } else { // 'z'
-            x = radius * 0.5 * Math.cos(t);
-            y = radius * 0.5 * Math.sin(t);
-            z = r * Math.sign(Math.sin(t));
+            // Aligned along Z
+            x = radius * 0.3 * Math.cos(t);
+            y = scale * Math.sin(t) * Math.cos(t);
+            z = scale * Math.sin(t);
         }
 
         points.push(new THREE.Vector3(x, y, z));
