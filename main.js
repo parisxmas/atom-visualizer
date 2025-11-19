@@ -197,12 +197,106 @@ function createPeriodicTable() {
             popup.style.display = 'none';
         });
 
-        cell.addEventListener('click', () => {
-            handleAtomSelection(atomData);
+        cell.addEventListener('click', (e) => {
+            // Check if element has isotopes
+            if (atomData.isotopes && atomData.isotopes.length > 0) {
+                showIsotopeSubmenu(atomData, cell);
+            } else {
+                handleAtomSelection(atomData);
+            }
         });
 
         periodicTableGrid.appendChild(cell);
     });
+}
+
+function showIsotopeSubmenu(atomData, cell) {
+    // Remove any existing submenu
+    const existingSubmenu = document.getElementById('isotope-submenu');
+    if (existingSubmenu) {
+        existingSubmenu.remove();
+    }
+
+    // Create submenu
+    const submenu = document.createElement('div');
+    submenu.id = 'isotope-submenu';
+    submenu.style.cssText = `
+        position: fixed;
+        background: rgba(0, 20, 40, 0.95);
+        border: 2px solid #00ccff;
+        border-radius: 8px;
+        padding: 12px;
+        z-index: 10001;
+        min-width: 180px;
+    `;
+
+    // Add title
+    const title = document.createElement('div');
+    title.textContent = `${i18n.t(`element.${atomData.name}.name`)} Isotopes`;
+    title.style.cssText = `
+        color: #00ccff;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: center;
+        font-size: 14px;
+    `;
+    submenu.appendChild(title);
+
+    // Add isotope options
+    atomData.isotopes.forEach(isotope => {
+        const option = document.createElement('div');
+        option.style.cssText = `
+            padding: 8px;
+            margin: 4px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-size: 12px;
+            transition: background 0.2s;
+        `;
+
+        const massNumber = `${atomData.symbol}-${isotope.mass}`;
+        const stability = isotope.stable ? '✓' : '☢';
+        option.innerHTML = `
+            <div style="font-weight: bold;">${massNumber} ${stability}</div>
+            <div style="font-size: 10px; color: #aaa;">${isotope.abundance}</div>
+        `;
+
+        option.addEventListener('mouseenter', () => {
+            option.style.background = 'rgba(0, 204, 255, 0.3)';
+        });
+
+        option.addEventListener('mouseleave', () => {
+            option.style.background = 'rgba(255, 255, 255, 0.1)';
+        });
+
+        option.addEventListener('click', () => {
+            // Create atom data with custom neutron count
+            const isotopeData = { ...atomData, neutrons: isotope.neutrons, massNumber: isotope.mass };
+            handleAtomSelection(isotopeData);
+            submenu.remove();
+        });
+
+        submenu.appendChild(option);
+    });
+
+    // Position submenu near the cell
+    const rect = cell.getBoundingClientRect();
+    submenu.style.top = `${rect.bottom + 5}px`;
+    submenu.style.left = `${rect.left}px`;
+
+    // Add to body
+    document.body.appendChild(submenu);
+
+    // Close submenu when clicking outside
+    const closeSubmenu = (e) => {
+        if (!submenu.contains(e.target) && e.target !== cell) {
+            submenu.remove();
+            document.removeEventListener('click', closeSubmenu);
+        }
+    };
+    setTimeout(() => document.addEventListener('click', closeSubmenu), 100);
 }
 
 function handleAtomSelection(newAtomData) {

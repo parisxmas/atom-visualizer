@@ -312,12 +312,13 @@ export class Atom {
         // Get translated element name
         const translatedName = i18n.t(`element.${this.data.name}.name`);
 
-        // Text
+        // Text - show mass number if this is an isotope
+        const symbolText = this.data.massNumber ? `${this.data.symbol}-${this.data.massNumber}` : this.data.symbol;
         context.font = 'bold 24px Arial';
         context.fillStyle = '#ffffff';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText(`${this.data.symbol} - ${translatedName}`, canvas.width / 2, canvas.height / 2);
+        context.fillText(`${symbolText} - ${translatedName}`, canvas.width / 2, canvas.height / 2);
 
         const texture = new THREE.CanvasTexture(canvas);
         texture.needsUpdate = true;

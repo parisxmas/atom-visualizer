@@ -17,7 +17,12 @@ export const atoms = [
     boiling: -252.87,
     density: 8.988e-05,
     yearDiscovered: 1766,
-    uses: "Fuel cells, ammonia production, rocket fuel"
+    uses: "Fuel cells, ammonia production, rocket fuel",
+    isotopes: [
+      { mass: 1, neutrons: 0, name: "Protium", abundance: "99.98%", stable: true },
+      { mass: 2, neutrons: 1, name: "Deuterium", abundance: "0.02%", stable: true },
+      { mass: 3, neutrons: 2, name: "Tritium", abundance: "trace", stable: false }
+    ]
   },
   {
     name: "Helium",
@@ -117,7 +122,12 @@ export const atoms = [
     boiling: 4027,
     density: 2.267,
     yearDiscovered: -3750,
-    uses: "Steel, plastics, diamonds, graphite"
+    uses: "Steel, plastics, diamonds, graphite",
+    isotopes: [
+      { mass: 12, neutrons: 6, abundance: "98.9%", stable: true },
+      { mass: 13, neutrons: 7, abundance: "1.1%", stable: true },
+      { mass: 14, neutrons: 8, abundance: "trace", stable: false }
+    ]
   },
   {
     name: "Nitrogen",
