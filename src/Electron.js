@@ -1,13 +1,14 @@
 import * as THREE from 'three';
+import { getSorbitalPath, getPorbitalPath, getDorbitalPath, getForbitalPath } from './OrbitalShapes.js';
 
 export class Electron {
-    constructor(radius = 0.2, orbitRadiusX = 2, orbitRadiusY = 2, speed = 1, color = 0x00ffff, orbitColor = 0x333333) {
+    constructor(radius = 0.2, orbitalType = 's', orbitalAxis = 0, shellRadius = 5, speed = 1, color = 0x00ffff, orbitColor = 0x333333) {
         this.radius = radius;
-        this.orbitRadiusX = orbitRadiusX;
-        this.orbitRadiusY = orbitRadiusY;
+        this.orbitalType = orbitalType;
+        this.orbitalAxis = orbitalAxis;
+        this.shellRadius = shellRadius;
         this.speed = speed;
-        this.angle = Math.random() * Math.PI * 2;
-        this.orbitAxis = new THREE.Vector3(Math.random(), Math.random(), Math.random()).normalize();
+        this.pathIndex = Math.random() * 100; // Random starting position on path
 
         const geometry = new THREE.SphereGeometry(this.radius, 16, 16);
         const material = new THREE.MeshStandardMaterial({
@@ -18,7 +19,7 @@ export class Electron {
         });
         this.mesh = new THREE.Mesh(geometry, material);
 
-        this.group = new THREE.Group(); // Initialize group early
+        this.group = new THREE.Group();
 
         // Add Glow Sprite
         const canvas = document.createElement('canvas');
@@ -42,62 +43,80 @@ export class Electron {
             opacity: 1.0
         });
         this.glowSprite = new THREE.Sprite(glowMaterial);
-        this.glowSprite.scale.set(radius * 12, radius * 12, 1); // Much bigger glow
-        this.glowSprite.raycast = () => { }; // Disable raycast
+        this.glowSprite.scale.set(radius * 12, radius * 12, 1);
+        this.glowSprite.raycast = () => { };
         this.mesh.add(this.glowSprite);
 
-        // Trail Setup (Particle System)
+        // Trail Setup
         this.trailContainer = new THREE.Group();
         this.group.add(this.trailContainer);
         this.group.add(this.mesh);
 
-        // Orbit Path (Visual ring)
-        const orbitCurve = new THREE.EllipseCurve(
-            0, 0,            // ax, aY
-            orbitRadiusX, orbitRadiusY, // xRadius, yRadius
-            0, 2 * Math.PI,  // aStartAngle, aEndAngle
-            false,            // aClockwise
-            0                 // aRotation
-        );
+        // Generate orbital path based on type
+        this.generateOrbitalPath(orbitColor);
+    }
 
-        const points = orbitCurve.getPoints(50);
-        const orbitGeometry = new THREE.BufferGeometry().setFromPoints(points);
-        const orbitMaterial = new THREE.LineBasicMaterial({ color: orbitColor, transparent: true, opacity: 0.15 }); // More transparent orbit lines
+    generateOrbitalPath(orbitColor) {
+        let pathPoints;
+
+        switch (this.orbitalType) {
+            case 's':
+                pathPoints = getSorbitalPath(this.shellRadius);
+                break;
+            case 'p':
+                // orbitalAxis: 0=x, 1=y, 2=z
+                const axis = ['x', 'y', 'z'][this.orbitalAxis % 3];
+                pathPoints = getPorbitalPath(this.shellRadius, axis);
+                break;
+            case 'd':
+                pathPoints = getDorbitalPath(this.shellRadius, this.orbitalAxis % 5);
+                break;
+            case 'f':
+                pathPoints = getForbitalPath(this.shellRadius, this.orbitalAxis % 7);
+                break;
+            default:
+                pathPoints = getSorbitalPath(this.shellRadius);
+        }
+
+        // Store path points for animation
+        this.pathPoints = pathPoints;
+
+        // Create visual orbit line
+        const orbitGeometry = new THREE.BufferGeometry().setFromPoints(pathPoints);
+        const orbitMaterial = new THREE.LineBasicMaterial({
+            color: orbitColor,
+            transparent: true,
+            opacity: 0.15
+        });
         this.orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
-        this.orbitLine.raycast = () => { }; // Disable raycast
-
-        // Rotate orbit line to match axis
-        // This is a bit tricky with EllipseCurve which is 2D. 
-        // Easier to just rotate the container group.
-
-        this.group.add(this.orbitLine); // Add orbit line to group
-
-        // Random orientation for the orbit
-        this.group.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), this.orbitAxis);
+        this.orbitLine.raycast = () => { };
+        this.group.add(this.orbitLine);
     }
 
     update(time) {
-        this.angle += this.speed * 0.02;
+        // Move along the orbital path
+        this.pathIndex += this.speed * 0.5;
 
-        // Update position
-        const x = Math.cos(this.angle) * this.orbitRadiusX;
-        const y = Math.sin(this.angle) * this.orbitRadiusY;
-        const z = 0;
+        if (this.pathPoints && this.pathPoints.length > 0) {
+            const index = Math.floor(this.pathIndex) % this.pathPoints.length;
+            const nextIndex = (index + 1) % this.pathPoints.length;
+            const t = this.pathIndex % 1;
 
-        this.mesh.position.set(x, y, z);
+            // Interpolate between points for smooth movement
+            const currentPoint = this.pathPoints[index];
+            const nextPoint = this.pathPoints[nextIndex];
+
+            this.mesh.position.lerpVectors(currentPoint, nextPoint, t);
+        }
 
         // Spawn trail particle
-        if (Math.random() > 0.5) { // Don't spawn every frame to save perf
-            // Let's use the same glow texture for trail particles but smaller
+        if (Math.random() > 0.5) {
             const trailSprite = this.glowSprite.clone();
             trailSprite.scale.set(2.0, 2.0, 1);
-
-            // We need to clone material to have independent opacity
             trailSprite.material = this.glowSprite.material.clone();
             trailSprite.material.opacity = 0.3;
-
             trailSprite.position.copy(this.mesh.position);
-            trailSprite.raycast = () => { }; // Disable raycast
+            trailSprite.raycast = () => { };
             this.trailContainer.add(trailSprite);
         }
 
@@ -108,7 +127,7 @@ export class Electron {
             p.scale.multiplyScalar(0.95);
             if (p.material.opacity <= 0) {
                 this.trailContainer.remove(p);
-                if (p.material) p.material.dispose(); // Fix memory leak
+                if (p.material) p.material.dispose();
             }
         }
     }

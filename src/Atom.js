@@ -62,47 +62,63 @@ export class Atom {
 
     createElectrons() {
         const electronCount = this.data.electrons;
-        // Shell configuration (simplified: 2, 8, 18...)
-        // Shell 1: 2
-        // Shell 2: 8
-        // Shell 3: 18
 
-        // Define colors for each shell
-        const shellColors = [
-            0x00ffff, // Shell 1: Cyan
-            0xff00ff, // Shell 2: Magenta
-            0xffff00, // Shell 3: Yellow
-            0x00ff00, // Shell 4: Green
-            0xff8800, // Shell 5: Orange
+        // Define orbital filling order (Aufbau principle)
+        // Format: { type, shell, suborbital, capacity, radius }
+        const orbitalOrder = [
+            { type: 's', shell: 1, suborbital: 0, capacity: 2, radius: 5 },
+            { type: 's', shell: 2, suborbital: 0, capacity: 2, radius: 7 },
+            { type: 'p', shell: 2, suborbital: 0, capacity: 2, radius: 7 },  // px
+            { type: 'p', shell: 2, suborbital: 1, capacity: 2, radius: 7 },  // py
+            { type: 'p', shell: 2, suborbital: 2, capacity: 2, radius: 7 },  // pz
+            { type: 's', shell: 3, suborbital: 0, capacity: 2, radius: 9 },
+            { type: 'p', shell: 3, suborbital: 0, capacity: 2, radius: 9 },
+            { type: 'p', shell: 3, suborbital: 1, capacity: 2, radius: 9 },
+            { type: 'p', shell: 3, suborbital: 2, capacity: 2, radius: 9 },
+            { type: 's', shell: 4, suborbital: 0, capacity: 2, radius: 11 },
+            { type: 'd', shell: 3, suborbital: 0, capacity: 2, radius: 9.5 },  // dxy
+            { type: 'd', shell: 3, suborbital: 1, capacity: 2, radius: 9.5 },  // dxz
+            { type: 'd', shell: 3, suborbital: 2, capacity: 2, radius: 9.5 },  // dyz
+            { type: 'd', shell: 3, suborbital: 3, capacity: 2, radius: 9.5 },  // dx2-y2
+            { type: 'd', shell: 3, suborbital: 4, capacity: 2, radius: 9.5 },  // dz2
+            { type: 'p', shell: 4, suborbital: 0, capacity: 2, radius: 11 },
+            { type: 'p', shell: 4, suborbital: 1, capacity: 2, radius: 11 },
+            { type: 'p', shell: 4, suborbital: 2, capacity: 2, radius: 11 },
         ];
 
+        // Orbital colors
+        const orbitalColors = {
+            's': 0x00ffff,  // Cyan
+            'p': 0xff00ff,  // Magenta
+            'd': 0xffff00,  // Yellow
+            'f': 0x00ff00   // Green
+        };
+
         let remainingElectrons = electronCount;
-        let shellIndex = 1;
 
-        while (remainingElectrons > 0) {
-            const shellCapacity = 2 * shellIndex * shellIndex;
-            const electronsInThisShell = Math.min(remainingElectrons, shellCapacity);
+        for (const orbital of orbitalOrder) {
+            if (remainingElectrons <= 0) break;
 
-            const orbitRadius = 3 + shellIndex * 2; // Base radius + spacing
-            const orbitColor = shellColors[(shellIndex - 1) % shellColors.length]; // Get color for this shell
+            const electronsInOrbital = Math.min(remainingElectrons, orbital.capacity);
+            const orbitColor = orbitalColors[orbital.type];
 
-            for (let i = 0; i < electronsInThisShell; i++) {
-                // Add some randomness to the orbit radius to make them distinct
-                const radiusVariation = (Math.random() - 0.5) * 1.0; // +/- 0.5
-                const baseRadius = orbitRadius + radiusVariation;
+            // Create electrons for this orbital
+            for (let i = 0; i < electronsInOrbital; i++) {
+                const electron = new Electron(
+                    0.2,                    // radius
+                    orbital.type,           // orbitalType (s, p, d, f)
+                    orbital.suborbital,     // orbitalAxis/orientation
+                    orbital.radius,         // shellRadius
+                    1.0 / orbital.shell,    // speed (slower for outer shells)
+                    this.data.electronColor, // electron color
+                    orbitColor              // orbit line color
+                );
 
-                // Elliptical factor
-                const eccentricity = 0.8 + Math.random() * 0.4; // 0.8 to 1.2 ratio
-                const radiusX = baseRadius;
-                const radiusY = baseRadius * eccentricity;
-
-                const electron = new Electron(0.2, radiusX, radiusY, 1.0 / shellIndex, this.data.electronColor, orbitColor);
                 this.electrons.push(electron);
                 this.group.add(electron.group);
             }
 
-            remainingElectrons -= electronsInThisShell;
-            shellIndex++;
+            remainingElectrons -= electronsInOrbital;
         }
     }
 

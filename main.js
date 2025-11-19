@@ -184,15 +184,55 @@ function onMouseMove(event) {
     const intersects = raycaster.intersectObjects(scene.children, true);
 
     let foundAtom = null;
+    let foundNucleon = null;
 
     if (intersects.length > 0) {
         let object = intersects[0].object;
+
+        // Check if hovering over a nucleon (proton or neutron)
+        if (object.geometry && object.geometry.type === 'SphereGeometry' && object.parent && object.parent.name === 'nucleus') {
+            foundNucleon = object;
+        }
+
+        // Check if hovering over nucleus to find atom
         if (object.parent && object.parent.name === 'nucleus') {
             const atomGroup = object.parent.parent;
             if (atomObjects.some(a => a.group === atomGroup)) {
                 foundAtom = atomObjects.find(a => a.group === atomGroup);
             }
         }
+    }
+
+    // Handle nucleon hover effect
+    if (window.hoveredNucleon !== foundNucleon) {
+        // Reset previous hovered nucleon
+        if (window.hoveredNucleon && window.hoveredNucleon.material) {
+            if (!window.hoveredNucleon.material.emissive) {
+                window.hoveredNucleon.material.emissive = new THREE.Color(0x000000);
+            }
+            window.hoveredNucleon.material.emissive.setHex(0x000000);
+            window.hoveredNucleon.material.emissiveIntensity = 0;
+        }
+
+        // Highlight new hovered nucleon with bright colors
+        if (foundNucleon && foundNucleon.material && foundNucleon.material.color) {
+            // Create emissive property if it doesn't exist
+            if (!foundNucleon.material.emissive) {
+                foundNucleon.material.emissive = new THREE.Color(0x000000);
+            }
+
+            console.log('Found nucleon to highlight!', foundNucleon);
+            // Use bright yellow for protons (red base) and bright cyan for neutrons (gray base)
+            const isProton = foundNucleon.material.color.r > 0.5; // Red channel high = proton
+            const highlightColor = isProton ? 0xffff00 : 0x00ffff; // Yellow for protons, cyan for neutrons
+
+            console.log('Setting emissive to:', highlightColor.toString(16), 'isProton:', isProton);
+            foundNucleon.material.emissive.setHex(highlightColor);
+            foundNucleon.material.emissiveIntensity = 2.0; // Much brighter
+            console.log('Emissive set:', foundNucleon.material.emissive, 'intensity:', foundNucleon.material.emissiveIntensity);
+        }
+
+        window.hoveredNucleon = foundNucleon;
     }
 
     setHoverAtom(foundAtom);
@@ -260,6 +300,9 @@ window.addEventListener('click', (event) => {
         }
     }
 });
+
+// Add mousemove event listener for hover effects
+window.addEventListener('mousemove', onMouseMove);
 
 
 

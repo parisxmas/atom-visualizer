@@ -9,6 +9,8 @@ export class Nucleon {
         const geometry = new THREE.SphereGeometry(this.radius, 32, 32);
         const material = new THREE.MeshPhysicalMaterial({
             color: color,
+            emissive: 0x000000, // Initialize emissive to black
+            emissiveIntensity: 0, // Start with no emission
             roughness: 0.3,
             metalness: 0.1,
             clearcoat: 1.0,
