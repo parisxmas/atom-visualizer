@@ -7,7 +7,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Atom } from './src/Atom.js';
 import { atoms } from './src/data.js';
 import TWEEN from '@tweenjs/tween.js';
-import { getCurrentLanguage, getElementName, getReactivity } from './src/translations.js';
+import { getCurrentLanguage, getElementName, getReactivity, getUIText } from './src/translations.js';
 
 // Detect browser language
 const currentLanguage = getCurrentLanguage();
@@ -86,6 +86,9 @@ atoms.slice(0, 27).forEach((atomData, index) => {
 const periodicTableOverlay = document.getElementById('periodic-table-overlay');
 const periodicTableGrid = document.getElementById('periodic-table-grid');
 const atomsButton = document.getElementById('atoms-button');
+
+// Set translated button text
+atomsButton.textContent = getUIText('Periodic Table', currentLanguage);
 
 atomsButton.addEventListener('click', () => {
     updatePeriodicTableHighlights();

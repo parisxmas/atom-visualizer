@@ -370,6 +370,19 @@ export function getSectionHeader(key, lang = 'en') {
     return translations[key]?.[lang] || translations[key]?.['en'] || key;
 }
 
+// Get translated UI text
+export function getUIText(key, lang = 'en') {
+    const translations = {
+        'Periodic Table': {
+            'tr': 'Periyodik Tablo',
+            'bg': 'Периодична таблица',
+            'en': 'Periodic Table'
+        }
+    };
+
+    return translations[key]?.[lang] || translations[key]?.['en'] || key;
+}
+
 // Get translated uses
 export function getUses(elementName, usesText, lang = 'en') {
     if (lang === 'en') return usesText;
