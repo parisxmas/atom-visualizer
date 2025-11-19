@@ -112,8 +112,8 @@ export class Electron {
     }
 
     update(time) {
-        // Move along the orbital path
-        this.pathIndex += this.speed * 0.08; // Further reduced for even slower movement
+        // Move along the orbital path - all electrons use same base speed
+        this.pathIndex += this.speed * 0.4; // Increased to 0.4 for faster movement
 
         if (this.pathPoints && this.pathPoints.length > 0) {
             const index = Math.floor(this.pathIndex) % this.pathPoints.length;

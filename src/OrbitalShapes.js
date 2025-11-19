@@ -3,23 +3,22 @@ import * as THREE from 'three';
 /**
  * Generate path points for s orbital (spherical)
  * s orbitals are spherical probability clouds
- * Uses a Fibonacci sphere pattern for better coverage
+ * Creates a smooth continuous spiral path around the sphere
  */
-export function getSorbitalPath(radius, pointCount = 60) {
+export function getSorbitalPath(radius, pointCount = 120) {
     const points = [];
-    const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // ~2.4 radians
 
-    // Create a smooth path that covers the sphere more uniformly
+    // Create a smooth continuous spherical spiral for elliptical movement
     for (let i = 0; i < pointCount; i++) {
-        const t = i / pointCount;
+        const t = (i / pointCount) * Math.PI * 4; // 2 full loops
 
-        // Use spherical Fibonacci lattice for uniform distribution
-        const theta = goldenAngle * i; // Azimuthal angle
-        const phi = Math.acos(1 - 2 * t); // Polar angle
+        // Spherical spiral with smooth continuous path
+        const theta = t; // Azimuthal angle (around equator)
+        const phi = Math.sin(t * 0.5) * Math.PI * 0.8; // Polar angle (up and down)
 
-        const x = radius * Math.sin(phi) * Math.cos(theta);
-        const y = radius * Math.sin(phi) * Math.sin(theta);
-        const z = radius * Math.cos(phi);
+        const x = radius * Math.cos(phi) * Math.cos(theta);
+        const y = radius * Math.cos(phi) * Math.sin(theta);
+        const z = radius * Math.sin(phi);
 
         points.push(new THREE.Vector3(x, y, z));
     }
@@ -30,25 +29,23 @@ export function getSorbitalPath(radius, pointCount = 60) {
 /**
  * Generate path points for p orbital (dumbbell shape)
  * p orbitals have three orientations: px, py, pz
- * Creates a figure-8 pattern through both lobes
+ * Creates a smooth figure-8 pattern through both lobes
  */
-export function getPorbitalPath(radius, axis = 'x', pointCount = 60) {
+export function getPorbitalPath(radius, axis = 'x', pointCount = 120) {
     const points = [];
 
     // p orbitals are dumbbell-shaped with two lobes
-    // Create a figure-8 path that goes through both lobes
+    // Create a smooth continuous figure-8 path
     for (let i = 0; i < pointCount; i++) {
         const t = (i / pointCount) * Math.PI * 2;
 
-        // Create a proper figure-8 (lemniscate) that crosses at origin
-        // r = a * sqrt(cos(2*theta))
-        // This creates two distinct lobes
+        // Create a smooth figure-8 (lemniscate) 
         const angle = t;
         const lobeRadius = radius * 1.3 * Math.sqrt(Math.abs(Math.cos(2 * angle)));
 
-        // Add some variation in the perpendicular directions for 3D effect
-        const perpVar1 = radius * 0.25 * Math.sin(3 * t);
-        const perpVar2 = radius * 0.25 * Math.cos(3 * t);
+        // Add smooth variation in perpendicular directions
+        const perpVar1 = radius * 0.2 * Math.sin(3 * t);
+        const perpVar2 = radius * 0.2 * Math.cos(3 * t);
 
         let x, y, z;
 
@@ -78,9 +75,9 @@ export function getPorbitalPath(radius, axis = 'x', pointCount = 60) {
 /**
  * Generate path points for d orbital (cloverleaf shape)
  * d orbitals have 5 different orientations
- * Creates 4-lobed cloverleaf patterns
+ * Creates smooth 4-lobed cloverleaf patterns
  */
-export function getDorbitalPath(radius, type = 0, pointCount = 80) {
+export function getDorbitalPath(radius, type = 0, pointCount = 150) {
     const points = [];
 
     for (let i = 0; i < pointCount; i++) {
@@ -151,7 +148,7 @@ export function getDorbitalPath(radius, type = 0, pointCount = 80) {
  * f orbitals have 7 different orientations
  * Creates complex multi-lobed patterns
  */
-export function getForbitalPath(radius, type = 0, pointCount = 100) {
+export function getForbitalPath(radius, type = 0, pointCount = 180) {
     const points = [];
 
     for (let i = 0; i < pointCount; i++) {
