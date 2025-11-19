@@ -9,7 +9,9 @@ export const atoms = [
     color: 0xff0000,
     electronColor: 0x00ffff,
     xpos: 1,
-    ypos: 1
+    ypos: 1,
+    reactivity: "Explosive",
+    isReactive: true
   },
   {
     name: "Helium",
@@ -21,7 +23,9 @@ export const atoms = [
     color: 0x00ff4a,
     electronColor: 0xff00b4,
     xpos: 18,
-    ypos: 1
+    ypos: 1,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Lithium",
@@ -33,7 +37,9 @@ export const atoms = [
     color: 0x9400ff,
     electronColor: 0x6aff00,
     xpos: 1,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Beryllium",
@@ -45,7 +51,9 @@ export const atoms = [
     color: 0xffdf00,
     electronColor: 0x001fff,
     xpos: 2,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Boron",
@@ -57,7 +65,9 @@ export const atoms = [
     color: 0x00d4ff,
     electronColor: 0xff2a00,
     xpos: 13,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Carbon",
@@ -69,7 +79,9 @@ export const atoms = [
     color: 0xff008a,
     electronColor: 0x00ff74,
     xpos: 14,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Nitrogen",
@@ -81,7 +93,9 @@ export const atoms = [
     color: 0x3fff00,
     electronColor: 0xbf00ff,
     xpos: 15,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Oxygen",
@@ -93,7 +107,9 @@ export const atoms = [
     color: 0x0a00ff,
     electronColor: 0xf4ff00,
     xpos: 16,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Fluorine",
@@ -105,7 +121,9 @@ export const atoms = [
     color: 0xff5400,
     electronColor: 0x00a9ff,
     xpos: 17,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Neon",
@@ -117,7 +135,9 @@ export const atoms = [
     color: 0x00ff9f,
     electronColor: 0xff005f,
     xpos: 18,
-    ypos: 2
+    ypos: 2,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Sodium",
@@ -129,7 +149,9 @@ export const atoms = [
     color: 0xe900ff,
     electronColor: 0x15ff00,
     xpos: 1,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Magnesium",
@@ -141,7 +163,9 @@ export const atoms = [
     color: 0xc9ff00,
     electronColor: 0x3500ff,
     xpos: 2,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Aluminum",
@@ -153,7 +177,9 @@ export const atoms = [
     color: 0x007fff,
     electronColor: 0xff7f00,
     xpos: 13,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Silicon",
@@ -165,7 +191,9 @@ export const atoms = [
     color: 0xff0035,
     electronColor: 0x00ffc9,
     xpos: 14,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Phosphorus",
@@ -177,7 +205,9 @@ export const atoms = [
     color: 0x00ff15,
     electronColor: 0xff00e9,
     xpos: 15,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Sulfur",
@@ -189,7 +219,9 @@ export const atoms = [
     color: 0x5f00ff,
     electronColor: 0x9fff00,
     xpos: 16,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Chlorine",
@@ -201,7 +233,9 @@ export const atoms = [
     color: 0xffaa00,
     electronColor: 0x0054ff,
     xpos: 17,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Argon",
@@ -213,7 +247,9 @@ export const atoms = [
     color: 0x00fff4,
     electronColor: 0xff000a,
     xpos: 18,
-    ypos: 3
+    ypos: 3,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Potassium",
@@ -225,7 +261,9 @@ export const atoms = [
     color: 0xff00bf,
     electronColor: 0x00ff3f,
     xpos: 1,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Calcium",
@@ -237,7 +275,9 @@ export const atoms = [
     color: 0x74ff00,
     electronColor: 0x8a00ff,
     xpos: 2,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Scandium",
@@ -249,7 +289,9 @@ export const atoms = [
     color: 0x002aff,
     electronColor: 0xffd400,
     xpos: 3,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Titanium",
@@ -261,7 +303,9 @@ export const atoms = [
     color: 0xff1f00,
     electronColor: 0x00dfff,
     xpos: 4,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Vanadium",
@@ -273,7 +317,9 @@ export const atoms = [
     color: 0x00ff6a,
     electronColor: 0xff0094,
     xpos: 5,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Chromium",
@@ -285,7 +331,9 @@ export const atoms = [
     color: 0xb400ff,
     electronColor: 0x4aff00,
     xpos: 6,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Manganese",
@@ -297,7 +345,9 @@ export const atoms = [
     color: 0xffff00,
     electronColor: 0x0000ff,
     xpos: 7,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Iron",
@@ -309,7 +359,9 @@ export const atoms = [
     color: 0x00b4ff,
     electronColor: 0xff4a00,
     xpos: 8,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Cobalt",
@@ -321,7 +373,9 @@ export const atoms = [
     color: 0xff006a,
     electronColor: 0x00ff94,
     xpos: 9,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Nickel",
@@ -333,7 +387,9 @@ export const atoms = [
     color: 0x1fff00,
     electronColor: 0xdf00ff,
     xpos: 10,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Copper",
@@ -345,7 +401,9 @@ export const atoms = [
     color: 0x2a00ff,
     electronColor: 0xd4ff00,
     xpos: 11,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Zinc",
@@ -357,7 +415,9 @@ export const atoms = [
     color: 0xff7400,
     electronColor: 0x008aff,
     xpos: 12,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Gallium",
@@ -369,7 +429,9 @@ export const atoms = [
     color: 0x00ffbf,
     electronColor: 0xff003f,
     xpos: 13,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Germanium",
@@ -381,7 +443,9 @@ export const atoms = [
     color: 0xff00f4,
     electronColor: 0x00ff0a,
     xpos: 14,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Arsenic",
@@ -393,7 +457,9 @@ export const atoms = [
     color: 0xaaff00,
     electronColor: 0x5400ff,
     xpos: 15,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Selenium",
@@ -405,7 +471,9 @@ export const atoms = [
     color: 0x005fff,
     electronColor: 0xff9f00,
     xpos: 16,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Bromine",
@@ -417,7 +485,9 @@ export const atoms = [
     color: 0xff0015,
     electronColor: 0x00ffe9,
     xpos: 17,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Krypton",
@@ -429,7 +499,9 @@ export const atoms = [
     color: 0x00ff35,
     electronColor: 0xff00c9,
     xpos: 18,
-    ypos: 4
+    ypos: 4,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Rubidium",
@@ -441,7 +513,9 @@ export const atoms = [
     color: 0x7f00ff,
     electronColor: 0x7fff00,
     xpos: 1,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Strontium",
@@ -453,7 +527,9 @@ export const atoms = [
     color: 0xffc900,
     electronColor: 0x0035ff,
     xpos: 2,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Yttrium",
@@ -465,7 +541,9 @@ export const atoms = [
     color: 0x00e9ff,
     electronColor: 0xff1500,
     xpos: 3,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Zirconium",
@@ -477,7 +555,9 @@ export const atoms = [
     color: 0xff009f,
     electronColor: 0x00ff5f,
     xpos: 4,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Niobium",
@@ -489,7 +569,9 @@ export const atoms = [
     color: 0x54ff00,
     electronColor: 0xaa00ff,
     xpos: 5,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Molybdenum",
@@ -501,7 +583,9 @@ export const atoms = [
     color: 0x000aff,
     electronColor: 0xfff400,
     xpos: 6,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Technetium",
@@ -513,7 +597,9 @@ export const atoms = [
     color: 0xff3f00,
     electronColor: 0x00bfff,
     xpos: 7,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Ruthenium",
@@ -525,7 +611,9 @@ export const atoms = [
     color: 0x00ff8a,
     electronColor: 0xff0074,
     xpos: 8,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Rhodium",
@@ -537,7 +625,9 @@ export const atoms = [
     color: 0xd400ff,
     electronColor: 0x2aff00,
     xpos: 9,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Palladium",
@@ -549,7 +639,9 @@ export const atoms = [
     color: 0xdfff00,
     electronColor: 0x1f00ff,
     xpos: 10,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Silver",
@@ -561,7 +653,9 @@ export const atoms = [
     color: 0x0094ff,
     electronColor: 0xff6a00,
     xpos: 11,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Cadmium",
@@ -573,7 +667,9 @@ export const atoms = [
     color: 0xff004a,
     electronColor: 0x00ffb4,
     xpos: 12,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Indium",
@@ -585,7 +681,9 @@ export const atoms = [
     color: 0x00ff00,
     electronColor: 0xff00ff,
     xpos: 13,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Tin",
@@ -597,7 +695,9 @@ export const atoms = [
     color: 0x4a00ff,
     electronColor: 0xb4ff00,
     xpos: 14,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Antimony",
@@ -609,7 +709,9 @@ export const atoms = [
     color: 0xff9400,
     electronColor: 0x006aff,
     xpos: 15,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Tellurium",
@@ -621,7 +723,9 @@ export const atoms = [
     color: 0x00ffdf,
     electronColor: 0xff001f,
     xpos: 16,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Iodine",
@@ -633,7 +737,9 @@ export const atoms = [
     color: 0xff00d4,
     electronColor: 0x00ff2a,
     xpos: 17,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Xenon",
@@ -645,7 +751,9 @@ export const atoms = [
     color: 0x8aff00,
     electronColor: 0x7400ff,
     xpos: 18,
-    ypos: 5
+    ypos: 5,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Cesium",
@@ -657,7 +765,9 @@ export const atoms = [
     color: 0x003fff,
     electronColor: 0xffbf00,
     xpos: 1,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Barium",
@@ -669,7 +779,9 @@ export const atoms = [
     color: 0xff0a00,
     electronColor: 0x00f4ff,
     xpos: 2,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Lanthanum",
@@ -681,7 +793,9 @@ export const atoms = [
     color: 0x00ff55,
     electronColor: 0xff00aa,
     xpos: 3,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Cerium",
@@ -693,7 +807,9 @@ export const atoms = [
     color: 0x9f00ff,
     electronColor: 0x5fff00,
     xpos: 4,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Praseodymium",
@@ -705,7 +821,9 @@ export const atoms = [
     color: 0xffe900,
     electronColor: 0x0015ff,
     xpos: 5,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Neodymium",
@@ -717,7 +835,9 @@ export const atoms = [
     color: 0x00c9ff,
     electronColor: 0xff3500,
     xpos: 6,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Promethium",
@@ -729,7 +849,9 @@ export const atoms = [
     color: 0xff007f,
     electronColor: 0x00ff7f,
     xpos: 7,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Samarium",
@@ -741,7 +863,9 @@ export const atoms = [
     color: 0x35ff00,
     electronColor: 0xc900ff,
     xpos: 8,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Europium",
@@ -753,7 +877,9 @@ export const atoms = [
     color: 0x1500ff,
     electronColor: 0xe9ff00,
     xpos: 9,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Gadolinium",
@@ -765,7 +891,9 @@ export const atoms = [
     color: 0xff5f00,
     electronColor: 0x009fff,
     xpos: 10,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Terbium",
@@ -777,7 +905,9 @@ export const atoms = [
     color: 0x00ffa9,
     electronColor: 0xff0055,
     xpos: 11,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Dysprosium",
@@ -789,7 +919,9 @@ export const atoms = [
     color: 0xf400ff,
     electronColor: 0x0aff00,
     xpos: 12,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Holmium",
@@ -801,7 +933,9 @@ export const atoms = [
     color: 0xbfff00,
     electronColor: 0x3f00ff,
     xpos: 13,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Erbium",
@@ -813,7 +947,9 @@ export const atoms = [
     color: 0x0074ff,
     electronColor: 0xff8a00,
     xpos: 14,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Thulium",
@@ -825,7 +961,9 @@ export const atoms = [
     color: 0xff002a,
     electronColor: 0x00ffd4,
     xpos: 15,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Ytterbium",
@@ -837,7 +975,9 @@ export const atoms = [
     color: 0x00ff1f,
     electronColor: 0xff00df,
     xpos: 16,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Lutetium",
@@ -849,7 +989,9 @@ export const atoms = [
     color: 0x6a00ff,
     electronColor: 0x94ff00,
     xpos: 17,
-    ypos: 8
+    ypos: 8,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Hafnium",
@@ -861,7 +1003,9 @@ export const atoms = [
     color: 0xffb400,
     electronColor: 0x004aff,
     xpos: 4,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Tantalum",
@@ -873,7 +1017,9 @@ export const atoms = [
     color: 0x00ffff,
     electronColor: 0xff0000,
     xpos: 5,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Tungsten",
@@ -885,7 +1031,9 @@ export const atoms = [
     color: 0xff00b4,
     electronColor: 0x00ff4a,
     xpos: 6,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Rhenium",
@@ -897,7 +1045,9 @@ export const atoms = [
     color: 0x6aff00,
     electronColor: 0x9400ff,
     xpos: 7,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Osmium",
@@ -909,7 +1059,9 @@ export const atoms = [
     color: 0x001fff,
     electronColor: 0xffdf00,
     xpos: 8,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Iridium",
@@ -921,7 +1073,9 @@ export const atoms = [
     color: 0xff2a00,
     electronColor: 0x00d4ff,
     xpos: 9,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Platinum",
@@ -933,7 +1087,9 @@ export const atoms = [
     color: 0x00ff74,
     electronColor: 0xff008a,
     xpos: 10,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Gold",
@@ -945,7 +1101,9 @@ export const atoms = [
     color: 0xbf00ff,
     electronColor: 0x3fff00,
     xpos: 11,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Noble Metal (Unreactive)",
+    isReactive: false
   },
   {
     name: "Mercury",
@@ -957,7 +1115,9 @@ export const atoms = [
     color: 0xf4ff00,
     electronColor: 0x0a00ff,
     xpos: 12,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Thallium",
@@ -969,7 +1129,9 @@ export const atoms = [
     color: 0x00a9ff,
     electronColor: 0xff5400,
     xpos: 13,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Lead",
@@ -981,7 +1143,9 @@ export const atoms = [
     color: 0xff005f,
     electronColor: 0x00ff9f,
     xpos: 14,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Bismuth",
@@ -993,7 +1157,9 @@ export const atoms = [
     color: 0x15ff00,
     electronColor: 0xe900ff,
     xpos: 15,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Polonium",
@@ -1005,7 +1171,9 @@ export const atoms = [
     color: 0x3500ff,
     electronColor: 0xc9ff00,
     xpos: 16,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Astatine",
@@ -1017,7 +1185,9 @@ export const atoms = [
     color: 0xff7f00,
     electronColor: 0x007fff,
     xpos: 17,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Radon",
@@ -1029,7 +1199,9 @@ export const atoms = [
     color: 0x00ffc9,
     electronColor: 0xff0035,
     xpos: 18,
-    ypos: 6
+    ypos: 6,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
   {
     name: "Francium",
@@ -1041,7 +1213,9 @@ export const atoms = [
     color: 0xff00e9,
     electronColor: 0x00ff15,
     xpos: 1,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Alkali Metal (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Radium",
@@ -1053,7 +1227,9 @@ export const atoms = [
     color: 0x9fff00,
     electronColor: 0x5f00ff,
     xpos: 2,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Alkaline Earth Metal (Reactive)",
+    isReactive: true
   },
   {
     name: "Actinium",
@@ -1065,7 +1241,9 @@ export const atoms = [
     color: 0x0054ff,
     electronColor: 0xffaa00,
     xpos: 3,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Thorium",
@@ -1077,7 +1255,9 @@ export const atoms = [
     color: 0xff000a,
     electronColor: 0x00fff4,
     xpos: 4,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Protactinium",
@@ -1089,7 +1269,9 @@ export const atoms = [
     color: 0x00ff3f,
     electronColor: 0xff00bf,
     xpos: 5,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Uranium",
@@ -1101,7 +1283,9 @@ export const atoms = [
     color: 0x8a00ff,
     electronColor: 0x74ff00,
     xpos: 6,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Neptunium",
@@ -1113,7 +1297,9 @@ export const atoms = [
     color: 0xffd400,
     electronColor: 0x002aff,
     xpos: 7,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Plutonium",
@@ -1125,7 +1311,9 @@ export const atoms = [
     color: 0x00dfff,
     electronColor: 0xff1f00,
     xpos: 8,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Americium",
@@ -1137,7 +1325,9 @@ export const atoms = [
     color: 0xff0094,
     electronColor: 0x00ff6a,
     xpos: 9,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Curium",
@@ -1149,7 +1339,9 @@ export const atoms = [
     color: 0x4aff00,
     electronColor: 0xb400ff,
     xpos: 10,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Berkelium",
@@ -1161,7 +1353,9 @@ export const atoms = [
     color: 0x0000ff,
     electronColor: 0xffff00,
     xpos: 11,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Californium",
@@ -1173,7 +1367,9 @@ export const atoms = [
     color: 0xff4a00,
     electronColor: 0x00b4ff,
     xpos: 12,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Einsteinium",
@@ -1185,7 +1381,9 @@ export const atoms = [
     color: 0x00ff94,
     electronColor: 0xff006a,
     xpos: 13,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Fermium",
@@ -1197,7 +1395,9 @@ export const atoms = [
     color: 0xdf00ff,
     electronColor: 0x1fff00,
     xpos: 14,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Mendelevium",
@@ -1209,7 +1409,9 @@ export const atoms = [
     color: 0xd4ff00,
     electronColor: 0x2a00ff,
     xpos: 15,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Radioactive/Reactive",
+    isReactive: true
   },
   {
     name: "Nobelium",
@@ -1221,7 +1423,9 @@ export const atoms = [
     color: 0x008aff,
     electronColor: 0xff7400,
     xpos: 16,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Lawrencium",
@@ -1233,7 +1437,9 @@ export const atoms = [
     color: 0xff003f,
     electronColor: 0x00ffbf,
     xpos: 17,
-    ypos: 9
+    ypos: 9,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Rutherfordium",
@@ -1245,7 +1451,9 @@ export const atoms = [
     color: 0x00ff0a,
     electronColor: 0xff00f4,
     xpos: 4,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Dubnium",
@@ -1257,7 +1465,9 @@ export const atoms = [
     color: 0x5400ff,
     electronColor: 0xaaff00,
     xpos: 5,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Seaborgium",
@@ -1269,7 +1479,9 @@ export const atoms = [
     color: 0xff9f00,
     electronColor: 0x005fff,
     xpos: 6,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Bohrium",
@@ -1281,7 +1493,9 @@ export const atoms = [
     color: 0x00ffe9,
     electronColor: 0xff0015,
     xpos: 7,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Hassium",
@@ -1293,7 +1507,9 @@ export const atoms = [
     color: 0xff00c9,
     electronColor: 0x00ff35,
     xpos: 8,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Meitnerium",
@@ -1305,7 +1521,9 @@ export const atoms = [
     color: 0x7fff00,
     electronColor: 0x7f00ff,
     xpos: 9,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Darmstadtium",
@@ -1317,7 +1535,9 @@ export const atoms = [
     color: 0x0035ff,
     electronColor: 0xffc900,
     xpos: 10,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Roentgenium",
@@ -1329,7 +1549,9 @@ export const atoms = [
     color: 0xff1500,
     electronColor: 0x00e9ff,
     xpos: 11,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Copernicium",
@@ -1341,7 +1563,9 @@ export const atoms = [
     color: 0x00ff5f,
     electronColor: 0xff009f,
     xpos: 12,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Nihonium",
@@ -1353,7 +1577,9 @@ export const atoms = [
     color: 0xaa00ff,
     electronColor: 0x54ff00,
     xpos: 13,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Flerovium",
@@ -1365,7 +1591,9 @@ export const atoms = [
     color: 0xfff400,
     electronColor: 0x000aff,
     xpos: 14,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Moscovium",
@@ -1377,7 +1605,9 @@ export const atoms = [
     color: 0x00bfff,
     electronColor: 0xff3f00,
     xpos: 15,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Moderate",
+    isReactive: false
   },
   {
     name: "Livermorium",
@@ -1389,7 +1619,9 @@ export const atoms = [
     color: 0xff0074,
     electronColor: 0x00ff8a,
     xpos: 16,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Chalcogen (Reactive)",
+    isReactive: true
   },
   {
     name: "Tennessine",
@@ -1401,7 +1633,9 @@ export const atoms = [
     color: 0x2aff00,
     electronColor: 0xd400ff,
     xpos: 17,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Halogen (Highly Reactive)",
+    isReactive: true
   },
   {
     name: "Oganesson",
@@ -1413,6 +1647,8 @@ export const atoms = [
     color: 0x1f00ff,
     electronColor: 0xdfff00,
     xpos: 18,
-    ypos: 7
+    ypos: 7,
+    reactivity: "Noble Gas (Inert)",
+    isReactive: false
   },
 ];

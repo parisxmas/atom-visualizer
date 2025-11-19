@@ -140,6 +140,15 @@ body {
   width: 100%;
 }
 
+.periodic-atom.reactive .periodic-atom-symbol {
+  color: #ff4444;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.periodic-atom.reactive .periodic-atom-name {
+  color: #ffaaaa;
+}
+
 #atom-popup {
   position: fixed;
   display: none;

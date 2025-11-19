@@ -108,6 +108,10 @@ function createPeriodicTable() {
         const cell = document.createElement('div');
         cell.className = 'periodic-atom';
         cell.dataset.atomName = atomData.name; // Store name for highlighting logic
+        if (atomData.isReactive) {
+            cell.classList.add('reactive');
+        }
+
         cell.innerHTML = `
             <span class="periodic-atom-number">${atomData.atomicNumber}</span>
             <span class="periodic-atom-symbol">${atomData.symbol}</span>
@@ -128,6 +132,7 @@ function createPeriodicTable() {
                 <p><strong>Protons:</strong> ${atomData.protons}</p>
                 <p><strong>Neutrons:</strong> ${atomData.neutrons}</p>
                 <p><strong>Electrons:</strong> ${atomData.electrons}</p>
+                <p><strong>Reactivity:</strong> <span style="color: ${atomData.isReactive ? '#ff4444' : '#00ff00'}">${atomData.reactivity}</span></p>
             `;
 
             // Show popup

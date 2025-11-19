@@ -84,6 +84,37 @@ for i, (name, symbol) in enumerate(elements):
             if atomic_number < 89: xpos = atomic_number - 86
             else: xpos = atomic_number - 86 - 14
 
+    # Determine Reactivity
+    reactivity = "Moderate"
+    is_reactive = False
+    
+    if atomic_number == 1:
+        reactivity = "Explosive"
+        is_reactive = True
+    elif xpos == 18:
+        reactivity = "Noble Gas (Inert)"
+        is_reactive = False
+    elif xpos == 1 and atomic_number != 1:
+        reactivity = "Alkali Metal (Highly Reactive)"
+        is_reactive = True
+    elif xpos == 2:
+        reactivity = "Alkaline Earth Metal (Reactive)"
+        is_reactive = True
+    elif xpos == 17:
+        reactivity = "Halogen (Highly Reactive)"
+        is_reactive = True
+    elif xpos == 16:
+        reactivity = "Chalcogen (Reactive)"
+        is_reactive = True
+    elif 57 <= atomic_number <= 71 or 89 <= atomic_number <= 103:
+        reactivity = "Radioactive/Reactive"
+        is_reactive = True # Broad generalization
+    
+    # Special cases for noble metals
+    if symbol in ["Au", "Pt", "Ag", "Ir", "Os", "Pd", "Rh", "Ru"]:
+        reactivity = "Noble Metal (Unreactive)"
+        is_reactive = False
+
     print(f"  {{")
     print(f"    name: \"{name}\",")
     print(f"    symbol: \"{symbol}\",")
@@ -94,6 +125,8 @@ for i, (name, symbol) in enumerate(elements):
     print(f"    color: {color_hex},")
     print(f"    electronColor: {electron_color_hex},")
     print(f"    xpos: {xpos},")
-    print(f"    ypos: {ypos}")
+    print(f"    ypos: {ypos},")
+    print(f"    reactivity: \"{reactivity}\",")
+    print(f"    isReactive: {str(is_reactive).lower()}")
     print(f"  }},")
 print("];")
