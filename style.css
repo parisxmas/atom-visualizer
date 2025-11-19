@@ -68,3 +68,36 @@ body {
     display: none;
   }
 }
+
+#atom-popup {
+  position: fixed;
+  display: none;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 200, 255, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+  color: white;
+  z-index: 1001;
+  width: 200px;
+  pointer-events: none;
+  /* Prevent popup from interfering with mouse events */
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+#atom-popup h4 {
+  margin: 0 0 10px 0;
+  color: #00c8ff;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+}
+
+#atom-popup p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ddd;
+}
+
+#atom-popup strong {
+  color: #fff;
+}

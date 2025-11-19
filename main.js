@@ -84,6 +84,35 @@ atomObjects.forEach((atom) => {
     listItem.textContent = `${atom.data.symbol} - ${atom.data.name}`;
     listItem.dataset.atomName = atom.data.name;
 
+    const popup = document.getElementById('atom-popup');
+
+    listItem.addEventListener('mouseenter', (e) => {
+        // Populate popup
+        popup.innerHTML = `
+            <h4>${atom.data.name} (${atom.data.symbol})</h4>
+            <p><strong>Atomic Number:</strong> ${atom.data.atomicNumber}</p>
+            <p><strong>Protons:</strong> ${atom.data.protons}</p>
+            <p><strong>Neutrons:</strong> ${atom.data.neutrons}</p>
+            <p><strong>Electrons:</strong> ${atom.data.electrons}</p>
+        `;
+
+        // Position popup to the left of the list item
+        const rect = listItem.getBoundingClientRect();
+        popup.style.display = 'block';
+
+        // Calculate position: left of the item minus popup width minus some padding
+        // We need to show it to get its width, or assume a width. 
+        // Since it's display: block now, we can get offsetWidth.
+        const popupWidth = popup.offsetWidth;
+
+        popup.style.top = `${rect.top}px`;
+        popup.style.left = `${rect.left - popupWidth - 10}px`;
+    });
+
+    listItem.addEventListener('mouseleave', () => {
+        popup.style.display = 'none';
+    });
+
     listItem.addEventListener('click', () => {
         // Remove selected class from all items
         document.querySelectorAll('.atom-list-item').forEach(item => {
