@@ -29,36 +29,51 @@ export class Atom {
 
         // Simple packing algorithm: random sphere packing near center
         // or just random points inside a sphere
-        const nucleusRadius = Math.pow(totalNucleons, 1 / 3) * 0.6; // Approximate radius
+        // Ensure minimum radius for single nucleons
+        const nucleusRadius = Math.max(0.8, Math.pow(totalNucleons, 1 / 3) * 0.6);
 
         // Hit Sphere (Invisible, for easier raycasting)
-        const hitGeo = new THREE.SphereGeometry(nucleusRadius * 3, 16, 16); // 3x radius for easier clicking
+        const hitGeo = new THREE.SphereGeometry(Math.max(1.5, nucleusRadius * 3), 16, 16); // 3x radius for easier clicking
         const hitMat = new THREE.MeshBasicMaterial({ visible: false });
         const hitSphere = new THREE.Mesh(hitGeo, hitMat);
         nucleusGroup.add(hitSphere);
 
-        for (let i = 0; i < protonCount; i++) {
-            const proton = new Nucleon('proton');
-            this.positionNucleon(proton.mesh, nucleusRadius);
-            nucleusGroup.add(proton.mesh);
-        }
+        // Special case: if only 1 nucleon, position it at center
+        if (totalNucleons === 1) {
+            if (protonCount === 1) {
+                const proton = new Nucleon('proton');
+                proton.mesh.position.set(0, 0, 0);
+                nucleusGroup.add(proton.mesh);
+            } else {
+                const neutron = new Nucleon('neutron');
+                neutron.mesh.position.set(0, 0, 0);
+                nucleusGroup.add(neutron.mesh);
+            }
+        } else {
+            for (let i = 0; i < protonCount; i++) {
+                const proton = new Nucleon('proton');
+                this.positionNucleon(proton.mesh, nucleusRadius, totalNucleons);
+                nucleusGroup.add(proton.mesh);
+            }
 
-        for (let i = 0; i < neutronCount; i++) {
-            const neutron = new Nucleon('neutron');
-            this.positionNucleon(neutron.mesh, nucleusRadius);
-            nucleusGroup.add(neutron.mesh);
+            for (let i = 0; i < neutronCount; i++) {
+                const neutron = new Nucleon('neutron');
+                this.positionNucleon(neutron.mesh, nucleusRadius, totalNucleons);
+                nucleusGroup.add(neutron.mesh);
+            }
         }
 
         this.group.add(nucleusGroup);
     }
 
-    positionNucleon(mesh, radius) {
+    positionNucleon(mesh, radius, totalNucleons) {
         // Random position within sphere
         // Better: use a force-directed graph layout or pre-calculated positions
         // For now: random with some rejection sampling to avoid overlap (simplified)
 
-        // Just random for now, maybe improve later if it looks bad
-        const r = Math.random() * radius * 0.8;
+        // For small numbers of nucleons, spread them out more
+        const spreadFactor = totalNucleons <= 3 ? 0.5 : 0.8;
+        const r = Math.random() * radius * spreadFactor;
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos(2 * Math.random() - 1);
 
