@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { Nucleon } from './Nucleon.js';
 import { Electron } from './Electron.js';
-import { getCurrentLanguage, getElementName, getDescription } from './translations.js';
+import { getCurrentLanguage, getElementName, getDescription, getSectionHeader, getUses } from './translations.js';
 
 export class Atom {
     constructor(data) {
@@ -230,7 +230,7 @@ export class Atom {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
         const width = 512;
-        const height = 256;
+        const height = 380; // Reduced height to fit content without extra space
         canvas.width = width;
         canvas.height = height;
 
@@ -258,29 +258,29 @@ export class Atom {
         // Title
         const lang = getCurrentLanguage();
         const translatedName = getElementName(this.data.name, lang);
-        context.font = 'bold 40px Arial';
+        context.font = 'bold 32px Arial';
         context.fillStyle = '#00ccff';
-        context.fillText(`${translatedName} (${this.data.symbol})`, 30, 60);
+        context.fillText(`${translatedName} (${this.data.symbol})`, 30, 50);
 
         // Separator
         context.beginPath();
-        context.moveTo(30, 80);
-        context.lineTo(width - 30, 80);
+        context.moveTo(30, 70);
+        context.lineTo(width - 30, 70);
         context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
         context.lineWidth = 2;
         context.stroke();
 
         // Description
-        context.font = '24px Arial';
+        context.font = '16px Arial';
         context.fillStyle = '#dddddd';
         const text = getDescription(this.data, lang);
 
-        // Text wrapping
+        // Text wrapping for description
         const maxWidth = width - 60;
-        const lineHeight = 32;
+        const lineHeight = 22;
         const words = text.split(' ');
         let line = '';
-        let y = 120;
+        let y = 95;
 
         for (let n = 0; n < words.length; n++) {
             const testLine = line + words[n] + ' ';
@@ -296,6 +296,78 @@ export class Atom {
             }
         }
         context.fillText(line, 30, y);
+        y += lineHeight + 8;
+
+        // Physical Properties Section
+        if (this.data.melting !== null || this.data.boiling !== null || this.data.density !== null) {
+            context.font = 'bold 18px Arial';
+            context.fillStyle = '#00ccff';
+            context.fillText(getSectionHeader('Physical Properties', lang) + ':', 30, y);
+            y += 24;
+
+            context.font = '15px Arial';
+            context.fillStyle = '#dddddd';
+
+            if (this.data.melting !== null) {
+                context.fillText(`${getSectionHeader('Melting Point', lang)}: ${this.data.melting}°C`, 40, y);
+                y += 20;
+            }
+            if (this.data.boiling !== null) {
+                context.fillText(`${getSectionHeader('Boiling Point', lang)}: ${this.data.boiling}°C`, 40, y);
+                y += 20;
+            }
+            if (this.data.density !== null) {
+                context.fillText(`${getSectionHeader('Density', lang)}: ${this.data.density} g/cm³`, 40, y);
+                y += 20;
+            }
+            y += 8;
+        }
+
+        // Discovery Section
+        if (this.data.yearDiscovered !== null) {
+            context.font = 'bold 18px Arial';
+            context.fillStyle = '#00ccff';
+            context.fillText(getSectionHeader('Discovery', lang) + ':', 30, y);
+            y += 24;
+
+            context.font = '15px Arial';
+            context.fillStyle = '#dddddd';
+            const yearText = this.data.yearDiscovered < 0 ?
+                `${getSectionHeader('Ancient', lang)} (${Math.abs(this.data.yearDiscovered)} BCE)` :
+                `${getSectionHeader('Year', lang)} ${this.data.yearDiscovered}`;
+            context.fillText(yearText, 40, y);
+            y += 28;
+        }
+
+        // Uses Section
+        if (this.data.uses) {
+            context.font = 'bold 18px Arial';
+            context.fillStyle = '#00ccff';
+            context.fillText(getSectionHeader('Common Uses', lang) + ':', 30, y);
+            y += 24;
+
+            context.font = '15px Arial';
+            context.fillStyle = '#dddddd';
+
+            // Get translated uses
+            const translatedUses = getUses(this.data.name, this.data.uses, lang);
+
+            // Wrap uses text
+            const usesWords = translatedUses.split(' ');
+            let usesLine = '';
+            for (let n = 0; n < usesWords.length; n++) {
+                const testLine = usesLine + usesWords[n] + ' ';
+                const metrics = context.measureText(testLine);
+                if (metrics.width > maxWidth - 20 && n > 0) {
+                    context.fillText(usesLine, 40, y);
+                    usesLine = usesWords[n] + ' ';
+                    y += 20;
+                } else {
+                    usesLine = testLine;
+                }
+            }
+            context.fillText(usesLine, 40, y);
+        }
 
         // Draw X button in top right corner
         const xButtonX = width - 40;
@@ -326,7 +398,7 @@ export class Atom {
 
         // Position above the atom (closer to make it visible)
         this.infoPanel.position.set(0, 4, 0);
-        this.infoPanel.scale.set(15, 7.5, 1);
+        this.infoPanel.scale.set(12, 9, 1); // Adjusted for 512x380 aspect ratio
         this.infoPanel.name = 'infoPanel';
         this.infoPanel.userData.atomName = this.data.name;
 
