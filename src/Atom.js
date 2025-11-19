@@ -310,8 +310,8 @@ export class Atom {
 
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
-        const width = 512;
-        const height = 550; // Increased height to fit details
+        const width = 320; // Further reduced width
+        const height = 550;
         canvas.width = width;
         canvas.height = height;
 
@@ -339,7 +339,7 @@ export class Atom {
         // Title
         const lang = i18n.language;
         const translatedName = i18n.t(`element.${this.data.name}.name`);
-        context.font = 'bold 32px Arial';
+        context.font = 'bold 26px "Roboto Condensed", sans-serif';
         context.fillStyle = '#00ccff';
         context.fillText(`${translatedName} (${this.data.symbol})`, 30, 50);
 
@@ -357,7 +357,7 @@ export class Atom {
         const valueX = 240;
         const lineHeight = 28;
 
-        context.font = 'bold 18px Arial';
+        context.font = '16px "Roboto Condensed", sans-serif';
         context.fillStyle = '#00ccff';
 
         // Helper to draw row
@@ -390,7 +390,7 @@ export class Atom {
         y += 30;
 
         // Description
-        context.font = '16px Arial';
+        context.font = '14px "Roboto Condensed", sans-serif';
         context.fillStyle = '#dddddd';
         const text = i18n.t('infoPanel.description_template', {
             name: i18n.t(`element.${this.data.name}.name`),
@@ -424,12 +424,12 @@ export class Atom {
 
         // Physical Properties Section
         if (this.data.melting !== null || this.data.boiling !== null || this.data.density !== null) {
-            context.font = 'bold 18px Arial';
+            context.font = '16px "Roboto Condensed", sans-serif';
             context.fillStyle = '#00ccff';
             context.fillText(i18n.t('infoPanel.headers.Physical Properties') + ':', 30, y);
             y += 24;
 
-            context.font = '15px Arial';
+            context.font = '14px "Roboto Condensed", sans-serif';
             context.fillStyle = '#dddddd';
 
             if (this.data.melting !== null) {
@@ -449,12 +449,12 @@ export class Atom {
 
         // Discovery Section
         if (this.data.yearDiscovered !== null) {
-            context.font = 'bold 18px Arial';
+            context.font = '16px "Roboto Condensed", sans-serif';
             context.fillStyle = '#00ccff';
             context.fillText(i18n.t('infoPanel.headers.Discovery') + ':', 30, y);
             y += 24;
 
-            context.font = '15px Arial';
+            context.font = '14px "Roboto Condensed", sans-serif';
             context.fillStyle = '#dddddd';
             const yearText = this.data.yearDiscovered < 0 ?
                 `${i18n.t('infoPanel.headers.Ancient')} (${Math.abs(this.data.yearDiscovered)} BCE)` :
@@ -465,12 +465,12 @@ export class Atom {
 
         // Uses Section
         if (this.data.uses) {
-            context.font = 'bold 18px Arial';
+            context.font = '16px "Roboto Condensed", sans-serif';
             context.fillStyle = '#00ccff';
             context.fillText(i18n.t('infoPanel.headers.Common Uses') + ':', 30, y);
             y += 24;
 
-            context.font = '15px Arial';
+            context.font = '14px "Roboto Condensed", sans-serif';
             context.fillStyle = '#dddddd';
 
             // Get translated uses
@@ -522,7 +522,11 @@ export class Atom {
 
         // Position above the atom (closer to make it visible)
         this.infoPanel.position.set(0, 4, 0);
-        this.infoPanel.scale.set(12, 9, 1); // Adjusted for 512x380 aspect ratio
+        // Canvas is 320x550. Aspect ratio is ~0.58
+        // Previous height was 9. Let's keep height around 10-11 for visibility
+        // Width should be Height * (320/550)
+        // If Height = 11, Width = 11 * 0.58 = 6.38
+        this.infoPanel.scale.set(6.4, 11, 1);
         this.infoPanel.renderOrder = 1000; // Render on top of labels (which have renderOrder 999)
         this.infoPanel.name = 'infoPanel';
         this.infoPanel.userData.atomName = this.data.name;
