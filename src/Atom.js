@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { Nucleon } from './Nucleon.js';
 import { Electron } from './Electron.js';
 import i18n from './i18n.js';
+import { getOrbitalGeometry } from './OrbitalGeometries.js';
 // import { getElementName, getDescription, getUses } from './translations.js'; // Removed legacy imports
 
 export class Atom {
@@ -15,6 +16,9 @@ export class Atom {
 
         this.createNucleus();
         this.createElectrons();
+        this.createNucleus();
+        this.createElectrons();
+        this.createOrbitals();
         this.createLabel();
     }
 
@@ -166,6 +170,41 @@ export class Atom {
 
             remainingElectrons -= electronsInOrbital;
         }
+    }
+
+    createOrbitals() {
+        // Track created orbitals to avoid duplicates
+        const createdOrbitals = new Set();
+        const orbitalColors = {
+            's': 0x00ffff,  // Cyan
+            'p': 0xff00ff,  // Magenta
+            'd': 0xffff00,  // Yellow
+            'f': 0x00ff00   // Green
+        };
+
+        // Iterate through electrons to find unique orbitals
+        this.electrons.forEach(electron => {
+            const orbitalKey = `${electron.shellRadius}-${electron.orbitalType}-${electron.orbitalAxis}`;
+
+            if (!createdOrbitals.has(orbitalKey)) {
+                createdOrbitals.add(orbitalKey);
+
+                const geometry = getOrbitalGeometry(electron.orbitalType, electron.orbitalAxis, electron.shellRadius);
+                const material = new THREE.MeshPhongMaterial({
+                    color: orbitalColors[electron.orbitalType],
+                    transparent: true,
+                    opacity: 0.1, // Very faint to see nucleus
+                    side: THREE.DoubleSide,
+                    depthWrite: false,
+                    blending: THREE.AdditiveBlending,
+                    shininess: 50
+                });
+
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.raycast = () => { }; // Ignore clicks
+                this.group.add(mesh);
+            }
+        });
     }
 
     createLabel() {
