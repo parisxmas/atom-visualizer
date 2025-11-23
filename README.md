@@ -9,6 +9,7 @@ A modern interactive 3‑D atom visualizer built with **React** and **Vite**. Th
 - Isotope selection UI
 - Multilingual support (JSON locale files in `src/locales/`)
 - FPS counter and smooth camera controls
+- Powered by WebGL via Three.js
 
 ## Prerequisites
 
