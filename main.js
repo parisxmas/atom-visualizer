@@ -263,7 +263,7 @@ function showIsotopeSubmenu(atomData, cell) {
 
     // Add title
     const title = document.createElement('div');
-    title.textContent = `${i18n.t(`element.${atomData.name}.name`)} Isotopes`;
+    title.textContent = `${i18n.t(`element.${atomData.name}.name`)} ${i18n.t('ui.isotopes')}`;
     title.style.cssText = `
         color: #00ccff;
         font-weight: bold;
@@ -603,7 +603,7 @@ window.addEventListener('click', (event) => {
 
         // Check if clicked on info panel - close it
         if (object.name === 'infoPanel' && object.userData.atomName) {
-            const atom = atomObjects.find(a => a.data.name === object.userData.atomName);
+            const atom = atomObjects.find(a => a.group === object.parent);
             if (atom && atom.infoPanel) {
                 atom.toggleInfoPanel();
                 return;
@@ -612,7 +612,7 @@ window.addEventListener('click', (event) => {
 
         // Check if clicked on a label sprite
         if (object.name === 'label' && object.userData.atomName) {
-            const atom = atomObjects.find(a => a.data.name === object.userData.atomName);
+            const atom = atomObjects.find(a => a.group === object.parent);
             if (atom) {
                 // Check distance from camera to atom
                 const distance = camera.position.distanceTo(atom.group.position);

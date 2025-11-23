@@ -491,7 +491,8 @@
         "protons": "Protonlar:",
         "neutrons": "Nötronlar:",
         "electrons": "Elektronlar:",
-        "reactivityLabel": "Reaktivite:"
+        "reactivityLabel": "Reaktivite:",
+        "isotopes": "İzotoplar"
     },
     "infoPanel": {
         "headers": {
