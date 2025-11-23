@@ -42,7 +42,11 @@ export const atoms = [
     boiling: -268.93,
     density: 0.0001785,
     yearDiscovered: 1868,
-    uses: "Balloons, cryogenics, breathing mixtures"
+    uses: "Balloons, cryogenics, breathing mixtures",
+    isotopes: [
+      { mass: 3, neutrons: 1, name: "Helium-3", abundance: "0.000137%", stable: true },
+      { mass: 4, neutrons: 2, name: "Helium-4", abundance: "99.999863%", stable: true }
+    ]
   },
   {
     name: "Lithium",
@@ -62,7 +66,12 @@ export const atoms = [
     boiling: 1342,
     density: 0.534,
     yearDiscovered: 1817,
-    uses: "Batteries, ceramics, lubricants"
+    uses: "Batteries, ceramics, lubricants",
+    isotopes: [
+      { mass: 6, neutrons: 3, name: "Lithium-6", abundance: "7.5%", stable: true },
+      { mass: 7, neutrons: 4, name: "Lithium-7", abundance: "92.5%", stable: true }
+    ]
+
   },
   {
     name: "Beryllium",
@@ -82,7 +91,10 @@ export const atoms = [
     boiling: 2470,
     density: 1.85,
     yearDiscovered: 1798,
-    uses: "Aerospace alloys, X-ray windows"
+    uses: "Aerospace alloys, X-ray windows",
+    isotopes: [
+      { mass: 9, neutrons: 5, name: "Beryllium-9", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Boron",
@@ -102,7 +114,11 @@ export const atoms = [
     boiling: 4000,
     density: 2.34,
     yearDiscovered: 1808,
-    uses: "Glass, detergents, semiconductors"
+    uses: "Glass, detergents, semiconductors",
+    isotopes: [
+      { mass: 10, neutrons: 5, name: "Boron-10", abundance: "19.9%", stable: true },
+      { mass: 11, neutrons: 6, name: "Boron-11", abundance: "80.1%", stable: true },
+    ],
   },
   {
     name: "Carbon",
@@ -147,7 +163,11 @@ export const atoms = [
     boiling: -195.79,
     density: 0.0012506,
     yearDiscovered: 1772,
-    uses: "Fertilizers, explosives, food preservation"
+    uses: "Fertilizers, explosives, food preservation",
+    isotopes: [
+      { mass: 14, neutrons: 7, name: "Nitrogen-14", abundance: "99.63%", stable: true },
+      { mass: 15, neutrons: 8, name: "Nitrogen-15", abundance: "0.37%", stable: true },
+    ],
   },
   {
     name: "Oxygen",
@@ -167,7 +187,12 @@ export const atoms = [
     boiling: -182.95,
     density: 0.001429,
     yearDiscovered: 1774,
-    uses: "Respiration, steel production, water treatment"
+    uses: "Respiration, steel production, water treatment",
+    isotopes: [
+      { mass: 16, neutrons: 8, name: "Oxygen-16", abundance: "99.762%", stable: true },
+      { mass: 17, neutrons: 9, name: "Oxygen-17", abundance: "0.038%", stable: true },
+      { mass: 18, neutrons: 10, name: "Oxygen-18", abundance: "0.200%", stable: true },
+    ],
   },
   {
     name: "Fluorine",
@@ -187,7 +212,10 @@ export const atoms = [
     boiling: -188.12,
     density: 0.001696,
     yearDiscovered: 1886,
-    uses: "Toothpaste, refrigerants, Teflon"
+    uses: "Toothpaste, refrigerants, Teflon",
+    isotopes: [
+      { mass: 19, neutrons: 10, name: "Fluorine-19", abundance: "100%", stable: true }
+    ],
   },
   {
     name: "Neon",
@@ -207,7 +235,12 @@ export const atoms = [
     boiling: -246.08,
     density: 0.0008999,
     yearDiscovered: 1898,
-    uses: "Neon signs, lasers, cryogenic refrigerant"
+    uses: "Neon signs, lasers, cryogenic refrigerant",
+    isotopes: [
+      { mass: 20, neutrons: 10, name: "Neon-20", abundance: "90.48%", stable: true },
+      { mass: 21, neutrons: 11, name: "Neon-21", abundance: "0.27%", stable: true },
+      { mass: 22, neutrons: 12, name: "Neon-22", abundance: "9.25%", stable: true },
+    ],
   },
   {
     name: "Sodium",
@@ -227,7 +260,10 @@ export const atoms = [
     boiling: 883,
     density: 0.971,
     yearDiscovered: 1807,
-    uses: "Table salt, soap, street lights"
+    uses: "Table salt, soap, street lights",
+    isotopes: [
+      { mass: 23, neutrons: 12, name: "Sodium-23", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Magnesium",
@@ -247,7 +283,12 @@ export const atoms = [
     boiling: 1090,
     density: 1.738,
     yearDiscovered: 1755,
-    uses: "Alloys, fireworks, flash photography"
+    uses: "Alloys, fireworks, flash photography",
+    isotopes: [
+      { mass: 24, neutrons: 12, name: "Magnesium-24", abundance: "78.99%", stable: true },
+      { mass: 25, neutrons: 13, name: "Magnesium-25", abundance: "10.00%", stable: true },
+      { mass: 26, neutrons: 14, name: "Magnesium-26", abundance: "11.01%", stable: true },
+    ],
   },
   {
     name: "Aluminum",
@@ -267,7 +308,10 @@ export const atoms = [
     boiling: 2519,
     density: 2.698,
     yearDiscovered: 1825,
-    uses: "Cans, foil, aircraft, construction"
+    uses: "Cans, foil, aircraft, construction",
+    isotopes: [
+      { mass: 27, neutrons: 14, name: "Aluminum-27", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Silicon",
@@ -287,7 +331,12 @@ export const atoms = [
     boiling: 3265,
     density: 2.3296,
     yearDiscovered: 1824,
-    uses: "Computer chips, solar cells, glass"
+    uses: "Computer chips, solar cells, glass",
+    isotopes: [
+      { mass: 28, neutrons: 14, name: "Silicon-28", abundance: "92.2%", stable: true },
+      { mass: 29, neutrons: 15, name: "Silicon-29", abundance: "4.7%", stable: true },
+      { mass: 30, neutrons: 16, name: "Silicon-30", abundance: "3.1%", stable: true },
+    ],
   },
   {
     name: "Phosphorus",
@@ -307,7 +356,10 @@ export const atoms = [
     boiling: 280.5,
     density: 1.82,
     yearDiscovered: 1669,
-    uses: "Fertilizers, detergents, matches"
+    uses: "Fertilizers, detergents, matches",
+    isotopes: [
+      { mass: 31, neutrons: 16, name: "Phosphorus-31", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Sulfur",
@@ -327,7 +379,13 @@ export const atoms = [
     boiling: 444.6,
     density: 2.067,
     yearDiscovered: -2000,
-    uses: "Sulfuric acid, gunpowder, vulcanizing rubber"
+    uses: "Sulfuric acid, gunpowder, vulcanizing rubber",
+    isotopes: [
+      { mass: 32, neutrons: 16, name: "Sulfur-32", abundance: "94.99%", stable: true },
+      { mass: 33, neutrons: 17, name: "Sulfur-33", abundance: "0.75%", stable: true },
+      { mass: 34, neutrons: 18, name: "Sulfur-34", abundance: "4.25%", stable: true },
+      { mass: 36, neutrons: 20, name: "Sulfur-36", abundance: "0.01%", stable: true },
+    ],
   },
   {
     name: "Chlorine",
@@ -347,7 +405,11 @@ export const atoms = [
     boiling: -34.04,
     density: 0.003214,
     yearDiscovered: 1774,
-    uses: "Water purification, bleach, PVC"
+    uses: "Water purification, bleach, PVC",
+    isotopes: [
+      { mass: 35, neutrons: 18, name: "Chlorine-35", abundance: "75.76%", stable: true },
+      { mass: 37, neutrons: 20, name: "Chlorine-37", abundance: "24.24%", stable: true },
+    ],
   },
   {
     name: "Argon",
@@ -367,7 +429,12 @@ export const atoms = [
     boiling: -185.85,
     density: 0.0017837,
     yearDiscovered: 1894,
-    uses: "Welding, light bulbs, insulation"
+    uses: "Welding, light bulbs, insulation",
+    isotopes: [
+      { mass: 36, neutrons: 18, name: "Argon-36", abundance: "0.334%", stable: true },
+      { mass: 38, neutrons: 20, name: "Argon-38", abundance: "0.063%", stable: true },
+      { mass: 40, neutrons: 22, name: "Argon-40", abundance: "99.604%", stable: true },
+    ],
   },
   {
     name: "Potassium",
@@ -387,7 +454,12 @@ export const atoms = [
     boiling: 759,
     density: 0.862,
     yearDiscovered: 1807,
-    uses: "Fertilizers, soap, glass"
+    uses: "Fertilizers, soap, glass",
+    isotopes: [
+      { mass: 39, neutrons: 20, name: "Potassium-39", abundance: "93.258%", stable: true },
+      { mass: 40, neutrons: 21, name: "Potassium-40", abundance: "0.012%", stable: false },
+      { mass: 41, neutrons: 22, name: "Potassium-41", abundance: "6.730%", stable: true },
+    ],
   },
   {
     name: "Calcium",
@@ -407,7 +479,14 @@ export const atoms = [
     boiling: 1484,
     density: 1.54,
     yearDiscovered: 1808,
-    uses: "Bones, cement, cheese production"
+    uses: "Bones, cement, cheese production",
+    isotopes: [
+      { mass: 40, neutrons: 20, name: "Calcium-40", abundance: "96.941%", stable: true },
+      { mass: 42, neutrons: 22, name: "Calcium-42", abundance: "0.647%", stable: true },
+      { mass: 43, neutrons: 23, name: "Calcium-43", abundance: "0.135%", stable: true },
+      { mass: 44, neutrons: 24, name: "Calcium-44", abundance: "2.086%", stable: true },
+      { mass: 48, neutrons: 28, name: "Calcium-48", abundance: "0.187%", stable: true },
+    ],
   },
   {
     name: "Scandium",
@@ -427,7 +506,10 @@ export const atoms = [
     boiling: 2836,
     density: 2.989,
     yearDiscovered: 1879,
-    uses: "Aerospace alloys, sports equipment"
+    uses: "Aerospace alloys, sports equipment",
+    isotopes: [
+      { mass: 45, neutrons: 24, name: "Scandium-45", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Titanium",
@@ -447,7 +529,14 @@ export const atoms = [
     boiling: 3287,
     density: 4.506,
     yearDiscovered: 1791,
-    uses: "Aircraft, medical implants, white paint"
+    uses: "Aircraft, medical implants, white paint",
+    isotopes: [
+      { mass: 46, neutrons: 24, name: "Titanium-46", abundance: "8.25%", stable: true },
+      { mass: 47, neutrons: 25, name: "Titanium-47", abundance: "7.44%", stable: true },
+      { mass: 48, neutrons: 26, name: "Titanium-48", abundance: "73.72%", stable: true },
+      { mass: 49, neutrons: 27, name: "Titanium-49", abundance: "5.41%", stable: true },
+      { mass: 50, neutrons: 28, name: "Titanium-50", abundance: "5.18%", stable: true },
+    ],
   },
   {
     name: "Vanadium",
@@ -467,7 +556,11 @@ export const atoms = [
     boiling: 3407,
     density: 6.11,
     yearDiscovered: 1801,
-    uses: "Steel alloys, catalysts, batteries"
+    uses: "Steel alloys, catalysts, batteries",
+    isotopes: [
+      { mass: 50, neutrons: 27, name: "Vanadium-50", abundance: "0.25%", stable: false },
+      { mass: 51, neutrons: 28, name: "Vanadium-51", abundance: "99.75%", stable: true },
+    ],
   },
   {
     name: "Chromium",
@@ -487,7 +580,13 @@ export const atoms = [
     boiling: 2671,
     density: 7.15,
     yearDiscovered: 1797,
-    uses: "Stainless steel, chrome plating, dyes"
+    uses: "Stainless steel, chrome plating, dyes",
+    isotopes: [
+      { mass: 50, neutrons: 26, name: "Chromium-50", abundance: "4.345%", stable: true },
+      { mass: 52, neutrons: 28, name: "Chromium-52", abundance: "83.789%", stable: true },
+      { mass: 53, neutrons: 29, name: "Chromium-53", abundance: "9.501%", stable: true },
+      { mass: 54, neutrons: 30, name: "Chromium-54", abundance: "2.365%", stable: true },
+    ],
   },
   {
     name: "Manganese",
@@ -507,7 +606,10 @@ export const atoms = [
     boiling: 2061,
     density: 7.44,
     yearDiscovered: 1774,
-    uses: "Steel production, batteries, fertilizers"
+    uses: "Steel production, batteries, fertilizers",
+    isotopes: [
+      { mass: 55, neutrons: 30, name: "Manganese-55", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Iron",
@@ -527,7 +629,13 @@ export const atoms = [
     boiling: 2862,
     density: 7.874,
     yearDiscovered: -1200,
-    uses: "Steel, construction, machinery, hemoglobin"
+    uses: "Steel, construction, machinery, hemoglobin",
+    isotopes: [
+      { mass: 54, neutrons: 28, name: "Iron-54", abundance: "5.845%", stable: true },
+      { mass: 56, neutrons: 30, name: "Iron-56", abundance: "91.754%", stable: true },
+      { mass: 57, neutrons: 31, name: "Iron-57", abundance: "2.119%", stable: true },
+      { mass: 58, neutrons: 32, name: "Iron-58", abundance: "0.282%", stable: true },
+    ],
   },
   {
     name: "Cobalt",
@@ -547,7 +655,10 @@ export const atoms = [
     boiling: 2927,
     density: 8.86,
     yearDiscovered: 1735,
-    uses: "Magnets, batteries, blue pigments"
+    uses: "Magnets, batteries, blue pigments",
+    isotopes: [
+      { mass: 59, neutrons: 32, name: "Cobalt-59", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Nickel",
@@ -567,7 +678,14 @@ export const atoms = [
     boiling: 2913,
     density: 8.912,
     yearDiscovered: 1751,
-    uses: "Stainless steel, coins, batteries"
+    uses: "Stainless steel, coins, batteries",
+    isotopes: [
+      { mass: 58, neutrons: 30, name: "Nickel-58", abundance: "68.077%", stable: true },
+      { mass: 60, neutrons: 32, name: "Nickel-60", abundance: "26.223%", stable: true },
+      { mass: 61, neutrons: 33, name: "Nickel-61", abundance: "1.140%", stable: true },
+      { mass: 62, neutrons: 34, name: "Nickel-62", abundance: "3.635%", stable: true },
+      { mass: 64, neutrons: 36, name: "Nickel-64", abundance: "0.926%", stable: true },
+    ],
   },
   {
     name: "Copper",
@@ -587,7 +705,11 @@ export const atoms = [
     boiling: 2562,
     density: 8.96,
     yearDiscovered: -9000,
-    uses: "Electrical wiring, plumbing, coins"
+    uses: "Electrical wiring, plumbing, coins",
+    isotopes: [
+      { mass: 63, neutrons: 34, name: "Copper-63", abundance: "69.15%", stable: true },
+      { mass: 65, neutrons: 36, name: "Copper-65", abundance: "30.85%", stable: true },
+    ],
   },
   {
     name: "Zinc",
@@ -607,7 +729,14 @@ export const atoms = [
     boiling: 907,
     density: 7.134,
     yearDiscovered: 1746,
-    uses: "Galvanizing, brass, batteries"
+    uses: "Galvanizing, brass, batteries",
+    isotopes: [
+      { mass: 64, neutrons: 34, name: "Zinc-64", abundance: "49.17%", stable: true },
+      { mass: 66, neutrons: 36, name: "Zinc-66", abundance: "27.73%", stable: true },
+      { mass: 67, neutrons: 37, name: "Zinc-67", abundance: "4.04%", stable: true },
+      { mass: 68, neutrons: 38, name: "Zinc-68", abundance: "18.45%", stable: true },
+      { mass: 70, neutrons: 40, name: "Zinc-70", abundance: "0.61%", stable: true },
+    ],
   },
   {
     name: "Gallium",
@@ -627,7 +756,11 @@ export const atoms = [
     boiling: 2204,
     density: 5.907,
     yearDiscovered: 1875,
-    uses: "Semiconductors, LEDs, solar cells"
+    uses: "Semiconductors, LEDs, solar cells",
+    isotopes: [
+      { mass: 69, neutrons: 38, name: "Gallium-69", abundance: "60.108%", stable: true },
+      { mass: 71, neutrons: 40, name: "Gallium-71", abundance: "39.892%", stable: true },
+    ],
   },
   {
     name: "Germanium",
@@ -647,7 +780,14 @@ export const atoms = [
     boiling: 2833,
     density: 5.323,
     yearDiscovered: 1886,
-    uses: "Fiber optics, infrared optics, transistors"
+    uses: "Fiber optics, infrared optics, transistors",
+    isotopes: [
+      { mass: 70, neutrons: 38, name: "Germanium-70", abundance: "20.84%", stable: true },
+      { mass: 72, neutrons: 40, name: "Germanium-72", abundance: "27.54%", stable: true },
+      { mass: 73, neutrons: 41, name: "Germanium-73", abundance: "7.73%", stable: true },
+      { mass: 74, neutrons: 42, name: "Germanium-74", abundance: "36.28%", stable: true },
+      { mass: 76, neutrons: 44, name: "Germanium-76", abundance: "7.61%", stable: true },
+    ],
   },
   {
     name: "Arsenic",
@@ -667,7 +807,10 @@ export const atoms = [
     boiling: 614,
     density: 5.776,
     yearDiscovered: 1250,
-    uses: "Semiconductors, wood preservatives, pesticides"
+    uses: "Semiconductors, wood preservatives, pesticides",
+    isotopes: [
+      { mass: 75, neutrons: 42, name: "Arsenic-75", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Selenium",
@@ -687,7 +830,15 @@ export const atoms = [
     boiling: 685,
     density: 4.809,
     yearDiscovered: 1817,
-    uses: "Glass manufacturing, electronics, photocopiers"
+    uses: "Glass manufacturing, electronics, photocopiers",
+    isotopes: [
+      { mass: 74, neutrons: 40, name: "Selenium-74", abundance: "0.89%", stable: true },
+      { mass: 76, neutrons: 42, name: "Selenium-76", abundance: "9.37%", stable: true },
+      { mass: 77, neutrons: 43, name: "Selenium-77", abundance: "7.63%", stable: true },
+      { mass: 78, neutrons: 44, name: "Selenium-78", abundance: "23.77%", stable: true },
+      { mass: 80, neutrons: 46, name: "Selenium-80", abundance: "49.61%", stable: true },
+      { mass: 82, neutrons: 48, name: "Selenium-82", abundance: "8.73%", stable: true },
+    ],
   },
   {
     name: "Bromine",
@@ -707,7 +858,11 @@ export const atoms = [
     boiling: 58.8,
     density: 3.122,
     yearDiscovered: 1826,
-    uses: "Flame retardants, water treatment, photography"
+    uses: "Flame retardants, water treatment, photography",
+    isotopes: [
+      { mass: 79, neutrons: 44, name: "Bromine-79", abundance: "50.69%", stable: true },
+      { mass: 81, neutrons: 46, name: "Bromine-81", abundance: "49.31%", stable: true },
+    ],
   },
   {
     name: "Krypton",
@@ -727,7 +882,15 @@ export const atoms = [
     boiling: -153.22,
     density: 0.003733,
     yearDiscovered: 1898,
-    uses: "Lighting, lasers, insulation"
+    uses: "Lighting, lasers, insulation",
+    isotopes: [
+      { mass: 78, neutrons: 42, name: "Krypton-78", abundance: "0.35%", stable: true },
+      { mass: 80, neutrons: 44, name: "Krypton-80", abundance: "2.28%", stable: true },
+      { mass: 82, neutrons: 46, name: "Krypton-82", abundance: "11.58%", stable: true },
+      { mass: 83, neutrons: 47, name: "Krypton-83", abundance: "11.49%", stable: true },
+      { mass: 84, neutrons: 48, name: "Krypton-84", abundance: "57.00%", stable: true },
+      { mass: 86, neutrons: 50, name: "Krypton-86", abundance: "17.30%", stable: true },
+    ],
   },
   {
     name: "Rubidium",
@@ -747,7 +910,11 @@ export const atoms = [
     boiling: 688,
     density: 1.532,
     yearDiscovered: 1861,
-    uses: "Atomic clocks, photocells, research"
+    uses: "Atomic clocks, photocells, research",
+    isotopes: [
+      { mass: 85, neutrons: 48, name: "Rubidium-85", abundance: "72.17%", stable: true },
+      { mass: 87, neutrons: 50, name: "Rubidium-87", abundance: "27.83%", stable: false },
+    ],
   },
   {
     name: "Strontium",
@@ -767,7 +934,13 @@ export const atoms = [
     boiling: 1382,
     density: 2.64,
     yearDiscovered: 1790,
-    uses: "Fireworks, flares, magnets"
+    uses: "Fireworks, flares, magnets",
+    isotopes: [
+      { mass: 84, neutrons: 46, name: "Strontium-84", abundance: "0.56%", stable: true },
+      { mass: 86, neutrons: 48, name: "Strontium-86", abundance: "9.86%", stable: true },
+      { mass: 87, neutrons: 49, name: "Strontium-87", abundance: "7.00%", stable: true },
+      { mass: 88, neutrons: 50, name: "Strontium-88", abundance: "82.58%", stable: true },
+    ],
   },
   {
     name: "Yttrium",
@@ -787,7 +960,10 @@ export const atoms = [
     boiling: 3345,
     density: 4.469,
     yearDiscovered: 1794,
-    uses: "LEDs, superconductors, cancer treatment"
+    uses: "LEDs, superconductors, cancer treatment",
+    isotopes: [
+      { mass: 89, neutrons: 50, name: "Yttrium-89", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Zirconium",
@@ -807,7 +983,14 @@ export const atoms = [
     boiling: 4409,
     density: 6.506,
     yearDiscovered: 1789,
-    uses: "Nuclear reactors, ceramics, gems"
+    uses: "Nuclear reactors, ceramics, gems",
+    isotopes: [
+      { mass: 90, neutrons: 50, name: "Zirconium-90", abundance: "51.45%", stable: true },
+      { mass: 91, neutrons: 51, name: "Zirconium-91", abundance: "11.22%", stable: true },
+      { mass: 92, neutrons: 52, name: "Zirconium-92", abundance: "17.15%", stable: true },
+      { mass: 94, neutrons: 54, name: "Zirconium-94", abundance: "17.38%", stable: true },
+      { mass: 96, neutrons: 56, name: "Zirconium-96", abundance: "2.80%", stable: true },
+    ],
   },
   {
     name: "Niobium",
@@ -827,7 +1010,10 @@ export const atoms = [
     boiling: 4744,
     density: 8.57,
     yearDiscovered: 1801,
-    uses: "Superconductors, steel alloys, jewelry"
+    uses: "Superconductors, steel alloys, jewelry",
+    isotopes: [
+      { mass: 93, neutrons: 52, name: "Niobium-93", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Molybdenum",
@@ -847,7 +1033,16 @@ export const atoms = [
     boiling: 4639,
     density: 10.22,
     yearDiscovered: 1778,
-    uses: "Steel alloys, lubricants, catalysts"
+    uses: "Steel alloys, lubricants, catalysts",
+    isotopes: [
+      { mass: 92, neutrons: 50, name: "Molybdenum-92", abundance: "14.84%", stable: true },
+      { mass: 94, neutrons: 52, name: "Molybdenum-94", abundance: "9.25%", stable: true },
+      { mass: 95, neutrons: 53, name: "Molybdenum-95", abundance: "15.92%", stable: true },
+      { mass: 96, neutrons: 54, name: "Molybdenum-96", abundance: "16.68%", stable: true },
+      { mass: 97, neutrons: 55, name: "Molybdenum-97", abundance: "9.55%", stable: true },
+      { mass: 98, neutrons: 56, name: "Molybdenum-98", abundance: "24.13%", stable: true },
+      { mass: 100, neutrons: 58, name: "Molybdenum-100", abundance: "9.63%", stable: true },
+    ],
   },
   {
     name: "Technetium",
@@ -867,7 +1062,12 @@ export const atoms = [
     boiling: 4265,
     density: 11.5,
     yearDiscovered: 1937,
-    uses: "Medical imaging, corrosion inhibitor"
+    uses: "Medical imaging, corrosion inhibitor",
+    isotopes: [
+      { mass: 97, neutrons: 54, name: "Technetium-97", abundance: "trace", stable: false },
+      { mass: 98, neutrons: 55, name: "Technetium-98", abundance: "trace", stable: false },
+      { mass: 99, neutrons: 56, name: "Technetium-99", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Ruthenium",
@@ -887,7 +1087,16 @@ export const atoms = [
     boiling: 4150,
     density: 12.37,
     yearDiscovered: 1844,
-    uses: "Electronics, catalysts, alloys"
+    uses: "Electronics, catalysts, alloys",
+    isotopes: [
+      { mass: 96, neutrons: 52, name: "Ruthenium-96", abundance: "5.54%", stable: true },
+      { mass: 98, neutrons: 54, name: "Ruthenium-98", abundance: "1.87%", stable: true },
+      { mass: 99, neutrons: 55, name: "Ruthenium-99", abundance: "12.76%", stable: true },
+      { mass: 100, neutrons: 56, name: "Ruthenium-100", abundance: "12.60%", stable: true },
+      { mass: 101, neutrons: 57, name: "Ruthenium-101", abundance: "17.06%", stable: true },
+      { mass: 102, neutrons: 58, name: "Ruthenium-102", abundance: "31.55%", stable: true },
+      { mass: 104, neutrons: 60, name: "Ruthenium-104", abundance: "18.62%", stable: true },
+    ],
   },
   {
     name: "Rhodium",
@@ -907,7 +1116,10 @@ export const atoms = [
     boiling: 3695,
     density: 12.41,
     yearDiscovered: 1803,
-    uses: "Catalytic converters, jewelry, mirrors"
+    uses: "Catalytic converters, jewelry, mirrors",
+    isotopes: [
+      { mass: 103, neutrons: 58, name: "Rhodium-103", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Palladium",
@@ -927,7 +1139,15 @@ export const atoms = [
     boiling: 2963,
     density: 12.02,
     yearDiscovered: 1803,
-    uses: "Catalytic converters, electronics, dentistry"
+    uses: "Catalytic converters, electronics, dentistry",
+    isotopes: [
+      { mass: 102, neutrons: 56, name: "Palladium-102", abundance: "1.02%", stable: true },
+      { mass: 104, neutrons: 58, name: "Palladium-104", abundance: "11.14%", stable: true },
+      { mass: 105, neutrons: 59, name: "Palladium-105", abundance: "22.33%", stable: true },
+      { mass: 106, neutrons: 60, name: "Palladium-106", abundance: "27.33%", stable: true },
+      { mass: 108, neutrons: 62, name: "Palladium-108", abundance: "26.46%", stable: true },
+      { mass: 110, neutrons: 64, name: "Palladium-110", abundance: "11.72%", stable: true },
+    ],
   },
   {
     name: "Silver",
@@ -947,7 +1167,11 @@ export const atoms = [
     boiling: 2162,
     density: 10.501,
     yearDiscovered: -3000,
-    uses: "Jewelry, coins, photography, electronics"
+    uses: "Jewelry, coins, photography, electronics",
+    isotopes: [
+      { mass: 107, neutrons: 60, name: "Silver-107", abundance: "51.839%", stable: true },
+      { mass: 109, neutrons: 62, name: "Silver-109", abundance: "48.161%", stable: true },
+    ],
   },
   {
     name: "Cadmium",
@@ -967,7 +1191,17 @@ export const atoms = [
     boiling: 767,
     density: 8.69,
     yearDiscovered: 1817,
-    uses: "Batteries, pigments, coatings"
+    uses: "Batteries, pigments, coatings",
+    isotopes: [
+      { mass: 106, neutrons: 58, name: "Cadmium-106", abundance: "1.25%", stable: true },
+      { mass: 108, neutrons: 60, name: "Cadmium-108", abundance: "0.89%", stable: true },
+      { mass: 110, neutrons: 62, name: "Cadmium-110", abundance: "12.49%", stable: true },
+      { mass: 111, neutrons: 63, name: "Cadmium-111", abundance: "12.80%", stable: true },
+      { mass: 112, neutrons: 64, name: "Cadmium-112", abundance: "24.13%", stable: true },
+      { mass: 113, neutrons: 65, name: "Cadmium-113", abundance: "12.22%", stable: true },
+      { mass: 114, neutrons: 66, name: "Cadmium-114", abundance: "28.73%", stable: true },
+      { mass: 116, neutrons: 68, name: "Cadmium-116", abundance: "7.49%", stable: true },
+    ],
   },
   {
     name: "Indium",
@@ -987,7 +1221,11 @@ export const atoms = [
     boiling: 2072,
     density: 7.31,
     yearDiscovered: 1863,
-    uses: "Touch screens, solar panels, LEDs"
+    uses: "Touch screens, solar panels, LEDs",
+    isotopes: [
+      { mass: 113, neutrons: 64, name: "Indium-113", abundance: "4.29%", stable: true },
+      { mass: 115, neutrons: 66, name: "Indium-115", abundance: "95.71%", stable: false },
+    ],
   },
   {
     name: "Tin",
@@ -1007,7 +1245,19 @@ export const atoms = [
     boiling: 2602,
     density: 7.287,
     yearDiscovered: -3500,
-    uses: "Solder, tin cans, bronze"
+    uses: "Solder, tin cans, bronze",
+    isotopes: [
+      { mass: 112, neutrons: 62, name: "Tin-112", abundance: "0.97%", stable: true },
+      { mass: 114, neutrons: 64, name: "Tin-114", abundance: "0.66%", stable: true },
+      { mass: 115, neutrons: 65, name: "Tin-115", abundance: "0.34%", stable: true },
+      { mass: 116, neutrons: 66, name: "Tin-116", abundance: "14.54%", stable: true },
+      { mass: 117, neutrons: 67, name: "Tin-117", abundance: "7.68%", stable: true },
+      { mass: 118, neutrons: 68, name: "Tin-118", abundance: "24.22%", stable: true },
+      { mass: 119, neutrons: 69, name: "Tin-119", abundance: "8.59%", stable: true },
+      { mass: 120, neutrons: 70, name: "Tin-120", abundance: "32.58%", stable: true },
+      { mass: 122, neutrons: 72, name: "Tin-122", abundance: "4.63%", stable: true },
+      { mass: 124, neutrons: 74, name: "Tin-124", abundance: "5.79%", stable: true },
+    ],
   },
   {
     name: "Antimony",
@@ -1027,7 +1277,11 @@ export const atoms = [
     boiling: 1587,
     density: 6.685,
     yearDiscovered: 1450,
-    uses: "Flame retardants, batteries, semiconductors"
+    uses: "Flame retardants, batteries, semiconductors",
+    isotopes: [
+      { mass: 121, neutrons: 70, name: "Antimony-121", abundance: "57.21%", stable: true },
+      { mass: 123, neutrons: 72, name: "Antimony-123", abundance: "42.79%", stable: true },
+    ],
   },
   {
     name: "Tellurium",
@@ -1047,7 +1301,17 @@ export const atoms = [
     boiling: 988,
     density: 6.232,
     yearDiscovered: 1783,
-    uses: "Solar cells, thermoelectrics, metallurgy"
+    uses: "Solar cells, thermoelectrics, metallurgy",
+    isotopes: [
+      { mass: 120, neutrons: 68, name: "Tellurium-120", abundance: "0.09%", stable: true },
+      { mass: 122, neutrons: 70, name: "Tellurium-122", abundance: "2.55%", stable: true },
+      { mass: 123, neutrons: 71, name: "Tellurium-123", abundance: "0.89%", stable: true },
+      { mass: 124, neutrons: 72, name: "Tellurium-124", abundance: "4.74%", stable: true },
+      { mass: 125, neutrons: 73, name: "Tellurium-125", abundance: "7.07%", stable: true },
+      { mass: 126, neutrons: 74, name: "Tellurium-126", abundance: "18.84%", stable: true },
+      { mass: 128, neutrons: 76, name: "Tellurium-128", abundance: "31.74%", stable: true },
+      { mass: 130, neutrons: 78, name: "Tellurium-130", abundance: "34.08%", stable: true },
+    ],
   },
   {
     name: "Iodine",
@@ -1067,7 +1331,10 @@ export const atoms = [
     boiling: 184.3,
     density: 4.93,
     yearDiscovered: 1811,
-    uses: "Disinfectants, pharmaceuticals, photography"
+    uses: "Disinfectants, pharmaceuticals, photography",
+    isotopes: [
+      { mass: 127, neutrons: 74, name: "Iodine-127", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Xenon",
@@ -1087,7 +1354,18 @@ export const atoms = [
     boiling: -108.04,
     density: 0.005887,
     yearDiscovered: 1898,
-    uses: "Lighting, anesthesia, ion propulsion"
+    uses: "Lighting, anesthesia, ion propulsion",
+    isotopes: [
+      { mass: 124, neutrons: 70, name: "Xenon-124", abundance: "0.095%", stable: true },
+      { mass: 126, neutrons: 72, name: "Xenon-126", abundance: "0.089%", stable: true },
+      { mass: 128, neutrons: 74, name: "Xenon-128", abundance: "1.910%", stable: true },
+      { mass: 129, neutrons: 75, name: "Xenon-129", abundance: "26.401%", stable: true },
+      { mass: 130, neutrons: 76, name: "Xenon-130", abundance: "4.071%", stable: true },
+      { mass: 131, neutrons: 77, name: "Xenon-131", abundance: "21.232%", stable: true },
+      { mass: 132, neutrons: 78, name: "Xenon-132", abundance: "26.909%", stable: true },
+      { mass: 134, neutrons: 80, name: "Xenon-134", abundance: "10.436%", stable: true },
+      { mass: 136, neutrons: 82, name: "Xenon-136", abundance: "8.857%", stable: true },
+    ],
   },
   {
     name: "Cesium",
@@ -1107,7 +1385,10 @@ export const atoms = [
     boiling: 671,
     density: 1.873,
     yearDiscovered: 1860,
-    uses: "Atomic clocks, drilling fluids, photoelectric cells"
+    uses: "Atomic clocks, drilling fluids, photoelectric cells",
+    isotopes: [
+      { mass: 133, neutrons: 78, name: "Cesium-133", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Barium",
@@ -1127,7 +1408,16 @@ export const atoms = [
     boiling: 1870,
     density: 3.594,
     yearDiscovered: 1808,
-    uses: "Medical imaging, fireworks, drilling fluids"
+    uses: "Medical imaging, fireworks, drilling fluids",
+    isotopes: [
+      { mass: 130, neutrons: 74, name: "Barium-130", abundance: "0.106%", stable: true },
+      { mass: 132, neutrons: 76, name: "Barium-132", abundance: "0.101%", stable: true },
+      { mass: 134, neutrons: 78, name: "Barium-134", abundance: "2.417%", stable: true },
+      { mass: 135, neutrons: 79, name: "Barium-135", abundance: "6.592%", stable: true },
+      { mass: 136, neutrons: 80, name: "Barium-136", abundance: "7.854%", stable: true },
+      { mass: 137, neutrons: 81, name: "Barium-137", abundance: "11.232%", stable: true },
+      { mass: 138, neutrons: 82, name: "Barium-138", abundance: "71.698%", stable: true },
+    ],
   },
   {
     name: "Lanthanum",
@@ -1147,7 +1437,11 @@ export const atoms = [
     boiling: 3464,
     density: 6.145,
     yearDiscovered: 1839,
-    uses: "Camera lenses, lighting, batteries"
+    uses: "Camera lenses, lighting, batteries",
+    isotopes: [
+      { mass: 138, neutrons: 81, name: "Lanthanum-138", abundance: "0.09%", stable: false },
+      { mass: 139, neutrons: 82, name: "Lanthanum-139", abundance: "99.91%", stable: true },
+    ],
   },
   {
     name: "Cerium",
@@ -1167,7 +1461,13 @@ export const atoms = [
     boiling: 3443,
     density: 6.77,
     yearDiscovered: 1803,
-    uses: "Catalytic converters, lighter flints, glass polishing"
+    uses: "Catalytic converters, lighter flints, glass polishing",
+    isotopes: [
+      { mass: 136, neutrons: 78, name: "Cerium-136", abundance: "0.185%", stable: true },
+      { mass: 138, neutrons: 80, name: "Cerium-138", abundance: "0.251%", stable: true },
+      { mass: 140, neutrons: 82, name: "Cerium-140", abundance: "88.450%", stable: true },
+      { mass: 142, neutrons: 84, name: "Cerium-142", abundance: "11.114%", stable: true },
+    ],
   },
   {
     name: "Praseodymium",
@@ -1187,7 +1487,10 @@ export const atoms = [
     boiling: 3520,
     density: 6.773,
     yearDiscovered: 1885,
-    uses: "Magnets, lasers, arc lighting"
+    uses: "Magnets, lasers, arc lighting",
+    isotopes: [
+      { mass: 141, neutrons: 82, name: "Praseodymium-141", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Neodymium",
@@ -1207,7 +1510,16 @@ export const atoms = [
     boiling: 3074,
     density: 7.007,
     yearDiscovered: 1885,
-    uses: "Powerful magnets, lasers, glass coloring"
+    uses: "Powerful magnets, lasers, glass coloring",
+    isotopes: [
+      { mass: 142, neutrons: 82, name: "Neodymium-142", abundance: "27.2%", stable: true },
+      { mass: 143, neutrons: 83, name: "Neodymium-143", abundance: "12.2%", stable: true },
+      { mass: 144, neutrons: 84, name: "Neodymium-144", abundance: "23.8%", stable: true },
+      { mass: 145, neutrons: 85, name: "Neodymium-145", abundance: "8.3%", stable: true },
+      { mass: 146, neutrons: 86, name: "Neodymium-146", abundance: "17.2%", stable: true },
+      { mass: 148, neutrons: 88, name: "Neodymium-148", abundance: "5.7%", stable: true },
+      { mass: 150, neutrons: 90, name: "Neodymium-150", abundance: "5.6%", stable: true },
+    ],
   },
   {
     name: "Promethium",
@@ -1227,7 +1539,11 @@ export const atoms = [
     boiling: 3000,
     density: 7.26,
     yearDiscovered: 1945,
-    uses: "Luminous paint, atomic batteries, thickness gauges"
+    uses: "Luminous paint, atomic batteries, thickness gauges",
+    isotopes: [
+      { mass: 145, neutrons: 84, name: "Promethium-145", abundance: "trace", stable: false },
+      { mass: 147, neutrons: 86, name: "Promethium-147", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Samarium",
@@ -1247,7 +1563,16 @@ export const atoms = [
     boiling: 1794,
     density: 7.52,
     yearDiscovered: 1879,
-    uses: "Magnets, lasers, nuclear reactors"
+    uses: "Magnets, lasers, nuclear reactors",
+    isotopes: [
+      { mass: 144, neutrons: 82, name: "Samarium-144", abundance: "3.07%", stable: true },
+      { mass: 147, neutrons: 85, name: "Samarium-147", abundance: "14.99%", stable: false },
+      { mass: 148, neutrons: 86, name: "Samarium-148", abundance: "11.24%", stable: false },
+      { mass: 149, neutrons: 87, name: "Samarium-149", abundance: "13.82%", stable: true },
+      { mass: 150, neutrons: 88, name: "Samarium-150", abundance: "7.38%", stable: true },
+      { mass: 152, neutrons: 90, name: "Samarium-152", abundance: "26.75%", stable: true },
+      { mass: 154, neutrons: 92, name: "Samarium-154", abundance: "22.75%", stable: true },
+    ],
   },
   {
     name: "Europium",
@@ -1267,7 +1592,11 @@ export const atoms = [
     boiling: 1529,
     density: 5.243,
     yearDiscovered: 1901,
-    uses: "Phosphors, lasers, nuclear control rods"
+    uses: "Phosphors, lasers, nuclear control rods",
+    isotopes: [
+      { mass: 151, neutrons: 88, name: "Europium-151", abundance: "47.81%", stable: true },
+      { mass: 153, neutrons: 90, name: "Europium-153", abundance: "52.19%", stable: true },
+    ],
   },
   {
     name: "Gadolinium",
@@ -1287,7 +1616,16 @@ export const atoms = [
     boiling: 3273,
     density: 7.895,
     yearDiscovered: 1880,
-    uses: "MRI contrast agents, magnets, neutron capture"
+    uses: "MRI contrast agents, magnets, neutron capture",
+    isotopes: [
+      { mass: 152, neutrons: 88, name: "Gadolinium-152", abundance: "0.20%", stable: false },
+      { mass: 154, neutrons: 90, name: "Gadolinium-154", abundance: "2.18%", stable: true },
+      { mass: 155, neutrons: 91, name: "Gadolinium-155", abundance: "14.80%", stable: true },
+      { mass: 156, neutrons: 92, name: "Gadolinium-156", abundance: "20.47%", stable: true },
+      { mass: 157, neutrons: 93, name: "Gadolinium-157", abundance: "15.65%", stable: true },
+      { mass: 158, neutrons: 94, name: "Gadolinium-158", abundance: "24.84%", stable: true },
+      { mass: 160, neutrons: 96, name: "Gadolinium-160", abundance: "21.86%", stable: true },
+    ],
   },
   {
     name: "Terbium",
@@ -1307,7 +1645,10 @@ export const atoms = [
     boiling: 3230,
     density: 8.229,
     yearDiscovered: 1843,
-    uses: "Phosphors, magnets, fuel cells"
+    uses: "Phosphors, magnets, fuel cells",
+    isotopes: [
+      { mass: 159, neutrons: 94, name: "Terbium-159", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Dysprosium",
@@ -1327,7 +1668,16 @@ export const atoms = [
     boiling: 2567,
     density: 8.55,
     yearDiscovered: 1886,
-    uses: "Magnets, lasers, nuclear reactors"
+    uses: "Magnets, lasers, nuclear reactors",
+    isotopes: [
+      { mass: 156, neutrons: 90, name: "Dysprosium-156", abundance: "0.06%", stable: true },
+      { mass: 158, neutrons: 92, name: "Dysprosium-158", abundance: "0.10%", stable: true },
+      { mass: 160, neutrons: 94, name: "Dysprosium-160", abundance: "2.34%", stable: true },
+      { mass: 161, neutrons: 95, name: "Dysprosium-161", abundance: "18.91%", stable: true },
+      { mass: 162, neutrons: 96, name: "Dysprosium-162", abundance: "25.51%", stable: true },
+      { mass: 163, neutrons: 97, name: "Dysprosium-163", abundance: "24.90%", stable: true },
+      { mass: 164, neutrons: 98, name: "Dysprosium-164", abundance: "28.18%", stable: true },
+    ],
   },
   {
     name: "Holmium",
@@ -1347,7 +1697,10 @@ export const atoms = [
     boiling: 2700,
     density: 8.795,
     yearDiscovered: 1878,
-    uses: "Lasers, magnets, nuclear reactors"
+    uses: "Lasers, magnets, nuclear reactors",
+    isotopes: [
+      { mass: 165, neutrons: 98, name: "Holmium-165", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Erbium",
@@ -1367,7 +1720,15 @@ export const atoms = [
     boiling: 2868,
     density: 9.066,
     yearDiscovered: 1843,
-    uses: "Fiber optics, lasers, nuclear technology"
+    uses: "Fiber optics, lasers, nuclear technology",
+    isotopes: [
+      { mass: 162, neutrons: 94, name: "Erbium-162", abundance: "0.14%", stable: true },
+      { mass: 164, neutrons: 96, name: "Erbium-164", abundance: "1.61%", stable: true },
+      { mass: 166, neutrons: 98, name: "Erbium-166", abundance: "33.61%", stable: true },
+      { mass: 167, neutrons: 99, name: "Erbium-167", abundance: "22.93%", stable: true },
+      { mass: 168, neutrons: 100, name: "Erbium-168", abundance: "26.78%", stable: true },
+      { mass: 170, neutrons: 102, name: "Erbium-170", abundance: "14.93%", stable: true },
+    ],
   },
   {
     name: "Thulium",
@@ -1387,7 +1748,10 @@ export const atoms = [
     boiling: 1950,
     density: 9.321,
     yearDiscovered: 1879,
-    uses: "Portable X-ray devices, lasers, alloys"
+    uses: "Portable X-ray devices, lasers, alloys",
+    isotopes: [
+      { mass: 169, neutrons: 100, name: "Thulium-169", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Ytterbium",
@@ -1407,7 +1771,16 @@ export const atoms = [
     boiling: 1196,
     density: 6.965,
     yearDiscovered: 1878,
-    uses: "Lasers, metallurgy, stress gauges"
+    uses: "Lasers, metallurgy, stress gauges",
+    isotopes: [
+      { mass: 168, neutrons: 98, name: "Ytterbium-168", abundance: "0.13%", stable: true },
+      { mass: 170, neutrons: 100, name: "Ytterbium-170", abundance: "3.04%", stable: true },
+      { mass: 171, neutrons: 101, name: "Ytterbium-171", abundance: "14.28%", stable: true },
+      { mass: 172, neutrons: 102, name: "Ytterbium-172", abundance: "21.83%", stable: true },
+      { mass: 173, neutrons: 103, name: "Ytterbium-173", abundance: "16.13%", stable: true },
+      { mass: 174, neutrons: 104, name: "Ytterbium-174", abundance: "31.83%", stable: true },
+      { mass: 176, neutrons: 106, name: "Ytterbium-176", abundance: "12.76%", stable: true },
+    ],
   },
   {
     name: "Lutetium",
@@ -1427,7 +1800,11 @@ export const atoms = [
     boiling: 3402,
     density: 9.84,
     yearDiscovered: 1907,
-    uses: "Catalysts, phosphors, dating rocks"
+    uses: "Catalysts, phosphors, dating rocks",
+    isotopes: [
+      { mass: 175, neutrons: 104, name: "Lutetium-175", abundance: "97.41%", stable: true },
+      { mass: 176, neutrons: 105, name: "Lutetium-176", abundance: "2.59%", stable: false },
+    ],
   },
   {
     name: "Hafnium",
@@ -1447,7 +1824,15 @@ export const atoms = [
     boiling: 4603,
     density: 13.31,
     yearDiscovered: 1923,
-    uses: "Nuclear reactors, microprocessors, plasma cutting"
+    uses: "Nuclear reactors, microprocessors, plasma cutting",
+    isotopes: [
+      { mass: 174, neutrons: 102, name: "Hafnium-174", abundance: "0.16%", stable: true },
+      { mass: 176, neutrons: 104, name: "Hafnium-176", abundance: "5.26%", stable: true },
+      { mass: 177, neutrons: 105, name: "Hafnium-177", abundance: "18.60%", stable: true },
+      { mass: 178, neutrons: 106, name: "Hafnium-178", abundance: "27.28%", stable: true },
+      { mass: 179, neutrons: 107, name: "Hafnium-179", abundance: "13.62%", stable: true },
+      { mass: 180, neutrons: 108, name: "Hafnium-180", abundance: "35.08%", stable: true },
+    ],
   },
   {
     name: "Tantalum",
@@ -1467,7 +1852,11 @@ export const atoms = [
     boiling: 5458,
     density: 16.654,
     yearDiscovered: 1802,
-    uses: "Capacitors, surgical implants, jet engines"
+    uses: "Capacitors, surgical implants, jet engines",
+    isotopes: [
+      { mass: 180, neutrons: 107, name: "Tantalum-180m", abundance: "0.012%", stable: false },
+      { mass: 181, neutrons: 108, name: "Tantalum-181", abundance: "99.988%", stable: true },
+    ],
   },
   {
     name: "Tungsten",
@@ -1487,7 +1876,14 @@ export const atoms = [
     boiling: 5555,
     density: 19.25,
     yearDiscovered: 1783,
-    uses: "Light bulb filaments, cutting tools, armor"
+    uses: "Light bulb filaments, cutting tools, armor",
+    isotopes: [
+      { mass: 180, neutrons: 106, name: "Tungsten-180", abundance: "0.12%", stable: true },
+      { mass: 182, neutrons: 108, name: "Tungsten-182", abundance: "26.50%", stable: true },
+      { mass: 183, neutrons: 109, name: "Tungsten-183", abundance: "14.31%", stable: true },
+      { mass: 184, neutrons: 110, name: "Tungsten-184", abundance: "30.64%", stable: true },
+      { mass: 186, neutrons: 112, name: "Tungsten-186", abundance: "28.43%", stable: true },
+    ],
   },
   {
     name: "Rhenium",
@@ -1507,7 +1903,11 @@ export const atoms = [
     boiling: 5596,
     density: 21.02,
     yearDiscovered: 1925,
-    uses: "Jet engines, catalysts, thermocouples"
+    uses: "Jet engines, catalysts, thermocouples",
+    isotopes: [
+      { mass: 185, neutrons: 110, name: "Rhenium-185", abundance: "37.40%", stable: true },
+      { mass: 187, neutrons: 112, name: "Rhenium-187", abundance: "62.60%", stable: false },
+    ],
   },
   {
     name: "Osmium",
@@ -1527,7 +1927,16 @@ export const atoms = [
     boiling: 5012,
     density: 22.59,
     yearDiscovered: 1803,
-    uses: "Fountain pen tips, electrical contacts, catalysts"
+    uses: "Fountain pen tips, electrical contacts, catalysts",
+    isotopes: [
+      { mass: 184, neutrons: 108, name: "Osmium-184", abundance: "0.02%", stable: true },
+      { mass: 186, neutrons: 110, name: "Osmium-186", abundance: "1.59%", stable: true },
+      { mass: 187, neutrons: 111, name: "Osmium-187", abundance: "1.96%", stable: true },
+      { mass: 188, neutrons: 112, name: "Osmium-188", abundance: "13.24%", stable: true },
+      { mass: 189, neutrons: 113, name: "Osmium-189", abundance: "16.15%", stable: true },
+      { mass: 190, neutrons: 114, name: "Osmium-190", abundance: "26.26%", stable: true },
+      { mass: 192, neutrons: 116, name: "Osmium-192", abundance: "40.78%", stable: true },
+    ],
   },
   {
     name: "Iridium",
@@ -1547,7 +1956,11 @@ export const atoms = [
     boiling: 4428,
     density: 22.56,
     yearDiscovered: 1803,
-    uses: "Spark plugs, crucibles, electrical contacts"
+    uses: "Spark plugs, crucibles, electrical contacts",
+    isotopes: [
+      { mass: 191, neutrons: 114, name: "Iridium-191", abundance: "37.3%", stable: true },
+      { mass: 193, neutrons: 116, name: "Iridium-193", abundance: "62.7%", stable: true },
+    ],
   },
   {
     name: "Platinum",
@@ -1567,7 +1980,15 @@ export const atoms = [
     boiling: 3825,
     density: 21.46,
     yearDiscovered: 1735,
-    uses: "Catalytic converters, jewelry, laboratory equipment"
+    uses: "Catalytic converters, jewelry, laboratory equipment",
+    isotopes: [
+      { mass: 190, neutrons: 112, name: "Platinum-190", abundance: "0.014%", stable: false },
+      { mass: 192, neutrons: 114, name: "Platinum-192", abundance: "0.782%", stable: true },
+      { mass: 194, neutrons: 116, name: "Platinum-194", abundance: "32.967%", stable: true },
+      { mass: 195, neutrons: 117, name: "Platinum-195", abundance: "33.832%", stable: true },
+      { mass: 196, neutrons: 118, name: "Platinum-196", abundance: "25.242%", stable: true },
+      { mass: 198, neutrons: 120, name: "Platinum-198", abundance: "7.163%", stable: true },
+    ],
   },
   {
     name: "Gold",
@@ -1587,7 +2008,10 @@ export const atoms = [
     boiling: 2856,
     density: 19.282,
     yearDiscovered: -6000,
-    uses: "Jewelry, electronics, currency, dentistry"
+    uses: "Jewelry, electronics, currency, dentistry",
+    isotopes: [
+      { mass: 197, neutrons: 118, name: "Gold-197", abundance: "100%", stable: true },
+    ],
   },
   {
     name: "Mercury",
@@ -1607,7 +2031,16 @@ export const atoms = [
     boiling: 356.73,
     density: 13.5336,
     yearDiscovered: -1500,
-    uses: "Thermometers, fluorescent lamps, dental amalgams"
+    uses: "Thermometers, fluorescent lamps, dental amalgams",
+    isotopes: [
+      { mass: 196, neutrons: 116, name: "Mercury-196", abundance: "0.15%", stable: true },
+      { mass: 198, neutrons: 118, name: "Mercury-198", abundance: "9.97%", stable: true },
+      { mass: 199, neutrons: 119, name: "Mercury-199", abundance: "16.87%", stable: true },
+      { mass: 200, neutrons: 120, name: "Mercury-200", abundance: "23.10%", stable: true },
+      { mass: 201, neutrons: 121, name: "Mercury-201", abundance: "13.18%", stable: true },
+      { mass: 202, neutrons: 122, name: "Mercury-202", abundance: "29.86%", stable: true },
+      { mass: 204, neutrons: 124, name: "Mercury-204", abundance: "6.87%", stable: true },
+    ],
   },
   {
     name: "Thallium",
@@ -1627,7 +2060,11 @@ export const atoms = [
     boiling: 1473,
     density: 11.85,
     yearDiscovered: 1861,
-    uses: "Electronics, optics, medical imaging"
+    uses: "Electronics, optics, medical imaging",
+    isotopes: [
+      { mass: 203, neutrons: 122, name: "Thallium-203", abundance: "29.52%", stable: true },
+      { mass: 205, neutrons: 124, name: "Thallium-205", abundance: "70.48%", stable: true },
+    ],
   },
   {
     name: "Lead",
@@ -1647,7 +2084,13 @@ export const atoms = [
     boiling: 1749,
     density: 11.342,
     yearDiscovered: -7000,
-    uses: "Batteries, radiation shielding, ammunition"
+    uses: "Batteries, radiation shielding, ammunition",
+    isotopes: [
+      { mass: 204, neutrons: 122, name: "Lead-204", abundance: "1.4%", stable: true },
+      { mass: 206, neutrons: 124, name: "Lead-206", abundance: "24.1%", stable: true },
+      { mass: 207, neutrons: 125, name: "Lead-207", abundance: "22.1%", stable: true },
+      { mass: 208, neutrons: 126, name: "Lead-208", abundance: "52.4%", stable: true },
+    ],
   },
   {
     name: "Bismuth",
@@ -1667,7 +2110,10 @@ export const atoms = [
     boiling: 1564,
     density: 9.807,
     yearDiscovered: 1753,
-    uses: "Cosmetics, pharmaceuticals, fire detectors"
+    uses: "Cosmetics, pharmaceuticals, fire detectors",
+    isotopes: [
+      { mass: 209, neutrons: 126, name: "Bismuth-209", abundance: "100%", stable: false },
+    ],
   },
   {
     name: "Polonium",
@@ -1687,7 +2133,11 @@ export const atoms = [
     boiling: 962,
     density: 9.32,
     yearDiscovered: 1898,
-    uses: "Antistatic devices, nuclear batteries, research"
+    uses: "Antistatic devices, nuclear batteries, research",
+    isotopes: [
+      { mass: 209, neutrons: 125, name: "Polonium-209", abundance: "trace", stable: false },
+      { mass: 210, neutrons: 126, name: "Polonium-210", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Astatine",
@@ -1707,7 +2157,11 @@ export const atoms = [
     boiling: 337,
     density: 7,
     yearDiscovered: 1940,
-    uses: "Cancer treatment research, radioactive tracers"
+    uses: "Cancer treatment research, radioactive tracers",
+    isotopes: [
+      { mass: 210, neutrons: 125, name: "Astatine-210", abundance: "trace", stable: false },
+      { mass: 211, neutrons: 126, name: "Astatine-211", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Radon",
@@ -1727,7 +2181,10 @@ export const atoms = [
     boiling: -61.7,
     density: 0.00973,
     yearDiscovered: 1900,
-    uses: "Cancer treatment, earthquake prediction, research"
+    uses: "Cancer treatment, earthquake prediction, research",
+    isotopes: [
+      { mass: 222, neutrons: 136, name: "Radon-222", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Francium",
@@ -1747,7 +2204,10 @@ export const atoms = [
     boiling: 677,
     density: 1.87,
     yearDiscovered: 1939,
-    uses: "Scientific research, atomic structure studies"
+    uses: "Scientific research, atomic structure studies",
+    isotopes: [
+      { mass: 223, neutrons: 136, name: "Francium-223", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Radium",
@@ -1767,7 +2227,10 @@ export const atoms = [
     boiling: 1737,
     density: 5,
     yearDiscovered: 1898,
-    uses: "Cancer treatment, luminous paint, neutron sources"
+    uses: "Cancer treatment, luminous paint, neutron sources",
+    isotopes: [
+      { mass: 226, neutrons: 138, name: "Radium-226", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Actinium",
@@ -1787,7 +2250,10 @@ export const atoms = [
     boiling: 3198,
     density: 10.07,
     yearDiscovered: 1899,
-    uses: "Neutron sources, cancer treatment research"
+    uses: "Neutron sources, cancer treatment research",
+    isotopes: [
+      { mass: 227, neutrons: 138, name: "Actinium-227", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Thorium",
@@ -1807,7 +2273,10 @@ export const atoms = [
     boiling: 4820,
     density: 11.72,
     yearDiscovered: 1828,
-    uses: "Nuclear fuel, gas mantles, welding electrodes"
+    uses: "Nuclear fuel, gas mantles, welding electrodes",
+    isotopes: [
+      { mass: 232, neutrons: 142, name: "Thorium-232", abundance: "100%", stable: false },
+    ],
   },
   {
     name: "Protactinium",
@@ -1827,7 +2296,10 @@ export const atoms = [
     boiling: 4000,
     density: 15.37,
     yearDiscovered: 1913,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 231, neutrons: 140, name: "Protactinium-231", abundance: "100%", stable: false },
+    ],
   },
   {
     name: "Uranium",
@@ -1847,7 +2319,12 @@ export const atoms = [
     boiling: 4131,
     density: 18.95,
     yearDiscovered: 1789,
-    uses: "Nuclear fuel, weapons, depleted uranium armor"
+    uses: "Nuclear fuel, weapons, depleted uranium armor",
+    isotopes: [
+      { mass: 234, neutrons: 142, name: "Uranium-234", abundance: "0.005%", stable: false },
+      { mass: 235, neutrons: 143, name: "Uranium-235", abundance: "0.720%", stable: false },
+      { mass: 238, neutrons: 146, name: "Uranium-238", abundance: "99.274%", stable: false },
+    ],
   },
   {
     name: "Neptunium",
@@ -1867,7 +2344,10 @@ export const atoms = [
     boiling: 4000,
     density: 20.45,
     yearDiscovered: 1940,
-    uses: "Neutron detection, plutonium production, research"
+    uses: "Neutron detection, plutonium production, research",
+    isotopes: [
+      { mass: 237, neutrons: 144, name: "Neptunium-237", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Plutonium",
@@ -1887,7 +2367,15 @@ export const atoms = [
     boiling: 3228,
     density: 19.84,
     yearDiscovered: 1940,
-    uses: "Nuclear weapons, spacecraft power, research"
+    uses: "Nuclear weapons, spacecraft power, research",
+    isotopes: [
+      { mass: 238, neutrons: 144, name: "Plutonium-238", abundance: "trace", stable: false },
+      { mass: 239, neutrons: 145, name: "Plutonium-239", abundance: "trace", stable: false },
+      { mass: 240, neutrons: 146, name: "Plutonium-240", abundance: "trace", stable: false },
+      { mass: 241, neutrons: 147, name: "Plutonium-241", abundance: "trace", stable: false },
+      { mass: 242, neutrons: 148, name: "Plutonium-242", abundance: "trace", stable: false },
+      { mass: 244, neutrons: 150, name: "Plutonium-244", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Americium",
@@ -1907,7 +2395,11 @@ export const atoms = [
     boiling: 2011,
     density: 13.69,
     yearDiscovered: 1944,
-    uses: "Smoke detectors, neutron sources, research"
+    uses: "Smoke detectors, neutron sources, research",
+    isotopes: [
+      { mass: 241, neutrons: 146, name: "Americium-241", abundance: "trace", stable: false },
+      { mass: 243, neutrons: 148, name: "Americium-243", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Curium",
@@ -1927,7 +2419,15 @@ export const atoms = [
     boiling: 3110,
     density: 13.51,
     yearDiscovered: 1944,
-    uses: "Spacecraft power, alpha particle sources, research"
+    uses: "Spacecraft power, alpha particle sources, research",
+    isotopes: [
+      { mass: 243, neutrons: 147, name: "Curium-243", abundance: "trace", stable: false },
+      { mass: 244, neutrons: 148, name: "Curium-244", abundance: "trace", stable: false },
+      { mass: 245, neutrons: 149, name: "Curium-245", abundance: "trace", stable: false },
+      { mass: 246, neutrons: 150, name: "Curium-246", abundance: "trace", stable: false },
+      { mass: 247, neutrons: 151, name: "Curium-247", abundance: "trace", stable: false },
+      { mass: 248, neutrons: 152, name: "Curium-248", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Berkelium",
@@ -1947,7 +2447,11 @@ export const atoms = [
     boiling: 2900,
     density: 14.79,
     yearDiscovered: 1949,
-    uses: "Scientific research, element synthesis"
+    uses: "Scientific research, element synthesis",
+    isotopes: [
+      { mass: 247, neutrons: 150, name: "Berkelium-247", abundance: "trace", stable: false },
+      { mass: 249, neutrons: 152, name: "Berkelium-249", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Californium",
@@ -1967,7 +2471,13 @@ export const atoms = [
     boiling: 1470,
     density: 15.1,
     yearDiscovered: 1950,
-    uses: "Neutron sources, cancer treatment, metal detectors"
+    uses: "Neutron sources, cancer treatment, metal detectors",
+    isotopes: [
+      { mass: 249, neutrons: 151, name: "Californium-249", abundance: "trace", stable: false },
+      { mass: 250, neutrons: 152, name: "Californium-250", abundance: "trace", stable: false },
+      { mass: 251, neutrons: 153, name: "Californium-251", abundance: "trace", stable: false },
+      { mass: 252, neutrons: 154, name: "Californium-252", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Einsteinium",
@@ -1987,7 +2497,10 @@ export const atoms = [
     boiling: 1130,
     density: 8.84,
     yearDiscovered: 1952,
-    uses: "Scientific research, element synthesis"
+    uses: "Scientific research, element synthesis",
+    isotopes: [
+      { mass: 252, neutrons: 153, name: "Einsteinium-252", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Fermium",
@@ -2007,7 +2520,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1952,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 257, neutrons: 157, name: "Fermium-257", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Mendelevium",
@@ -2027,7 +2543,11 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1955,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 258, neutrons: 157, name: "Mendelevium-258", abundance: "trace", stable: false },
+      { mass: 260, neutrons: 159, name: "Mendelevium-260", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Nobelium",
@@ -2047,7 +2567,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1958,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 259, neutrons: 157, name: "Nobelium-259", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Lawrencium",
@@ -2067,7 +2590,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1961,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 262, neutrons: 159, name: "Lawrencium-262", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Rutherfordium",
@@ -2087,7 +2613,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1964,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 267, neutrons: 163, name: "Rutherfordium-267", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Dubnium",
@@ -2107,7 +2636,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1968,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 268, neutrons: 163, name: "Dubnium-268", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Seaborgium",
@@ -2127,7 +2659,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1974,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 271, neutrons: 165, name: "Seaborgium-271", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Bohrium",
@@ -2147,7 +2682,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1981,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 270, neutrons: 163, name: "Bohrium-270", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Hassium",
@@ -2167,7 +2705,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1984,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 270, neutrons: 162, name: "Hassium-270", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Meitnerium",
@@ -2187,7 +2728,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1982,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 278, neutrons: 169, name: "Meitnerium-278", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Darmstadtium",
@@ -2207,7 +2751,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1994,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 281, neutrons: 171, name: "Darmstadtium-281", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Roentgenium",
@@ -2227,7 +2774,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1994,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 282, neutrons: 171, name: "Roentgenium-282", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Copernicium",
@@ -2247,7 +2797,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1996,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 285, neutrons: 173, name: "Copernicium-285", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Nihonium",
@@ -2267,7 +2820,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 2004,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 286, neutrons: 173, name: "Nihonium-286", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Flerovium",
@@ -2287,7 +2843,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 1998,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 289, neutrons: 175, name: "Flerovium-289", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Moscovium",
@@ -2307,7 +2866,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 2003,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 290, neutrons: 175, name: "Moscovium-290", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Livermorium",
@@ -2327,7 +2889,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 2000,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 293, neutrons: 177, name: "Livermorium-293", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Tennessine",
@@ -2347,7 +2912,10 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 2010,
-    uses: "Scientific research, nuclear physics"
+    uses: "Scientific research, nuclear physics",
+    isotopes: [
+      { mass: 294, neutrons: 177, name: "Tennessine-294", abundance: "trace", stable: false },
+    ],
   },
   {
     name: "Oganesson",
@@ -2367,6 +2935,9 @@ export const atoms = [
     boiling: null,
     density: null,
     yearDiscovered: 2002,
-    uses: "Scientific research, nuclear studies"
+    uses: "Scientific research, nuclear studies",
+    isotopes: [
+      { mass: 294, neutrons: 176, name: "Oganesson-294", abundance: "trace", stable: false },
+    ],
   },
 ];

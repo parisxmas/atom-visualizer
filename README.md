@@ -1,4 +1,4 @@
-# Atoms Gemini
+# 3D Atoms Visualizer
 
 A modern interactive 3‑D atom visualizer built with **React** and **Vite**. The app displays realistic electron orbitals, supports multiple isotopes, and lets users explore atomic structures directly in the browser.
 

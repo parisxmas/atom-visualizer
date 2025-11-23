@@ -356,7 +356,77 @@ function handleAtomSelection(newAtomData) {
     selectAtom(newAtom);
 }
 
+
+// Filter Logic
+const selectedFilters = new Set();
+const periodicTableFilters = document.getElementById('periodic-table-filters');
+
+function createPeriodicTableFilters() {
+    // Get unique reactivity types
+    const reactivityTypes = [...new Set(atoms.map(a => a.reactivity))].sort();
+
+    // Initialize all as selected
+    reactivityTypes.forEach(type => selectedFilters.add(type));
+
+    reactivityTypes.forEach(type => {
+        const filterItem = document.createElement('div');
+        filterItem.className = 'filter-item active';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'filter-checkbox';
+        checkbox.checked = true;
+
+        const label = document.createElement('span');
+        label.className = 'filter-label';
+        label.textContent = i18n.t(`reactivity.${type}`);
+
+        filterItem.appendChild(checkbox);
+        filterItem.appendChild(label);
+
+        // Handle click on the entire item
+        filterItem.addEventListener('click', (e) => {
+            if (e.target !== checkbox) {
+                checkbox.checked = !checkbox.checked;
+            }
+
+            if (checkbox.checked) {
+                selectedFilters.add(type);
+                filterItem.classList.add('active');
+            } else {
+                selectedFilters.delete(type);
+                filterItem.classList.remove('active');
+            }
+
+            filterPeriodicTable();
+        });
+
+        periodicTableFilters.appendChild(filterItem);
+    });
+}
+
+function filterPeriodicTable() {
+    const cells = document.querySelectorAll('.periodic-atom');
+    cells.forEach(cell => {
+        const atomName = cell.dataset.atomName;
+        const atomData = atoms.find(a => a.name === atomName);
+
+        if (atomData && selectedFilters.has(atomData.reactivity)) {
+            cell.style.opacity = '1';
+            cell.style.pointerEvents = 'auto';
+            // Restore active state if needed
+            if (cell.classList.contains('active')) {
+                cell.style.boxShadow = ''; // Let CSS handle it
+            }
+        } else {
+            cell.style.opacity = '0.1';
+            cell.style.pointerEvents = 'none';
+        }
+    });
+}
+
 createPeriodicTable();
+createPeriodicTableFilters();
 
 // Raycaster for interaction
 const raycaster = new THREE.Raycaster();

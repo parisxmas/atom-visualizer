@@ -324,13 +324,13 @@ export class Atom {
         texture.needsUpdate = true;
         const spriteMaterial = new THREE.SpriteMaterial({
             map: texture,
-            depthTest: false,
+            depthTest: true,
             depthWrite: false
         });
         this.label = new THREE.Sprite(spriteMaterial);
         this.label.scale.set(8, 2, 1);
         this.label.position.set(0, -3, 0);
-        this.label.renderOrder = 999; // Render on top of everything
+        // this.label.renderOrder = 999; // Removed to allow proper depth sorting
         this.label.name = 'label';
         this.label.userData.atomName = this.data.name;
         this.group.add(this.label);
@@ -528,23 +528,7 @@ export class Atom {
             context.fillText(usesLine, 40, y);
         }
 
-        // Draw X button in top right corner
-        const xButtonX = width - 40;
-        const xButtonY = 30;
-        const xButtonRadius = 20;
 
-        // X button circle background
-        context.fillStyle = 'rgba(255, 100, 100, 0.8)';
-        context.beginPath();
-        context.arc(xButtonX, xButtonY, xButtonRadius, 0, Math.PI * 2);
-        context.fill();
-
-        // X text
-        context.font = 'bold 28px Arial';
-        context.fillStyle = 'white';
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-        context.fillText('X', xButtonX, xButtonY);
 
 
         const texture = new THREE.CanvasTexture(canvas);
